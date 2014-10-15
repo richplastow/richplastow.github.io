@@ -1,0 +1,12 @@
+{
+  "name": "richplastow.github.com",
+  "version": "0.0.1-2",
+  "description": "Portfolio website for Rich Plastow, freelance Web Designer and Web App Developer",
+  "scripts": {
+    "test": "echo 'Error: no test specified' && exit 1"
+  },
+  "author": "Rich Plastow <rich@richplastow.com>",
+  "contributors": [
+  ],
+  "license": "GPL v2"
+}
