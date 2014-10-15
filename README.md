@@ -22,3 +22,5 @@ Changelog
 + rpcom@0.0.1-1     create ‘package.json’; add ‘Changelog’ and ‘Workflow’ sections to ‘README.md’; 
 + rpcom@0.0.1-2     add minimal ‘.gitignore’; add minimal ‘index.html’; 
 + rpcom@0.1.0       ready for initial test release; 
++ rpcom@0.1.1-1     create ‘CNAME’ record; install Zurb Foundation Essentials v5.4.6; content placeholders; 
+
