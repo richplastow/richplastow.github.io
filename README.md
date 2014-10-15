@@ -19,4 +19,5 @@ Changelog
 ---------
 
 +                   Initial commit
-+ 0.0.1-1           create ‘package.json’; add ‘Changelog’ and ‘Workflow’ sections to ‘README.md’; 
++ rpcom@0.0.1-1     create ‘package.json’; add ‘Changelog’ and ‘Workflow’ sections to ‘README.md’; 
++ rpcom@0.0.1-2     add minimal ‘.gitignore’; add minimal ‘index.html’; 
