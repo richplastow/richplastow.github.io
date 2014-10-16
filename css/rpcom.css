@@ -1,0 +1,91 @@
+/* rpcom.css rpcom@0.1.1-2 */
+
+
+/* Import Custom Fonts
+==================================================
+ * We don't use style-linking yet because:
+ *   It crashes BlackBerry 9900 & iPad 1
+ *   IE7/8 can only link four styles or fewer
+ *   http://tinyurl.com/n3po7nv
+ */
+
+@font-face {
+    font-family: 'JuneLight';
+    src: url('../font/junelight.eot');
+    src: url('../font/junelight.eot#iefix') format('embedded-opentype'),
+         url('../font/junelight.woff') format('woff'),
+         url('../font/junelight.ttf') format('truetype'),
+         url('../font/junelight.svg#JuneLight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JuneRegular';
+    src: url('../font/juneregular.eot');
+    src: url('../font/juneregular.eot#iefix') format('embedded-opentype'),
+         url('../font/juneregular.woff') format('woff'),
+         url('../font/juneregular.ttf') format('truetype'),
+         url('../font/juneregular.svg#JuneRegular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JuneItalic';
+    src: url('../font/junekursiv.eot');
+    src: url('../font/junekursiv.eot#iefix') format('embedded-opentype'),
+         url('../font/junekursiv.woff') format('woff'),
+         url('../font/junekursiv.ttf') format('truetype'),
+         url('../font/junekursiv.svg#JuneItalic') format('svg');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'JuneBold';
+    src: url('../font/junebold.eot');
+    src: url('../font/junebold.eot#iefix') format('embedded-opentype'),
+         url('../font/junebold.woff') format('woff'),
+         url('../font/junebold.ttf') format('truetype'),
+         url('../font/junebold.svg#JuneBold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FontelloRuf';
+    src: url('../font/fontello-ruf.eot');
+    src: url('../font/fontello-ruf.eot#iefix') format('embedded-opentype'),
+         url('../font/fontello-ruf.woff') format('woff'),
+         url('../font/fontello-ruf.ttf') format('truetype'),
+         url('../font/fontello-ruf.svg#fontello-ruf') format('svg');
+}
+
+body, h2, h3, h4 {
+    font-family:'JuneRegular', arial, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+h1 {
+    font-family:'JuneLight', arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+strong, b, h5, h6 {
+    font-family: 'JuneBold', arial, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+em, i {
+    font-family: 'JuneItalic', arial, sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+.fontello {
+    font-family: 'FontelloRuf';
+}
+
+
+
+

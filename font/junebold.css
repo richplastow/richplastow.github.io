@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'JuneBold';
+    src: url('junebold.eot');
+    src: url('junebold.eot') format('embedded-opentype'),
+         url('junebold.woff') format('woff'),
+         url('junebold.ttf') format('truetype'),
+         url('junebold.svg#JuneBold') format('svg');
+}
