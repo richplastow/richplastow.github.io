@@ -9,7 +9,7 @@ Location: Brighton, UK
 /* SITE */
 
 Last update: 2014/10/15
-Version: rpcom@0.1.1-2
+Version: rpcom@0.1.2
 Language: English
 Doctype: HTML5
 Standards: HTML5, CSS3
