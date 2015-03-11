@@ -1,5 +1,5 @@
-richplastow.github.com
-======================
+richplastow.github.io
+=====================
 
 Portfolio website for Rich Plastow, freelance Web Designer and Web App Developer
 
@@ -26,3 +26,4 @@ Changelog
 + rpcom@0.1.1-2     part way through adding content; ‘June’ and ‘Fontello’ fonts; holding-page; 
 + rpcom@0.1.2       add ‘CNAME’ record; ready to push holding-page to live; 
 + rpcom@0.1.4       with google verification meta tag; 
++ rpcom@0.1.6       various minor amends; ready for holding page; 
