@@ -8,10 +8,10 @@ Location: Brighton, UK
                             
 /* SITE */
 
-Last update: 2014/10/29
-Version: rpcom@0.1.4
+Last update: 2015/03/11
+Version: rpcom@0.1.6
 Language: English
 Doctype: HTML5
 Standards: HTML5, CSS3
-Components: Foundation, jQuery, Orbit, Reveal
-Software: Sublime, PhotoShop, Git, Sass
+Components: Foundation, jQuery
+Software: Sublime Text, Photoshop, Git
