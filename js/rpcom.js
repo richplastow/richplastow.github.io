@@ -1,1 +1,1 @@
-console.log('RPCOM 0.2.1');
+console.log('RPCOM 0.2.2');

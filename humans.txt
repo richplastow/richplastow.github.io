@@ -1,17 +1,31 @@
-/* TEAM */
+/* AUTHOR */
 
-Web Designer and Developer: Rich Plastow
-Contact: Rich Plastow <rich@richplastow.com>
-Twitter: @BtnWebVR
-Location: Brighton, UK
+Web Designer: Rich Plastow
+Developer:    Rich Plastow
+Contact:      Rich Plastow <rich@richplastow.com>
+Twitter:      @BtnWebVR
+Location:     Brighton, UK
 
 
 /* SITE */
 
-Last update: 2017/06/21
-Version: 0.2.1
-Language: English
-Doctype: HTML5
-Standards: HTML5, CSS3
-Components: Bootstrap 4.0.0, Tether 1.2.4, jQuery 3.2.1
-Software: Atom, Photoshop, Git
+Last update:  2017/06/21
+Version:      0.2.2
+Language:     English
+Doctype:      HTML5
+Standards:    HTML5, CSS3
+Components:   Bootstrap 4.0.0, Tether 1.2.4, jQuery 3.2.1
+Software:     Atom, Photoshop, Git
+
+
+/* ICON */
+Generator:    realfavicongenerator.net
+iOS:          background #ffffff, margin 9px
+Android:      background #ffffff, margin 12px, browser-mode
+Metro:        background #ffffff, Big square icon only
+OS X Safari:  theme color #222222
+Path:         /asset/icon
+Compression:  Very high compression factor
+Scaling:      Lanczos
+App Name:     Rich Plastow
+Post:         Six PNGs thru tinypng.com
