@@ -2,16 +2,16 @@
 
 Web Designer and Developer: Rich Plastow
 Contact: Rich Plastow <rich@richplastow.com>
-Twitter: @RichPlastow
+Twitter: @BtnWebVR
 Location: Brighton, UK
 
-                            
+
 /* SITE */
 
-Last update: 2015/03/11
-Version: rpcom@0.1.6
+Last update: 2017/06/21
+Version: rpcom@0.2.0
 Language: English
 Doctype: HTML5
 Standards: HTML5, CSS3
 Components: Foundation, jQuery
-Software: Sublime Text, Photoshop, Git
+Software: Atom, Photoshop, Git

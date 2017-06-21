@@ -71,6 +71,14 @@ h1 {
     font-family:'JuneLight', arial, sans-serif;
     font-weight: 300;
     font-style: normal;
+    font-size: 4em;
+    text-transform: uppercase;
+}
+h1 a {
+    color: inherit;
+}
+a {
+    outline: none!important;
 }
 strong, b, h5, h6 {
     font-family: 'JuneBold', arial, sans-serif;
@@ -85,7 +93,3 @@ em, i {
 .fontello {
     font-family: 'FontelloRuf';
 }
-
-
-
-
