@@ -9,9 +9,9 @@ Location: Brighton, UK
 /* SITE */
 
 Last update: 2017/06/21
-Version: rpcom@0.2.0
+Version: 0.2.1
 Language: English
 Doctype: HTML5
 Standards: HTML5, CSS3
-Components: Foundation, jQuery
+Components: Bootstrap 4.0.0, Tether 1.2.4, jQuery 3.2.1
 Software: Atom, Photoshop, Git

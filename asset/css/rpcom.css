@@ -93,3 +93,11 @@ em, i {
 .fontello {
     font-family: 'FontelloRuf';
 }
+
+
+
+
+/* UA FIX */
+
+/* getbootstrap.com/getting-started/#support-ie10-width */
+@-ms-viewport { width: device-width; }

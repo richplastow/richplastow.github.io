@@ -18,4 +18,5 @@ Changelog
 + 0.1.2       add ‘CNAME’ record; ready to push holding-page to live;
 + 0.1.4       with google verification meta tag;
 + 0.1.6       various minor amends; ready for holding page;
-+ 0.2.0       With favicons and asset directory
++ 0.2.0       with favicons and asset directory
++ 0.2.1       switched from Foundation to Bootstrap 4.0.0
