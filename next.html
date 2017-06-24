@@ -4,12 +4,12 @@
     <base target="_blank">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Rich Plastow, freelance Web App Developer and Web Designer</title>
+    <title>Rich Plastow, freelance web app developer and web designer</title>
     <meta name="description" content="Portfolio and CV for Rich Plastow, a
-        creative web-application developer with twenty years’ experience working
-        for digital agencies and publishing houses in London and Brighton">
+      creative web application developer with twenty years’ experience working
+      for digital agencies and publishing houses in London and Brighton">
     <meta name="author" content="Rich Plastow">
     <link rel="author" href="humans.txt">
 
@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="asset/css/rpcom.css">
 
     <!-- IE8 support for HTML5 elements and media queries -->
+    <!-- NOTE: Bootstrap 4.0.0 does not support IE8 or IE9 -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -38,292 +39,471 @@
   </head>
   <body>
 
-    <nav class="container" id="menu">
-      <div>
-        <ul>
-          <li><a target="_self" href="#top"                title="Back to the top of the page">Top</a></li>
-          <li><a target="_self" href="#about"              title="A quick overview of what I do">About</a></li>
-          <li>
-            <a target="_self" href="#projects"             title="A selection of projects">Projects</a>
-            <ul>
-              <li><a target="_self" href="#web-apps"       title="Some of my web application development">Web apps</a></li>
-              <li><a target="_self" href="#web-design"     title="Websites I’ve designed and built">Web design</a></li>
-              <li><a target="_self" href="#graphic-design" title="Projects from my days as a graphic designer">Graphic design</a></li>
-            </ul>
-          </li>
-          <li><a target="_self" href="#skills"             title="How I make what I make">Skills &amp; qualifications</a></li>
-          <li><a target="_self" href="#contact"            title="Let’s get in touch!">Contact</a></li>
-          <li>
-            <a target="_self" href="#case-studies"         title="Six recent projects">Case studies</a>
-            <ul>
-              <li><a target="_self" href="#looptopia"      title="An otherworldly musical experience">Looptopia</a></li>
-              <li><a target="_self" href="#aatc"           title="A lightweight, easy-to-update, responsive website">Arms Around The Child</a></li>
-              <li><a target="_self" href="#dream-vacation" title="Holiday designer and competition">Dream Vacation</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <div class="container"><!-- fixed width layout (use "container-fluid" for full width) -->
 
-    <header class="container" id="top">
-      <h1><a target="_self" href="/" title="Rich Plastow, freelance Web App Developer and Web Designer">Rich Plastow</a></h1>
-      <p class="lead">I’m a freelance
-        <a href="http://en.wikipedia.org/wiki/Web_application"
-          title="Find out about web applications">creative web-application
-        developer</a> with twenty years’ experience working for digital
-        agencies and publishing houses in London and Brighton.
-      </p>
-    </header>
-
-    <section class="container" id="about">
-      <div>
-        <h2>About</h2>
-        <p>People hire me because I’m friendly, committed and professional, with a broad range of skills and an excellent eye for detail.</p>
-        <p>I specialise in building beautiful, <a href="http://en.wikipedia.org/wiki/Responsive_web_design" title="Find out about responsive web design on Wikipedia">responsive, </a><a href="http://en.wikipedia.org/wiki/Usability" title="Find out about usability on Wikipedia">user friendly</a> front-ends, based on open source technologies. In particular, I’m a bit of a <a href="http://en.wikipedia.org/wiki/JavaScript" title="Find out about JavaScript on Wikipedia">JavaScript,</a> <a href="http://en.wikipedia.org/wiki/HTML" title="Find out about HTML on Wikipedia">HTML</a> and <a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets" title="Find out about CSS on Wikipedia">CSS</a> guru. I generally use <a href="http://wordpress.org/about/" title="Find out about WordPress on their website">WordPress</a> for websites, and <a href="http://foundation.zurb.com/learn/features.html" title="Find out about Foundation on their website">Foundation,</a> <a href="http://backbonejs.org/" title="Find out about Backbone on their website">Backbone</a> and <a href="http://www.meteor.com/" title="Find out about Meteor on their website">Meteor</a> for web apps. I’ve worked on projects for dozens of clients, including <a href="http://en.wikipedia.org/wiki/Saatchi_%26_Saatchi" title="Find out about Saatchi &amp; Saatchi on Wikipedia">Saatchi &amp; Saatchi,</a> <a href="http://en.wikipedia.org/wiki/Time_Inc._UK" title="Find out about Time on Wikipedia">Time,</a> <a href="http://en.wikipedia.org/wiki/BBC" title="Find out about the BBC on Wikipedia">the BBC,</a> <a href="http://en.wikipedia.org/wiki/The_Daily_Telegraph" title="Find out about The Daily Telegraph on Wikipedia">The Daily Telegraph,</a> <a href="http://en.wikipedia.org/wiki/Ford_of_Britain" title="Find out about Ford on Wikipedia">Ford,</a> <a href="http://en.wikipedia.org/wiki/Sony" title="Find out about Sony on Wikipedia">Sony,</a> <a href="http://en.wikipedia.org/wiki/BT_Group" title="Find out about BT on Wikipedia">BT</a> and <a href="http://en.wikipedia.org/wiki/Elizabeth_II" title="Find out about the Queen on Wikipedia">the Queen.</a> You can see a <a target="_self" href="#projects" title="A selection of projects">small selection of my work</a> on this site.</p>
-        <p>I am available for in-house and remote freelance and contract work. Please <a target="_self" href="#contact" title="Contact Rich Plastow">contact me</a> if you would like to discuss a project.</p>
-      </div>
-    </section>
-
-    <section class="container" id="projects">
-      <div>
-        <h2>Projects</h2>
-        <article>
-          <h3>Web Apps</h3>
+      <nav class="row" id="menu">
+        <div class="col">
           <ul>
-            <li><time>2014</time> <a target="_self" href="#looptopia" title="Read the ‘Looptopia’ case study">‘Looptopia’,</a> a 3D landscape where users create music collaboratively, built in <a href="http://www.meteor.com/" title="Find out about Meteor on their website">Meteor</a></li>
-            <li><time>2014</time> <a target="_self" href="#dream-vacation" title="Read the ‘Dream Vacation’ case study">‘Dream Vacation’</a> for US travel agent <a href="http://en.wikipedia.org/wiki/RCI_(company)" title="Find out about RCI on Wikipedia">RCI,</a> built in <a href="http://www.nodejs.org/" title="Find out about Node on their website">Node</a> with a <a href="http://www.mongodb.org/" title="Find out about Mongo on their website">Mongo</a> database</li>
-            <li><time>2013</time> ‘GUI Email Composer’ for French SaaS provider <a href="http://en.wikipedia.org/wiki/SmartFocus" title="Find out about SmartFocus on Wikipedia">SmartFocus,</a> based on <a href="http://wordpress.org/about/" title="Find out about WordPress on their website">WordPress</a></li>
-            <li><time>2012</time> Suite of multilingual data-capture iPad apps for <a href="http://en.wikipedia.org/wiki/Winsor_%26_Newton" title="Find out about Winsor &amp; Newton on Wikipedia">Winsor &amp; Newton,</a> with <a href="http://en.wikipedia.org/wiki/PHP" title="Find out about PHP on Wikipedia">PHP</a></li>
-            <li><time>2012</time> In-store touchscreen catalogue for footwear brand <a href="http://en.wikipedia.org/wiki/Kurt_Geiger" title="Find out about Kurt Geiger on Wikipedia">Kurt Geiger,</a> built in <a href="http://en.wikipedia.org/wiki/ActionScript" title="Find out about ActionScript on Wikipedia">ActionScript</a></li>
-            <li><time>2011</time> ‘Smarter Living’, a lifestyle and pension calculator for <a href="http://www.zurich.co.uk/aboutus/zurichintheuk/" title="Find out about Zurich Insurance on their website">Zurich Insurance,</a> using <a href="http://jquery.com/" title="Find out about jQuery on their website">jQuery</a></li>
-            <li><time>2008</time> ‘Preview’, a magazine and <a href="http://en.wikipedia.org/wiki/Online_magazine" title="Find out about e-zines on Wikipedia">e-zine</a> with embedded video for <a href="http://en.wikipedia.org/wiki/Blockbuster_LLC" title="Find out about Blockbuster on Wikipedia">Blockbuster,</a> built in <a href="http://en.wikipedia.org/wiki/Adobe_Flash" title="Find out about Flash on Wikipedia">Flash</a></li>
-            <li><time>2008</time> ‘Body Shape Challenge’, a <a href="http://en.wikipedia.org/wiki/Browser_game" title="Find out about browser game on Wikipedia">browser game</a> for <a href="http://en.wikipedia.org/wiki/New_Look_(company)" title="Find out about New Look on Wikipedia">New Look,</a> shortlisted for an <a href="http://www.the-cma.com/news/apa-rebrands-to-the-cma" title="Find out about the CMA/APA Awards on their website">APA Award</a></li>
+            <li><a target="_self" href="#top"                       title="Back to the top of the page">Top</a></li>
+            <li><a target="_self" href="#about"                     title="A quick overview of what I do">About</a></li>
+            <li>
+              <a target="_self" href="#projects"                    title="A selection of projects">Projects</a>
+              <ul>
+                <li><a target="_self" href="#web-app-development"   title="Some of my web application development">Web app development</a></li>
+                <li><a target="_self" href="#web-design"            title="Websites I’ve designed and built">Web design</a></li>
+                <li><a target="_self" href="#graphic-design"        title="Projects from my days as a graphic designer">Graphic design</a></li>
+              </ul>
+            </li>
+            <li><a target="_self" href="#skills-and-qualifications" title="How I make what I make">Skills &amp; qualifications</a></li>
+            <li><a target="_self" href="#clients"                   title="Who I’ve worked with">Clients</a></li>
+            <li><a target="_self" href="#contact"                   title="Let’s get in touch!">Contact</a></li>
+            <li>
+              <a target="_self" href="#case-studies"                title="Six recent projects">Case studies</a>
+              <ul>
+                <li><a target="_self" href="#nrm-game"              title="A multiplayer training game in a simulated bar">NRM Game</a></li>
+                <li><a target="_self" href="#edf-efr"               title="Animated interactive 3D guide with minigames">EDF EFR</a></li>
+                <li><a target="_self" href="#cell-survivor"         title="Educational game to raise AIDS awareness">Cell Survivor</a></li>
+                <li><a target="_self" href="#looptopia"             title="An otherworldly musical experience">Looptopia</a></li>
+                <li><a target="_self" href="#aatc"                  title="A lightweight, easy-to-update, responsive website">Arms Around The Child</a></li>
+                <li><a target="_self" href="#dream-vacation"        title="Holiday designer and competition">Win Your Dream Vacation</a></li>
+              </ul>
+            </li>
           </ul>
-        </article>
-        <article>
-          <h3>WordPress Themes and Plugins</h3>
-          <ul>
-            <li><time>2014</time> A <a href="http://en.wikipedia.org/wiki/Digital_asset_management" title="Find out about digital asset management on Wikipedia">Digital Asset Management</a> theme which automatically captures media metadata</li>
-            <li><time>2014</time> ‘Don’t Quote Me’, a shareable <a href="http://en.wikipedia.org/wiki/Parody_generator" title="Find out about random quote generators on Wikipedia">random quote generator</a> built to be highly scalable</li>
-            <li><time>2014</time> ‘Lookabout’, a plugin where portraits in a gallery follow your mouse around the page</li>
-            <li><time>2013</time> ‘broo-base’, a <a href="http://en.wikipedia.org/wiki/WordPress#Themes" title="Find out about WordPress themes on Wikipedia">responsive theme</a> and accompanying plugins, based on <a href="http://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)" title="Find out about Bootstrap on Wikipedia">Bootstrap</a></li>
-          </ul>
-        </article>
-        <article>
-          <h3>Web Design</h3>
-          <ul>
-            <li><time>2014</time> Site with innovative page transition system for property company <a href="http://www.primeresi.com/interview-antony-alberti-on-the-rise-of-the-thackeray-estate/40957/" title="Read an article about Thackeray Estates">Thackeray Estates</a></li>
-            <li><time>2014</time> <a href="http://en.wikipedia.org/wiki/Responsive_web_design" title="Find out about responsive web design on Wikipedia">Responsive layout</a> and new features for a major hairdressing chain’s existing website</li>
-            <li><time>2013</time> Plugins and theme for <a target="_self" href="#aatc" title="Read the ‘Arms Around The Child’ case study">Arms Around The Child,</a> a charity working in India and Africa</li>
-            <li><time>2013</time> Custom responsive theme for fashion commentator <a href="http://en.wikipedia.org/wiki/Caryn_Franklin" title="Find out about Caryn Franklin on Wikipedia">Caryn Franklin’s</a> personal blog</li>
-            <li><time>2012</time> Animated <a href="http://en.wikipedia.org/wiki/Microsite" title="Find out about microsites on Wikipedia">microsite</a> with competition system, for the <a href="http://en.wikipedia.org/wiki/Ford_B-Max" title="Find out about the Ford B-Max on Wikipedia">Ford B-Max</a> launch campaign</li>
-            <li><time>2009</time> <a href="http://en.wikipedia.org/wiki/E-commerce" title="Find out about E-commerce on Wikipedia">E-commerce</a> site for London hi-fi retailer <a href="http://audiogold.co.uk/" title="Find out about Audio Gold on their website">Audio Gold,</a> built using <a href="http://wordpress.org/about/" title="Find out about WordPress on their website">WordPress</a> and <a href="http://getshopped.org/" title="Find out about the WPSC plugin on their website">WPSC</a></li>
-            <li><time>2008</time> Custom site design and build for fashion label <a href="http://www.londonfashionweek.co.uk/designers_profile.aspx?DesignerID=1048" title="Find out about Mark Fast on the London Fashion Week website">Mark Fast,</a> using a bespoke <a href="http://en.wikipedia.org/wiki/PHP" title="Find out about PHP on Wikipedia">PHP</a> CMS</li>
-            <li><time>2005</time> Site with custom event-listing for London music venue <a href="http://www.greennote.co.uk/" title="Find out about Green Note on their website">Green Note,</a> using <a href="http://en.wikipedia.org/wiki/Joomla" title="Find out about Joomla on Wikipedia">Joomla</a></li>
-          </ul>
-        </article>
-        <article>
-          <h3>Graphic Design</h3>
-          <ul>
-            <li><time>2006</time> Brand refresh for <a href="http://en.wikipedia.org/wiki/GVA_(business)" title="Find out about GVA on Wikipedia">GVA,</a> the UK’s largest independent commercial property agency</li>
-            <li><time>2004</time> Visual identity and brand guidelines for <a href="http://www.suntech-power.com/news/news5.html" title="Find out about Suntech Power’s acquisition of MSK">MSK,</a> Japan’s largest photovoltaics specialist</li>
-            <li><time>2003</time> Design of award-winning customer magazines for <a href="http://en.wikipedia.org/wiki/Britannia_(former_building_society)" title="Find out about Britannia on Wikipedia">Britannia,</a> <a href="http://en.wikipedia.org/wiki/Land_Rover" title="Find out about Land Rover on Wikipedia">Land Rover</a> and <a href="http://en.wikipedia.org/wiki/Volvo_Cars" title="Find out about Volvo on Wikipedia">Volvo</a></li>
-            <li><time>2001</time> Template design for a major brand refresh of <a href="http://en.wikipedia.org/wiki/Radio_Times" title="Find out about Radio Times on Wikipedia">Radio Times</a> at <a href="http://en.wikipedia.org/wiki/BBC_Worldwide" title="Find out about BBC Worldwide on Wikipedia">BBC Worldwide</a></li>
-            <li><time>1999</time> Won an internal award for brand development of <a href="http://www.thomson.co.uk/editorial/skytours/skytours-holidays.html" title="Find out about Skytours on Thomson’s website">Skytours</a> at <a href="http://en.wikipedia.org/wiki/Thomson_Holidays" title="Find out about Thomson Holidays on Wikipedia">Thomson Holidays</a></li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="container" id="contact">
-      <div>
-        <h2>Contact</h2>
-        <p>Lipsum.</p>
-      </div>
-    </section>
-
-    <section class="container" id="case-studies">
-
-
-      <div id="looptopia">
-        <div>
-          <h2>Case Study 1: Looptopia public beta</h2>
-          <div class="date">
-            <b class="slug">Date</b> <time datetime="2014-09-27">September 2014</time>
-          </div>
-          <h4>Launched at Brighton Digital Festival, <a href="https://looptopia.loop.coop/" title="Find out about Looptopia on their website">Looptopia</a> combines a range of new technologies including <a href="http://en.wikipedia.org/wiki/WebGL" title="Find out about WebGL on Wikipedia">WebGL,</a> <a href="http://en.wikipedia.org/wiki/WebSocket" title="Find out about WebSockets on Wikipedia">WebSockets</a> and <a href="http://en.wikipedia.org/wiki/HTML5_Audio" title="Find out about Web Audio on Wikipedia">Web Audio</a> to deliver an otherworldly musical experience.</h4>
-          <ul class="skills">
-            <li><a href="http://en.wikipedia.org/wiki/Project_management"                 title="Find out about project management on Wikipedia">Project Management</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/Graphic_design"                     title="Find out about graphic design on Wikipedia">Graphic Design</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/Corporate_identity#Visual_identity" title="Find out about visual identity on Wikipedia">Visual Identity</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/User_interface_design"              title="Find out about UX and user interface design on Wikipedia">UX Design</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/Sound_design"                       title="Find out about sound design on Wikipedia">Sound Design</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/Web_app_development"                title="Find out about web app development on Wikipedia">Web App Development</a></li>
-            <li><a href="http://www.smashingmagazine.com/2013/11/21/introduction-to-full-stack-javascript/" title="Read an article about full stack JavaScript">Full Stack JavaScript</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/Responsive_web_design"              title="Find out about responsive web design on Wikipedia">Responsive Layout</a></li>
-            <li><a href="https://github.com/features"                                     title="Find out about Github on their website">GitHub</a></li>
-            <li><a href="http://www.mongodb.org/"                                         title="Find out about Mongo on their website">Mongo</a></li>
-            <li><a href="http://www.nodejs.org/"                                          title="Find out about Node on their website">Node</a></li>
-            <li><a href="http://www.meteor.com/"                                          title="Find out about Meteor on their website">Meteor</a></li>
-            <li><a href="http://foundation.zurb.com/learn/features.html"                  title="Find out about Foundation on their website">Foundation</a></li>
-            <li><a href="http://handlebarsjs.com/"                                        title="Find out about Handlebars on their website">Handlebars</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/HTML"                               title="Find out about HTML on Wikipedia">HTML</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/Less_(stylesheet_language)"         title="Find out about Less on Wikipedia">Less</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets"             title="Find out about CSS on Wikipedia">CSS</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/X3D"                                title="Find out about X3D on Wikipedia">X3D</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/HTML5_Audio"                        title="Find out about Web Audio on Wikipedia">Web Audio</a></li>
-          </ul>
-          <p><a href="https://looptopia.loop.coop/" title="Find out about Looptopia on their website">Looptopia</a> is a strange and beautiful web app where you can sculpt music visually, jam in real time with other users, and immerse yourself in a vast 3D soundscape.</p>
-          <p>This project provided a unique opportunity to explore cutting edge web technologies on the server and in the browser.
-             The <a href="http://www.meteor.com/" title="Find out about Meteor on their website">Meteor</a> framework allows
-             thousands of users to collaborate on a shared collection of documents, with
-             <a href="http://en.wikipedia.org/wiki/Push_technology" title="Find out about push technology on Wikipedia">live push-updates</a>
-             to clientside HTML when data changes. X3D uses an HTML-like syntax to represent a 3D scene.
-             By hooking <a href="http://en.wikipedia.org/wiki/X3D" title="Find out about X3D on Wikipedia">X3D</a> up to Meteor,
-             I was able to create a <a href="http://en.wikipedia.org/wiki/Reactive_programming" title="Find out about reactive programming on Wikipedia">
-             reactive</a> <a href="http://en.wikipedia.org/wiki/MUVE" title="Find out about multi user virtual environments on Wikipedia">multi
-             user environment</a> which can scale without losing performance.
-          </p>
-          <aside>
-            <h3>Emerging technologies</h3>
-            <ul>
-              <li><a class="slug" href="http://www.mongodb.org/"         title="Find out about Mongo on their website">Mongo</a> A database which stores <a href="http://en.wikipedia.org/wiki/JSON" title="Find out about JSON on Wikipedia">JSON objects,</a> and understands complex JavaScript queries</li>
-              <li><a class="slug" href="http://www.nodejs.org/"          title="Find out about Node on their website">Node</a> Google’s V8 JavaScript engine running as a <a href="http://en.wikipedia.org/wiki/Web_server" title="Find out about web servers on Wikipedia">web server</a></li>
-              <li><a class="slug" href="https://www.npmjs.org/"          title="Find out about NPM on their website">NPM</a> A collection of 100,000 Node modules — many Meteor packages rely on these</li>
-              <li><a class="slug" href="http://www.meteor.com/"          title="Find out about Meteor on their website">Meteor</a> Much code actually runs on server <em>and</em> client, with communication via  <a href="http://en.wikipedia.org/wiki/WebSocket" title="Find out about WebSockets on Wikipedia">WebSockets</a></li>
-              <li><a class="slug" href="https://atmospherejs.com/"       title="Find out about Atmosphere on their website">Atmosphere</a> 2000 Meteor packages — Looptopia uses <a href="http://eventedmind.github.io/iron-router/" title="Find out about Iron Router their website">Iron Router,</a> <a href="http://www.x3dom.org/?page_id=2" title="Find out about X3DOM on their website">X3DOM,</a> <a href="http://momentjs.com/" title="Find out about Moment on their website">Moment</a> and many more</li>
-              <li><a class="slug" href="http://www.x3dom.org/?page_id=2" title="Find out about X3DOM on their website">X3DOM</a> A JavaScript implementation of <a href="http://en.wikipedia.org/wiki/X3D" title="Find out about X3D on Wikipedia">X3D,</a> the W3C’s successor to VRML</li>
-            </ul>
-          </aside>
-          <aside>
-            <h3>Special features</h3>
-            <ul>
-              <li><a class="slug" href="http://en.wikipedia.org/wiki/Multimedia"     title="Find out about multimedia on Wikipedia">Multimedia</a> Elements in the 3D scene react to user activity by animating and playing music</li>
-              <li><a class="slug" href="http://en.wikipedia.org/wiki/Collaboration"  title="Find out about collaboration on Wikipedia">Collaborative</a> Users can modify the 3D world, and modifications are <a href="http://en.wikipedia.org/wiki/Push_technology" title="Find out about push technology on Wikipedia">immediately seen by all users</a></li>
-              <li><a class="slug" href="http://en.wikipedia.org/wiki/Generative_art" title="Find out about generative art on Wikipedia">Generative</a> The 3D landscape evolves according to a semi-random algorithm</li>
-              <li><a class="slug" href="http://en.wikipedia.org/wiki/Archive"        title="Find out about archiving on Wikipedia">Archived</a> All modifications are <a href="http://en.wikipedia.org/wiki/Journal_(computing)" title="Find out about database journals on Wikipedia">permanently recorded,</a> for ‘undo’ history and audit trail</li>
-            </ul>
-          </aside>
         </div>
-      </div>
+      </nav>
 
-      <div id="aatc">
-        <div>
-          <h2>Case Study 2: Arms Around The Child site refresh</h2>
-          <div class="date">
-            <b class="slug">Date</b> <time datetime="2013-11">November 2013</time>
-          </div>
-          <h4>I developed a suite of custom WordPress plugins, along with a custom WordPress theme based on Bootstrap, to create this
-              lightweight, easy-to-update, responsive website.</h4>
-          <ul class="skills">
-            <li><a href="http://en.wikipedia.org/wiki/xx"                 title="Find out about xx on Wikipedia">xx</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/xx"                 title="Find out about xx on Wikipedia">xx</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/xx"                 title="Find out about xx on Wikipedia">xx</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/xx"                 title="Find out about xx on Wikipedia">xx</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/xx"                 title="Find out about xx on Wikipedia">xx</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/xx"                 title="Find out about xx on Wikipedia">xx</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/xx"                 title="Find out about xx on Wikipedia">xx</a></li>
-            <li><a href="xx"                                              title="Find out about xx on their website">xx</a></li>
-            <li><a href="xx"                                              title="Find out about xx on their website">xx</a></li>
-            <li><a href="xx"                                              title="Find out about xx on their website">xx</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/xx"                 title="Find out about xx on Wikipedia">xx</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/xx"                 title="Find out about xx on Wikipedia">xx</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/xx"                 title="Find out about xx on Wikipedia">xx</a></li>
-            <li><a href="xx"                                              title="Find out about xx on their website">xx</a></li>
-          </ul>
-          <p>Arms Around The Child raises funds for projects in India and Africa to help lift children out of poverty.
-             Analytics indicated that donations at armsaroundthechild.org were increasingly being made using tablets and mobile
-             devices, so we chose to rebuild the site from the ground up, using responsive techniques.
+      <header class="row" id="top">
+        <div class="col">
+          <h1>
+            <a target="_self" href="/"
+               title="Rich Plastow, freelance web app developer and web designer">
+               Rich Plastow
+            </a>
+          </h1>
+          <p class="lead">I’m a freelance creative
+            <a href="https://en.wikipedia.org/wiki/Web_application"
+               title="Find out about web applications">web application
+            developer</a> with twenty years’ experience working for digital
+            agencies and publishing houses in London and Brighton.
           </p>
-          <p>The Creative Director at Kandi Media designed the new site, providing visuals in PDF format. I reworked the visuals
-              for three screen widths: desktop, tablet, and mobile. From these I built ‘broo-aatc’, a WordPress child theme which
-              extends ‘broo-base’, a general purpose parent theme I developed in early 2013.
-          </p>
-          <aside>
-            <h3>Custom plugins</h3>
-            <ul>
-              <li><b class="slug">BrooLang</b> <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx</li>
-              <li><b class="slug">BrooShare</b> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx</li>
-              <li><b class="slug">BrooSlide</b> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx</li>
-              <li><b class="slug">BrooMax</b> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a></li>
-              <li><b class="slug">BrooPop</b> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a></li>
-            </ul>
-          </aside>
-          <aside>
-            <h3>Best practice</h3>
-            <ul>
-              <li><b class="slug">Future Proof</b> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx</li>
-              <li><b class="slug">Clean Code</b> <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a></li>
-              <li><b class="slug">Test Suite</b> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx</li>
-              <li><b class="slug">Cross Platform</b> xx</li>
-              <li><b class="slug">Accessibility</b> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx</li>
-            </ul>
-          </aside>
         </div>
-      </div>
+      </header>
 
-      <div id="dream-vacation">
-        <div>
-          <h2>Case Study 3: Dream Vacation</h2>
-          <div class="date">
-            <b class="slug">Date</b> <time datetime="2014-04">April 2014</time>
-          </div>
-          <h4>A web app I built using Node, Mongo and jQuery, which was the centerpiece of a ten week promotional campaign. By the end,
-              150,000 users had registered and designed a dream holiday.
-          </h4>
-          <ul class="skills">
-            <li><a href="http://en.wikipedia.org/wiki/xx"                 title="Find out about xx on Wikipedia">xx</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/xx"                 title="Find out about xx on Wikipedia">xx</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/xx"                 title="Find out about xx on Wikipedia">xx</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/xx"                 title="Find out about xx on Wikipedia">xx</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/xx"                 title="Find out about xx on Wikipedia">xx</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/xx"                 title="Find out about xx on Wikipedia">xx</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/xx"                 title="Find out about xx on Wikipedia">xx</a></li>
-            <li><a href="xx"                                              title="Find out about xx on their website">xx</a></li>
-            <li><a href="xx"                                              title="Find out about xx on their website">xx</a></li>
-            <li><a href="xx"                                              title="Find out about xx on their website">xx</a></li>
-            <li><a href="xx"                                              title="Find out about xx on their website">xx</a></li>
-            <li><a href="xx"                                              title="Find out about xx on their website">xx</a></li>
-            <li><a href="xx"                                              title="Find out about xx on their website">xx</a></li>
-            <li><a href="xx"                                              title="Find out about xx on their website">xx</a></li>
-            <li><a href="xx"                                              title="Find out about xx on their website">xx</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/xx"                 title="Find out about xx on Wikipedia">xx</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/xx"                 title="Find out about xx on Wikipedia">xx</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/xx"                 title="Find out about xx on Wikipedia">xx</a></li>
-            <li><a href="xx"                                              title="Find out about xx on their website">xx</a></li>
-          </ul>
-          <p>To celebrate their 40th anniversary, US travel agent RCI ran a competition over ten weeks and gave away 40 holidays.
-             Users were encouraged to invite thier friends to enter the competition using an in-app Facebook, Twitter, and Email popup.
-             The app tracked each invitation, and rewarded users when one of thier invitees registered.
+      <section class="row" id="about">
+        <div class="col">
+          <h2>About</h2>
+          <p>I build beautiful,
+            <a href="https://en.wikipedia.org/wiki/Usability"           title="Find out about usability">user friendly,</a>
+            feature-rich desktop and mobile
+            <a href="https://en.wikipedia.org/wiki/Web_application"     title="Find out about web applications">web apps.</a>
+            I’ve worked on projects for
+            <a href="https://en.wikipedia.org/wiki/BBC"                 title="Find out about the BBC">the BBC,</a>
+            <a href="https://en.wikipedia.org/wiki/Saatchi_%26_Saatchi" title="Find out about Saatchi &amp; Saatchi">Saatchi &amp; Saatchi,</a>
+            <a href="https://en.wikipedia.org/wiki/EDF_Energy"          title="Find out about EDF">EDF,</a>
+            <a href="https://en.wikipedia.org/wiki/Diageo"              title="Find out about Diageo">Diageo,</a>
+            <a href="https://en.wikipedia.org/wiki/The_Daily_Telegraph" title="Find out about The Daily Telegraph">The Daily Telegraph,</a>
+            <a href="https://en.wikipedia.org/wiki/Sony"                title="Find out about Sony">Sony,</a>
+            <a href="https://en.wikipedia.org/wiki/Ford_of_Britain"     title="Find out about Ford">Ford,</a>
+            <a href="https://en.wikipedia.org/wiki/BT_Group"            title="Find out about BT">BT</a> and the
+            <a href="https://en.wikipedia.org/wiki/House_of_Windsor"    title="Find out about the House of Windsor">House of Windsor.</a>
+            I love pushing boundaries, often using cutting edge technologies like
+            <a href="http://es6-features.org/"                          title="Find out about ES6">ES6,</a>
+            <a href="https://en.wikipedia.org/wiki/Web_Components"      title="Find out about the Web Components">Web Components</a> and
+            <a href="https://en.wikipedia.org/wiki/WebVR"               title="Find out about the WebVR">WebVR</a>
+            in my work.
           </p>
-          <p>I was provided with wireframes, artwork and a functional spec. I built and deployed the app, tuned its performance during
-              the campaign, and compiled analytics results.
+
+          <!-- <p>People hire me because I’m friendly, committed and professional, with a broad range of skills and an excellent eye for detail.</p> -->
+
+          <p>I am available for freelance and contract projects, working in-house or remotely.
+            Please <a target="_self" href="#contact" title="Contact Rich Plastow">contact me</a>
+            if you would like to discuss a project.
           </p>
-          <aside>
-            <h3>App dependencies</h3>
-            <ul>
-              <li><b class="slug">Server</b> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx</li>
-              <li><b class="slug">Packages</b> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a></li>
-              <li><b class="slug">Database</b> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx</li>
-              <li><b class="slug">Router</b> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a></li>
-              <li><b class="slug">Templating</b> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a></li>
-            </ul>
-          </aside>
-          <aside>
-            <h3>External APIs</h3>
-            <ul>
-              <li><b class="slug">Email</b> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx</li>
-              <li><b class="slug">Facebook</b> <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx</li>
-              <li><b class="slug">Twitter</b> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx</li>
-              <li><b class="slug">Promotion</b> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a></li>
-              <li><b class="slug">Feedback</b> <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx</li>
-              <li><b class="slug">Analytics</b> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a> xx <a href="http://en.wikipedia.org/wiki/xx" title="Find out about xx on Wikipedia">xx</a></li>
-            </ul>
-          </aside>
         </div>
-      </div>
+      </section>
 
-    </section>
+      <section class="row" id="projects">
+        <div class="col">
+          <h2>Projects</h2>
+
+          <article id="web-app-development">
+            <h3>Web app development</h3>
+            <ul>
+              <li><time>2017</time> <a target="_self" href="#nrm-game" title="Read the ‘NRM Game’ case study">3D multiplayer game</a> for <a href="https://en.wikipedia.org/wiki/Diageo" title="Find out about Diageo">Diageo</a> with a unique financial simulation, in <a href="http://es6-features.org/" title="Find out about ES6">ES6</a> and <a href="https://en.wikipedia.org/wiki/Three.js" title="Find out about THREE">THREE</a></li>
+              <li><time>2016</time> Animated <a target="_self" href="#edf-efr" title="Read the ‘EDF EFR’ case study">interactive 3D guide</a> with minigames for <a href="https://en.wikipedia.org/wiki/EDF_Energy" title="Find out about EDF">EDF,</a> built in <a href="https://en.wikipedia.org/wiki/TypeScript" title="Find out about TypeScript">TypeScript</a> and <a href="https://en.wikipedia.org/wiki/Angular_(application_platform)" title="Find out about Angular">Angular</a></li>
+              <li><time>2015</time> <a target="_self" href="#cell-survivor" title="Read the ‘Cell Survivor’ case study">‘Cell Survivor’,</a> an educational game for <a href="https://en.wikipedia.org/wiki/International_HIV/AIDS_Alliance" title="Find out about AIDS Alliance">AIDS Alliance,</a> using <a href="https://en.wikipedia.org/wiki/CoffeeScript" title="Find out about CoffeeScript">CoffeeScript</a> and <a href="https://phaser.io/learn" title="Find out about Phaser">Phaser</a></li>
+              <li><time>2014</time> <a target="_self" href="#looptopia" title="Read the ‘Looptopia’ case study">‘Looptopia’,</a> a 3D landscape where users create music collaboratively, built in <a href="https://en.wikipedia.org/wiki/Meteor_(web_framework)" title="Find out about Meteor">Meteor</a></li>
+              <li><time>2014</time> <a target="_self" href="#dream-vacation" title="Read the ‘Win Your Dream Vacation’ case study">‘Win Your Dream Vacation’</a> for US travel agent <a href="https://en.wikipedia.org/wiki/RCI_(company)" title="Find out about RCI">RCI,</a> using <a href="https://en.wikipedia.org/wiki/NodeJS" title="Find out about Node">Node</a> and a <a href="https://en.wikipedia.org/wiki/MongoDB" title="Find out about Mongo">Mongo</a> database</li>
+              <li><time>2013</time> Drag-and-drop email composer for web-marketers <a href="http://www.smartfocus.com/en/company" title="Find out about SmartFocus">SmartFocus,</a> based on <a href="http://wordpress.org/about/" title="Find out about WordPress">WordPress</a></li>
+              <li><time>2012</time> Suite of multilingual data-capture iPad apps for <a href="https://en.wikipedia.org/wiki/Winsor_%26_Newton" title="Find out about Winsor &amp; Newton">Winsor &amp; Newton,</a> with <a href="https://en.wikipedia.org/wiki/PHP" title="Find out about PHP">PHP</a></li>
+              <li><time>2012</time> In-store touchscreen catalogue for footwear brand <a href="https://en.wikipedia.org/wiki/Kurt_Geiger" title="Find out about Kurt Geiger">Kurt Geiger,</a> built in <a href="https://en.wikipedia.org/wiki/ActionScript" title="Find out about ActionScript">ActionScript</a></li>
+              <li><time>2011</time> ‘Smarter Living’, a lifestyle and pension calculator for <a href="http://www.zurich.co.uk/aboutus/zurichintheuk/" title="Find out about Zurich Insurance">Zurich Insurance,</a> using <a href="http://jquery.com/" title="Find out about jQuery">jQuery</a></li>
+              <li><time>2008</time> ‘Preview’, a magazine and <a href="https://en.wikipedia.org/wiki/Online_magazine" title="Find out about e-zines">e-zine</a> with embedded video for <a href="https://en.wikipedia.org/wiki/Blockbuster_LLC" title="Find out about Blockbuster">Blockbuster,</a> built in <a href="https://en.wikipedia.org/wiki/Adobe_Flash" title="Find out about Flash">Flash</a></li>
+              <li><time>2008</time> ‘Body Shape Challenge’, a <a href="https://en.wikipedia.org/wiki/Browser_game" title="Find out about browser game">browser game</a> for <a href="https://en.wikipedia.org/wiki/New_Look_(company)" title="Find out about New Look">New Look,</a> shortlisted for an <a href="http://www.the-cma.com/news/apa-rebrands-to-the-cma" title="Find out about the CMA/APA Awards">APA Award</a></li>
+            </ul>
+          </article>
+
+          <article id="web-design">
+            <h3>Web design</h3>
+            <ul>
+              <li><time>2016</time> A <a href="https://en.wikipedia.org/wiki/WooCommerce" title="Find out about WooCommerce">WooCommerce</a> site where customers create custom books, and then the backend
+                                    generates press-ready PDFs and FTPs them to a <a href="https://en.wikipedia.org/wiki/Print_on_demand" title="Find out about print-on-demand">print-on-demand</a> service</li>
+              <li><time>2015</time> A <a href="https://en.wikipedia.org/wiki/Digital_asset_management" title="Find out about digital asset management">Digital Asset Management</a> theme which automatically captures media metadata</li>
+              <li><time>2014</time> ‘Don’t Quote Me’, a shareable random quote generator built for <a href="https://en.wikipedia.org/wiki/Tesco" title="Find out about Tesco">Tesco</a> and <a href="https://en.wikipedia.org/wiki/TalkTalk_TV_Store" title="Find out about Blinkbox">Blinkbox</a></li>
+              <li><time>2014</time> <a href="http://lookabout.wpengine.com/" title="Find out about Lookabout">‘Lookabout’,</a> a plugin where 3D portraits in a gallery respond to cursor movement</li>
+              <li><time>2014</time> <a href="https://en.wikipedia.org/wiki/Responsive_web_design" title="Find out about responsive web design">Responsive layout</a> and new features for hairdresser <a href="http://www.headmasters.com/about/" title="Find out about Headmasters">Headmasters’</a> existing website</li>
+              <li><time>2013</time> Site with innovative page transition system for property company <a href="http://thackerayestates.com/about-us/" title="Find out about Thackeray Estates">Thackeray Estates</a></li>
+              <li><time>2013</time> Custom <a href="https://en.wikipedia.org/wiki/WordPress#Themes" title="Find out about WordPress themes">responsive WordPress theme</a> and plugins based on <a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)" title="Find out about Bootstrap">Bootstrap,</a> for fashion
+                                    commentator <a href="https://en.wikipedia.org/wiki/Caryn_Franklin" title="Find out about Caryn Franklin">Caryn Franklin</a> and childrens’ charity <a target="_self" href="#aatc" title="Read the ‘Arms Around The Child’ case study">Arms Around The Child</a></li>
+              <li><time>2012</time> Promotional <a href="https://en.wikipedia.org/wiki/Microsite" title="Find out about microsites">microsite</a> with HTML5 animations for the <a href="https://en.wikipedia.org/wiki/Ford_B-Max" title="Find out about the Ford B-Max">Ford B-Max</a> launch campaign</li>
+              <li><time>2009</time> <a href="https://en.wikipedia.org/wiki/E-commerce" title="Find out about e-commerce">E-commerce</a> site for London hi-fi retailer <a href="https://audiogold.co.uk/about-us/" title="Find out about Audio Gold">Audio Gold,</a> in <a href="https://en.wikipedia.org/wiki/WordPress" title="Find out about WordPress">WordPress</a> and <a href="https://en.wikipedia.org/wiki/WooCommerce" title="Find out about WooCommerce">WooCommerce</a></li>
+              <li><time>2008</time> Custom site design and build for fashion label <a href="http://www.markfast.net/about.htm" title="Find out about Mark Fast">Mark Fast,</a> using a bespoke <a href="https://en.wikipedia.org/wiki/PHP" title="Find out about PHP">PHP</a> CMS</li>
+              <li><time>2005</time> Site with custom event-listing for London music venue <a href="http://www.greennote.co.uk/about-us/" title="Find out about Green Note">Green Note,</a> using <a href="https://en.wikipedia.org/wiki/Joomla" title="Find out about Joomla">Joomla</a></li>
+            </ul>
+          </article>
+
+          <article id="graphic-design">
+            <h3>Graphic design</h3>
+            <ul>
+              <li><time>2006</time> Brand refresh for <a href="https://en.wikipedia.org/wiki/GVA_(business)" title="Find out about GVA">GVA,</a> the UK’s largest independent commercial property agency</li>
+              <li><time>2004</time> Visual identity and brand guidelines for <a href="http://www.pvdatabase.org/projects_view_detailsmore.php?ID=225" title="Find out about MSK">MSK,</a> Japan’s largest photovoltaics specialist</li>
+              <li><time>2003</time> Design of award-winning customer magazines for <a href="https://en.wikipedia.org/wiki/Britannia_Building_Society" title="Find out about Britannia">Britannia,</a> <a href="https://en.wikipedia.org/wiki/Land_Rover" title="Find out about Land Rover">Land Rover</a> and <a href="https://en.wikipedia.org/wiki/Volvo_Cars" title="Find out about Volvo">Volvo</a></li>
+              <li><time>2001</time> Template design for a major brand refresh of <a href="https://en.wikipedia.org/wiki/Radio_Times" title="Find out about Radio Times">Radio Times</a> at <a href="https://en.wikipedia.org/wiki/BBC_Worldwide" title="Find out about BBC Worldwide">BBC Worldwide</a></li>
+              <li><time>1999</time> Won an internal award for brand development of <a href="http://www.thomson.co.uk/destinations/info/skytours-holidays" title="Find out about Skytours">Skytours</a> at <a href="https://en.wikipedia.org/wiki/Thomson_Holidays" title="Find out about Thomson Holidays">Thomson Holidays</a></li>
+            </ul>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="row" id="clients">
+        <div class="col">
+          <h2>Clients</h2>
+            <ul>
+
+              <li><a href="https://en.wikipedia.org/wiki/International_HIV/AIDS_Alliance"         title="Find out about AIDS Alliance">AIDS Alliance</a></li>
+              <li><a href="http://www.allwalks.org/who-are-all-walks/"                            title="Find out about All Walks">All Walks</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Academy_of_Medical_Royal_Colleges"       title="Find out about The AMRC">The AMRC</a></li>
+              <li><a href="http://armsaroundthechild.org/about/"                                  title="Find out about Arms Around The Child">Arms Around The Child</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Asda"                                    title="Find out about Asda">Asda</a></li>
+              <li><a href="https://audiogold.co.uk/about-us/"                                     title="Find out about Audio Gold">Audio Gold</a></li>
+
+              <li><a href="https://en.wikipedia.org/wiki/BBC_Worldwide"                           title="Find out about BBC Worldwide">BBC Worldwide</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/TalkTalk_TV_Store"                       title="Find out about Blinkbox">Blinkbox</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Blockbuster_LLC"                         title="Find out about Blockbuster">Blockbuster</a></li>
+              <li><a href="http://www.brightwavegroup.com/about-us/index.html"                    title="Find out about Brightwave">Brightwave</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Britannia_Building_Society"              title="Find out about Britannia">Britannia</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/BT_Group"                                title="Find out about BT">BT</a></li>
+
+              <li><a href="http://www.cadoganclinic.com/about-us/"                                title="Find out about Cadogan Clinic">Cadogan Clinic</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Caryn_Franklin"                          title="Find out about Caryn Franklin">Caryn Franklin</a></li>
+              <li><a href="https://www.classicbritishhotels.com/about-classic-british-hotels/"    title="Find out about Classic British Hotels">Classic British Hotels</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/ColArt"                                  title="Find out about ColArt">ColArt</a></li>
+
+              <li><a href="https://en.wikipedia.org/wiki/The_Daily_Telegraph"                     title="Find out about The Daily Telegraph">The Daily Telegraph</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Dazed"                                   title="Find out about Dazed">Dazed</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Diageo"                                  title="Find out about Diageo">Diageo</a></li>
+
+              <li><a href="https://en.wikipedia.org/wiki/EDF_Energy"                              title="Find out about EDF">EDF</a></li>
+
+              <li><a href="https://en.wikipedia.org/wiki/Ford_of_Britain"                         title="Find out about Ford">Ford</a></li>
+
+              <li><a href="https://en.wikipedia.org/wiki/Global_Apollo_Programme"                 title="Find out about The Global Apollo Programme">The Global Apollo Programme</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Gok_Wan"                                 title="Find out about Gok Wan">Gok Wan</a></li>
+              <li><a href="http://www.greennote.co.uk/about-us/"                                  title="Find out about Green Note">Green Note</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/GVA_(business)"                          title="Find out about GVA">GVA</a></li>
+
+              <li><a href="http://www.headmasters.com/about/"                                     title="Find out about Headmasters">Headmasters</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/House_of_Windsor"                        title="Find out about the House of Windsor">House of Windsor</a></li>
+
+              <li><a href="http://kandimedia.com/about/"                                          title="Find out about Kandi">Kandi</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Kurt_Geiger"                             title="Find out about Kurt Geiger">Kurt Geiger</a></li>
+
+              <li><a href="https://en.wikipedia.org/wiki/Land_Rover"                              title="Find out about Land Rover">Land Rover</a></li>
+              <li><a href="http://loop.coop/curious/"                                             title="Find out about Loop.Coop">Loop.Coop</a></li>
+
+              <li><a href="https://en.wikipedia.org/wiki/MacUser"                                 title="Find out about MacUser">MacUser</a></li>
+              <li><a href="http://www.makereal.co.uk/about-makereal/"                             title="Find out about Make Real">Make Real</a></li>
+              <li><a href="http://www.markfast.net/about.htm"                                     title="Find out about Mark Fast">Mark Fast</a></li>
+              <li><a href="http://www.movimientos.org.uk/latin-music-booking-agents.html"         title="Find out about Movimientos">Movimientos</a></li>
+              <li><a href="http://www.pvdatabase.org/projects_view_detailsmore.php?ID=225"        title="Find out about MSK">MSK</a></li>
+
+              <li><a href="https://neidhart.com/en/"                                              title="Find out about Neidhart">Neidhart</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/New_Look_(company)"                      title="Find out about New Look">New Look</a></li>
+              <li><a href="https://www.nucreative.co.uk/about-us/"                                title="Find out about Nu Creative">Nu Creative</a></li>
+
+              <li><a href="https://en.wikipedia.org/wiki/Personal_Computer_World"                 title="Find out about PCW">PCW Magazine</a></li>
+              <li><a href="https://pragmatic.agency/about/"                                       title="Find out about Pragmatic">Pragmatic</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/PricewaterhouseCoopers"                  title="Find out about PWC">PWC</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Publicis"                                title="Find out about Publicis">Publicis</a></li>
+
+              <li><a href="https://en.wikipedia.org/wiki/Radio_Times"                             title="Find out about Radio Times">Radio Times</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/RCI_(company)"                           title="Find out about RCI">RCI</a></li>
+              <li><a href="http://www.redwoodlondon.com/about-us"                                 title="Find out about Redwood">Redwood</a></li>
+              <li><a href="https://rtister.com/"                                                  title="Find out about Rtister">Rtister</a></li>
+
+              <li><a href="https://en.wikipedia.org/wiki/Saatchi_%26_Saatchi"                     title="Find out about Saatchi &amp; Saatchi">Saatchi &amp; Saatchi</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Schneider_National"                      title="Find out about Schneider">Schneider</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Society_of_Chemical_Industry"            title="Find out about The SCI">The SCI</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Selfridges"                              title="Find out about Selfridges">Selfridges</a></li>
+              <li><a href="http://www.thomson.co.uk/destinations/info/skytours-holidays"          title="Find out about Skytours">Skytours</a></li>
+              <li><a href="http://www.smartfocus.com/en/company"                                  title="Find out about SmartFocus">SmartFocus</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Sony"                                    title="Find out about Sony">Sony</a></li>
+              <li><a href="https://www.facebook.com/pg/sw.facepainting/about/"                    title="Find out about Squiggles &amp; Wiggles">Squiggles &amp; Wiggles</a></li>
+
+              <li><a href="https://en.wikipedia.org/wiki/Tesco"                                   title="Find out about Tesco">Tesco</a></li>
+              <li><a href="http://thackerayestates.com/about-us/"                                 title="Find out about Thackeray Estates">Thackeray Estates</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Thomson_Holidays"                        title="Find out about Thomson Holidays">Thomson Holidays</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Time_Inc._UK"                            title="Find out about Time">Time</a></li>
+
+              <li><a href="https://en.wikipedia.org/wiki/Verenigde_Nederlandse_Uitgeverijen"      title="Find out about VNU">VNU Business Publications</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Volvo_Cars"                              title="Find out about Volvo Cars">Volvo Cars</a></li>
+
+              <li><a href="https://en.wikipedia.org/wiki/Winsor_%26_Newton"                       title="Find out about Winsor &amp; Newton">Winsor &amp; Newton</a></li>
+
+              <li><a href="http://www.zurich.co.uk/aboutus/zurichintheuk/"                        title="Find out about Zurich Insurance">Zurich Insurance</a></li>
+
+            </ul>
+        </div>
+      </section>
+
+      <section class="row" id="skills-and-qualifications">
+        <div class="col">
+          <h2>Skills and qualifications</h2>
+            <ul>
+              <li><b class="slug">Languages</b> Fluent in JavaScript, HTML, CSS and PHP. Some SQL, C#, TypeScript and shell script</li>
+              <li><b class="slug">Libraries</b> Excellent with jQuery, THREE, A-Frame and Node. Some Underscore and Handlebars</li>
+              <li><b class="slug">Frameworks</b> WordPress, Meteor, Phaser, Bootstrap, Foundation, Vue and Angular</li>
+              <li><b class="slug">Software</b> Expert in Atom, Animate (Flash), Photoshop, inDesign and Illustrator. Some Unity</li>
+              <li><b class="slug">Other skills</b> Professional experience in photography and retouching, illustration and icon design,
+                sub-editing and proofreading, motion graphics, 3D design, Balsamiq and UX design</li>
+              <li><b class="slug">Degree</b> BA (Hons) Graphic Communication with Painting and Photography</li>
+            </ul>
+        </div>
+      </section>
+
+      <section class="row" id="contact">
+        <div class="col">
+          <h2>Contact</h2>
+          <p>Lipsum.</p>
+        </div>
+      </section>
+
+      <section class="row" id="case-studies">
+        <div class="col">
+
+          <h2>Case studies</h2>
+          <article id="looptopia">
+            <div>
+              <h3>Looptopia public beta</h3>
+              <div class="date">
+                <b class="slug">Date</b> <time datetime="2014-09-27">September 2014</time>
+              </div>
+              <h4>Launched at Brighton Digital Festival, <a href="https://looptopia.loop.coop/" title="Find out about Looptopia">Looptopia</a> combines a range of new technologies including <a href="https://en.wikipedia.org/wiki/WebGL" title="Find out about WebGL">WebGL,</a> <a href="https://en.wikipedia.org/wiki/WebSocket" title="Find out about WebSockets">WebSockets</a> and <a href="https://en.wikipedia.org/wiki/HTML5_Audio" title="Find out about Web Audio">Web Audio</a> to deliver an otherworldly musical experience.</h4>
+              <ul class="skills">
+                <li><a href="https://en.wikipedia.org/wiki/Project_management"                 title="Find out about project management">Project Management</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Graphic_design"                     title="Find out about graphic design">Graphic Design</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Corporate_identity#Visual_identity" title="Find out about visual identity">Visual Identity</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/User_interface_design"              title="Find out about UX and user interface design">UX Design</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Sound_design"                       title="Find out about sound design">Sound Design</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Web_application_development"        title="Find out about web app development">Web App Development</a></li>
+                <li><a href="http://www.smashingmagazine.com/2013/11/21/introduction-to-full-stack-javascript/" title="Read an article about full stack JavaScript">Full Stack JavaScript</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Responsive_web_design"              title="Find out about responsive web design">Responsive Layout</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/GitHub"                             title="Find out about Github">GitHub</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/MongoDB"                            title="Find out about Mongo">Mongo</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/NodeJS"                             title="Find out about Node">Node</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Meteor_(web_framework)"             title="Find out about Meteor">Meteor</a></li>
+                <li><a href="http://foundation.zurb.com/learn/features.html"                   title="Find out about Foundation">Foundation</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Mustache_(template_system)#Handlebars" title="Find out about Handlebars">Handlebars</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/HTML"                               title="Find out about HTML">HTML</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Less_(stylesheet_language)"         title="Find out about Less">Less</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets"             title="Find out about CSS">CSS</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/JavaScript"                         title="Find out about JavaScript">JavaScript</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/JQuery"                             title="Find out about JQuery">JQuery</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/X3D"                                title="Find out about X3D">X3D</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/HTML5_Audio"                        title="Find out about Web Audio">Web Audio</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/WebSocket"                          title="Find out about Web Sockets">Web Sockets</a></li>
+              </ul>
+              <p><a href="https://looptopia.loop.coop/" title="Find out about Looptopia">Looptopia</a> is a strange and beautiful web app
+                 where you can sculpt music visually, jam in real time with other users, and immerse yourself in a vast 3D soundscape.</p>
+              <p>This project provided a unique opportunity to explore cutting edge web technologies on the server and in the browser.
+                 The <a href="https://en.wikipedia.org/wiki/Meteor_(web_framework)" title="Find out about Meteor">Meteor</a> framework allows
+                 thousands of users to collaborate on a shared collection of documents, with
+                 <a href="https://en.wikipedia.org/wiki/Push_technology" title="Find out about push technology">live push-updates</a>
+                 to clientside HTML when data changes. <a href="https://en.wikipedia.org/wiki/X3D" title="Find out about X3D">X3D</a>
+                 uses an HTML-like syntax to represent a 3D scene. By hooking X3D up to Meteor, I was able to create a
+                 <a href="https://en.wikipedia.org/wiki/Reactive_programming" title="Find out about reactive programming">
+                 reactive</a> <a href="https://en.wikipedia.org/wiki/MUVE" title="Find out about multi user virtual environments">multi
+                 user environment</a> which can scale without losing performance.
+              </p>
+              <aside>
+                <h3>App dependencies</h3>
+                <ul>
+                  <li><b class="slug">Server</b> The backend is written in <a href="https://en.wikipedia.org/wiki/JavaScript" title="Find out about JavaScript">JavaScript,</a> running on a <a href="https://en.wikipedia.org/wiki/NodeJS" title="Find out about Node">Node</a> server</li>
+                  <li><b class="slug">Database</b> Data is stored as <a href="https://en.wikipedia.org/wiki/JSON" title="Find out about JSON">JSON objects</a> in <a href="https://en.wikipedia.org/wiki/MongoDB" title="Find out about Mongo">Mongo</a>, a high-performance <a href="https://en.wikipedia.org/wiki/NoSQL" title="Find out about NoSQL">NoSQL</a> database</li>
+                  <li><b class="slug">Meteor</b> Much code actually runs on server <em>and</em> client, with communication via <a href="https://en.wikipedia.org/wiki/WebSocket" title="Find out about WebSockets">WebSockets</a></li>
+                  <li><b class="slug">Packages</b> Looptopia uses <a href="http://eventedmind.github.io/iron-router/" title="Find out about Iron Router">Iron Router,</a> <a href="http://www.x3dom.org/?page_id=2" title="Find out about X3DOM">X3DOM,</a> <a href="http://momentjs.com/" title="Find out about Moment">Moment</a>
+                      and many more <a href="https://en.wikipedia.org/wiki/Npm_(software)" title="Find out about NPM">NPM packages</a></li>
+                  <li><b class="slug">X3DOM</b> A JavaScript implementation of <a href="https://en.wikipedia.org/wiki/X3D" title="Find out about X3D">X3D,</a> the W3C’s successor to VRML</li>
+                </ul>
+              </aside>
+              <aside>
+                <h3>Special features</h3>
+                <ul>
+                  <li><b class="slug">Multimedia</b> Elements in the 3D scene react to user activity by animating and playing music</li>
+                  <li><b class="slug">Collaborative</b> Users can modify the 3D world, and modifications are <a href="https://en.wikipedia.org/wiki/Push_technology" title="Find out about push technology">immediately seen by all users</a></li>
+                  <li><b class="slug">Generative</b> The 3D landscape evolves according to a <a href="https://en.wikipedia.org/wiki/Generative_art" title="Find out about generative art">semi-random algorithm</a></li>
+                  <li><b class="slug">Generative</b> All modifications are <a href="https://en.wikipedia.org/wiki/Transaction_log" title="Find out about database journals">permanently recorded,</a> for ‘undo’ history and audit trail</li>
+                </ul>
+              </aside>
+            </div>
+          </article>
+
+          <article id="aatc">
+            <div>
+              <h3>Arms Around The Child site refresh</h3>
+              <div class="date">
+                <b class="slug">Date</b> <time datetime="2013-11">November 2013</time>
+              </div>
+              <h4>I developed a suite of custom
+                  <a href="https://en.wikipedia.org/wiki/WordPress#Plugins" title="Find out about WordPress plugins">WordPress plugins,</a>
+                  along with a custom <a href="https://en.wikipedia.org/wiki/WordPress#Themes" title="Find out about WordPress themes">WordPress theme</a>
+                  based on <a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)" title="Find out about Bootstrap">Bootstrap,</a> to create this
+                  lightweight, easy-to-update, <a href="https://en.wikipedia.org/wiki/Responsive_web_design" title="Find out about responsive web design">responsive</a> website.
+              </h4>
+              <ul class="skills">
+                <li><a href="https://en.wikipedia.org/wiki/Web_development"                 title="Find out about web development">Web Development</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/User_interface_design"           title="Find out about UX and user interface design">UX Design</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Search_engine_optimization"      title="Find out about SEO">SEO</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Web_analytics"                   title="Find out about analytics">Analytics</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Web_accessibility"               title="Find out about accessibility">Accessibility</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Responsive_web_design"           title="Find out about responsive layout">Responsive Layout</a></li>
+                <li><a href="https://www.thoughtco.com/what-is-web-administration-3466199"  title="Find out about server admin">Server Admin</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/WordPress"                       title="Find out about WordPress">WordPress</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)" title="Find out about Bootstrap">Bootstrap</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/PHP"                             title="Find out about PHP">PHP</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/HTML"                            title="Find out about HTML">HTML</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/CSS"                             title="Find out about CSS">CSS</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/JavaScript"                      title="Find out about JavaScript">JavaScript</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/JQuery"                          title="Find out about JQuery">JQuery</a></li>
+              </ul>
+
+              <p><a href="http://armsaroundthechild.org/about/" title="Find out about Arms Around The Child">Arms Around The Child</a>
+                 raises funds for projects in India and Africa to help lift children out of poverty. Analytics indicated that donations at
+                 <a href="http://armsaroundthechild.org/donate/" title="Donate to Arms Around The Child">armsaroundthechild.org</a>
+                 were increasingly being made using tablets and mobile devices, so we chose to rebuild the site from the ground up, using
+                 <a href="https://en.wikipedia.org/wiki/Responsive_web_design" title="Find out about responsive layout">responsive techniques.</a>
+              </p>
+              <p>The Creative Director at <a href="http://kandimedia.com/about/" title="Find out about Kandi">Kandi Media</a>
+                 designed the new site, providing visuals in PDF format. I reworked the visuals for three screen widths: desktop, tablet,
+                 and mobile. From these I built ‘broo-aatc’, a
+                 <a href="https://en.wikipedia.org/wiki/WordPress" title="Find out about WordPress">WordPress</a>
+                 child theme which extends ‘broo-base’, a general purpose parent theme I developed in early 2013.
+              </p>
+              <aside>
+                <h3>Custom plugins</h3>
+                <ul>
+                  <li><b class="slug">BrooLang</b> <a href="https://en.wikipedia.org/wiki/Internationalization_and_localization" title="Find out about internationalization and localization">Language and locale</a> tools, for maintaining US and UK versions of the site</li>
+                  <li><b class="slug">BrooShare</b> Dynamic <a href="https://en.wikipedia.org/wiki/Like_button" title="Find out about like buttons">social media buttons,</a> including Facebook Like and Twitter Tweet</li>
+                  <li><b class="slug">BrooSlide</b> An <a href="https://www.sitepoint.com/wordpress-image-sliders/" title="Find out about image sliders">image slider</a> based on Bootstrap’s carousel component</li>
+                  <li><b class="slug">BrooMax</b> A modified Bootstrap carousel which dynamically fills all available window space</li>
+                  <li><b class="slug">BrooPop</b> A variable-column gallery with popup Bootstrap <a href="https://en.wikipedia.org/wiki/Modal_window" title="Find out about modal windows">modal dialogs</a></li>
+                </ul>
+              </aside>
+              <aside>
+                <h3>Best practice</h3>
+                <ul>
+                  <li><b class="slug">Future Proof</b> Extensive use of <a href="https://codex.wordpress.org/Plugin_API#Hooks:_Actions_and_Filters" title="Find out about plugin hooks">plugin hooks</a> for hassle-free WordPress upgrades</li>
+                  <li><b class="slug">Clean Code</b> HTML, CSS and JavaScript source files are properly <a href="https://en.wikipedia.org/wiki/Indent_style" title="Find out about code indentation">indented</a> and well <a href="https://en.wikipedia.org/wiki/Comment_(computer_programming)" title="Find out about code comments">commented</a></li>
+                  <li><b class="slug">Compatibility</b> Tested on all modern <a href="https://en.wikipedia.org/wiki/Cross-browser" title="Find out about cross-browser web design">browsers</a> and <a href="https://en.wikipedia.org/wiki/Cross-platform#Web_applications" title="Find out about cross-platform web design">devices</a></li>
+                  <li><b class="slug">Accessibility</b> Includes CSS for <a href="https://en.wikipedia.org/wiki/Screen_reader" title="Find out about screen readers">screen readers</a> and <a href="https://en.wikipedia.org/wiki/Web_accessibility" title="Find out about accessibility">visually impaired</a> users</li>
+                </ul>
+              </aside>
+            </div>
+          </article>
+
+          <article id="dream-vacation">
+            <div>
+              <h3>Win Your Dream Vacation</h3>
+              <div class="date">
+                <b class="slug">Date</b> <time datetime="2014-04">April 2014</time>
+              </div>
+              <h4>A web app I built using
+                  <a href="https://en.wikipedia.org/wiki/NodeJS"  title="Find out about Node">Node,</a>
+                  <a href="https://en.wikipedia.org/wiki/MongoDB" title="Find out about Mongo">Mongo</a> and
+                  <a href="https://en.wikipedia.org/wiki/JQuery"  title="Find out about JQuery">JQuery,</a>
+                  which was the centerpiece of a ten week promotional campaign. By the end,
+                  150,000 users had registered and designed a dream holiday.
+              </h4>
+              <ul class="skills">
+                <li><a href="https://en.wikipedia.org/wiki/Web_application_development"        title="Find out about web app development">Web App Development</a></li>
+                <li><a href="http://www.smashingmagazine.com/2013/11/21/introduction-to-full-stack-javascript/" title="Read an article about full stack JavaScript">Full Stack JavaScript</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Data_security"                      title="Find out about data security">Data Security</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Web_server_benchmarking"            title="Find out about server performance">Server Performance</a></li>
+                <li><a href="https://www.thoughtco.com/what-is-web-administration-3466199"     title="Find out about server admin">Server Admin</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Responsive_web_design"              title="Find out about responsive web design">Responsive Layout</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Web_analytics"                      title="Find out about analytics">Analytics</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Git"                                title="Find out about Git">Git</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Grunt_(software)"                   title="Find out about Grunt">Grunt</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/JSDoc"                              title="Find out about JSDoc">JSDoc</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/MongoDB"                            title="Find out about Mongo">Mongo</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/NodeJS"                             title="Find out about Node">Node</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Facebook_Platform#Graph_API"        title="Find out about Facebook API">Facebook API</a></li>
+                <li><a href="https://dev.twitter.com/overview/api"                             title="Find out about Twitter API">Twitter API</a></li>
+                <li><a href="https://www.getdonedone.com/the-five-essential-rules-of-saas-email-integration/" title="Find out about email integration">Email API</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Express.js"                         title="Find out about Express">Express</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Mustache_(template_system)"         title="Find out about Mustache">Mustache</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/HTML"                               title="Find out about HTML">HTML</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Less_(stylesheet_language)"         title="Find out about Less">Less</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets"             title="Find out about CSS">CSS</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/JavaScript"                         title="Find out about JavaScript">JavaScript</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/JQuery"                             title="Find out about JQuery">JQuery</a></li>
+              </ul>
+              <p>To celebrate their 40th anniversary, US travel agent <a href="https://en.wikipedia.org/wiki/RCI_(company)" title="Find out about RCI">RCI</a>
+                 ran a competition over ten weeks and gave away 40 holidays. Users were encouraged to invite thier friends to enter the competition using in-app
+                 <a href="https://en.wikipedia.org/wiki/Facebook_Platform#Graph_API"                       title="Find out about Facebook Graph API">Facebook,</a>
+                 <a href="https://dev.twitter.com/overview/api"                                            title="Find out about Twitter API">Twitter,</a> and
+                 <a href="https://www.getdonedone.com/the-five-essential-rules-of-saas-email-integration/" title="Find out about email integration">Email</a>
+                 integrations. The app tracked each invitation, and rewarded users when one of thier invitees registered.
+              </p>
+              <p>I was provided with <a href="https://en.wikipedia.org/wiki/Website_wireframe"             title="Find out about wireframes">wireframes,</a>
+                 artwork and a <a href="https://en.wikipedia.org/wiki/Functional_specification"            title="Find out about functional specs">functional spec.</a>
+                 I built and deployed the app,
+                 <a href="https://en.wikipedia.org/wiki/Web_server_benchmarking"                           title="Find out about server performance">tuned its performance</a>
+                 during the campaign, and compiled
+                 <a href="https://en.wikipedia.org/wiki/Web_analytics"                                     title="Find out about analytics">analytics</a> results.
+              </p>
+              <aside>
+                <h3>App dependencies</h3>
+                <ul>
+                  <li><b class="slug">Server</b> The backend is written in <a href="https://en.wikipedia.org/wiki/JavaScript" title="Find out about JavaScript">JavaScript,</a> running on a <a href="https://en.wikipedia.org/wiki/NodeJS" title="Find out about Node">Node</a> HTTPS server on a <a href="https://en.wikipedia.org/wiki/CentOS" title="Find out about CentOS">CentOS</a> box</li>
+                  <li><b class="slug">Database</b> Data is stored as <a href="https://en.wikipedia.org/wiki/JSON" title="Find out about JSON">JSON objects</a> in <a href="https://en.wikipedia.org/wiki/MongoDB" title="Find out about Mongo">Mongo</a>, a high-performance <a href="https://en.wikipedia.org/wiki/NoSQL" title="Find out about NoSQL">NoSQL</a> database</li>
+                  <li><b class="slug">Router</b> Advanced server-side routing and request handling is provided by <a href="https://en.wikipedia.org/wiki/Express.js" title="Find out about Express">Express</a></li>
+                  <li><b class="slug">Templating</b> The app uses <a href="https://en.wikipedia.org/wiki/Mustache_(template_system)" title="Find out about Mustache">Mustache,</a> a template syntax for injecting content into static <a href="https://en.wikipedia.org/wiki/HTML" title="Find out about HTML">HTML</a></li>
+                </ul>
+              </aside>
+              <aside>
+                <h3>External APIs</h3>
+                <ul>
+                  <li><b class="slug">Facebook</b> Facebook’s <a href="https://en.wikipedia.org/wiki/Facebook_Platform#Graph_API" title="Find out about Facebook Graph API">Graph API</a> is used to send invitation messages to users’ Facebook friends</li>
+                  <li><b class="slug">Twitter</b> Users can <a href="https://dev.twitter.com/overview/api" title="Find out about Twitter API">tweet an invitation</a> on their Twitter feed at the click of a button</li>
+                  <li><b class="slug">Email</b> The app uses the <a href="https://nodemailer.com/about/" title="Find out about Nodemailer">Nodemailer</a> package to send invitations to users’ email contacts</li>
+                  <li><b class="slug">Promotion</b> A service called <a href="https://en.wikipedia.org/wiki/HelloWorld_Inc" title="Find out about HelloWorld">HelloWorld</a> records competition entries over a secure connection</li>
+                  <li><b class="slug">Feedback</b> Comments and customer satifaction scores are collected via a popup <a href="https://www.opinionlab.com/tour/" title="Find out about OpinionLab">OpinionLab</a> form</li>
+                  <li><b class="slug">Analytics</b> App usage is tracked with <a href="https://www.conversionreview.com/blog/micro-conversions/" title="Find out about micro conversions">micro-conversion tracking tags</a> and
+                      <a href="https://en.wikipedia.org/wiki/Google_Analytics" title="Find out about Google Analytics">Google Analytics</a></li>
+                </ul>
+              </aside>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+    </div><!--.container -->
+
+
+
 
     <!-- from jquery.com, npmcdn.com/tether@1.2.4 and getbootstrap.com -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

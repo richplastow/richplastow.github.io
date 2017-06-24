@@ -79,6 +79,7 @@ h1 a {
 }
 a {
     outline: none!important;
+    display: inline-block;
 }
 strong, b, h5, h6 {
     font-family: 'JuneBold', arial, sans-serif;

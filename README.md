@@ -21,3 +21,4 @@ Changelog
 + 0.2.0       with favicons and asset directory
 + 0.2.1       switched from Foundation to Bootstrap 4.0.0
 + 0.2.2       refined favicon; reordered content
++ 0.2.3       content update
