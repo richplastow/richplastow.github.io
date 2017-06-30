@@ -2,13 +2,56 @@ richplastow.github.io
 =====================
 
 Portfolio website for Rich Plastow, freelance Web Designer and Web App Developer
+--------------------------------------------------------------------------------
 
 
+Author
+------
+Designed, developed and authored by Rich Plastow.
+
++ __LinkedIn:__     richardplastow
++ __GitHub:__       richplastow
++ __Twitter:__      @BtnWebVR
++ __Location:__     Brighton, UK
+
+
+Site
+----
++ __Last update:__  2017/06/30
++ __Version:__      0.2.4
++ __Language:__     English
++ __Doctype:__      HTML5
++ __Standards:__    HTML5, CSS3
++ __Components:__   Bootstrap 4.0.0, jQuery 3.2.1, Tether 1.2.4
++ __Software:__     Atom, Git, Illustrator, Photoshop
+
+
+Icon
+----
++ __Generator:__    realfavicongenerator.net
++ __iOS:__          background #ffffff, margin 9px
++ __Android:__      background #ffffff, margin 12px, browser-mode
++ __Metro:__        background #ffffff, Big square icon only
++ __OS X Safari:__  theme color #222222
++ __Path:__         /asset/icon
++ __Compression:__  Very high compression factor
++ __Scaling:__      Lanczos
++ __App Name:__     Rich Plastow
++ __Post:__         Six PNGs thru tinypng.com
+
+
+Tested
+------
++ __Android:__      Browser 4.4+
++ __iOS:__          Safari 7+
++ __Windows 10:__   Edge 14+, IE 11
++ __Windows 7:__    IE 10
++ __Windows XP:__   Firefox 29+, Chrome 22+, Opera 15+
++ __OS X M’Lion:__  Safari 6.2+
 
 
 Changelog
 ---------
-
 + Initial commit
 + 0.0.1-1     create ‘package.json’; add ‘Changelog’ and ‘Workflow’ sections to ‘README.md’;
 + 0.0.1-2     add minimal ‘.gitignore’; add minimal ‘index.html’;
@@ -22,3 +65,4 @@ Changelog
 + 0.2.1       switched from Foundation to Bootstrap 4.0.0
 + 0.2.2       refined favicon; reordered content
 + 0.2.3       content update
++ 0.2.4       footer and improved icons

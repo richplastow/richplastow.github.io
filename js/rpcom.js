@@ -1,12 +1,35 @@
-console.log('RPCOM 0.2.3');
+console.log('RPCOM 0.2.4');
 
-!function () {
+$(function () { // on load
 
 
 //// Use Bootstrap’s tooltip component on all elements with a 'title' attribute.
-$(function () {
-    $('[title]').tooltip()
+// $('[title]').tooltip()
+
+//// Remove ‘_ma_ling’ protection and replace at-sign.svg with a real '@'.
+$('.ma_ling').each( function (i,el) {
+    var $el = $(el)
+    $el.attr( 'href', $el.attr('href').replace('_ma_ling','') )
+    $('.at', $el).html('@')
+})
+
+//// Enable the ‘share’ and ‘menu’ buttons.
+$('.share-btn').on('click', function () {
+    $('body').removeClass('show-menu')
+             .toggleClass('show-share')
+})
+$('.menu-btn').on('click', function () {
+    $('body').removeClass('show-share')
+             .toggleClass('show-menu')
+})
+
+//// Prevent browser’s status-bar opening when a footer link is hovered.
+$('#foot a[href]').each( function (i,el) {
+    var $el = $(el)
+      , href  = $el.attr('href')
+    $el.removeAttr('href')
+       .on('click', function () { window.location = href })
 })
 
 
-}()
+})

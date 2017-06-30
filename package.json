@@ -1,11 +1,11 @@
 {
   "name": "richplastow.github.io",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Portfolio website for Rich Plastow, freelance web app developer and web designer",
   "scripts": {
     "test": "echo 'Error: no test specified' && exit 1"
   },
-  "author": "Rich Plastow <rich@richplastow.com>",
+  "author": "Rich Plastow",
   "contributors": [
   ],
   "license": "GPL v2"
