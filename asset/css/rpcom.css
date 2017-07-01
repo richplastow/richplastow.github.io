@@ -1,66 +1,4 @@
-/* rpcom.css 0.2.4 */
-
-
-/* Import Custom Fonts
-==================================================
- * We don't use style-linking yet because:
- *   It crashes BlackBerry 9900 & iPad 1
- *   IE7/8 can only link four styles or fewer
- *   http://tinyurl.com/n3po7nv
- */
-
-@font-face {
-    font-family: 'JuneLight';
-    src: url('../font/junelight.eot');
-    src: url('../font/junelight.eot#iefix') format('embedded-opentype'),
-         url('../font/junelight.woff') format('woff'),
-         url('../font/junelight.ttf') format('truetype'),
-         url('../font/junelight.svg#JuneLight') format('svg');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'JuneRegular';
-    src: url('../font/juneregular.eot');
-    src: url('../font/juneregular.eot#iefix') format('embedded-opentype'),
-         url('../font/juneregular.woff') format('woff'),
-         url('../font/juneregular.ttf') format('truetype'),
-         url('../font/juneregular.svg#JuneRegular') format('svg');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'JuneItalic';
-    src: url('../font/junekursiv.eot');
-    src: url('../font/junekursiv.eot#iefix') format('embedded-opentype'),
-         url('../font/junekursiv.woff') format('woff'),
-         url('../font/junekursiv.ttf') format('truetype'),
-         url('../font/junekursiv.svg#JuneItalic') format('svg');
-    font-weight: 400;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'JuneBold';
-    src: url('../font/junebold.eot');
-    src: url('../font/junebold.eot#iefix') format('embedded-opentype'),
-         url('../font/junebold.woff') format('woff'),
-         url('../font/junebold.ttf') format('truetype'),
-         url('../font/junebold.svg#JuneBold') format('svg');
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'FontelloRuf';
-    src: url('../font/fontello-ruf.eot');
-    src: url('../font/fontello-ruf.eot#iefix') format('embedded-opentype'),
-         url('../font/fontello-ruf.woff') format('woff'),
-         url('../font/fontello-ruf.ttf') format('truetype'),
-         url('../font/fontello-ruf.svg#fontello-ruf') format('svg');
-}
+/* rpcom.css 0.2.5 */
 
 
 
@@ -108,27 +46,43 @@
         padding: 0 2em 0 0;
     }
 }
+html {
+    overflow-y: hidden;
+}
+html.I4.JS {
+    overflow-y: auto;
+    padding-right: 0;
+}
+
+/* Prevent content-jump when scrollbar appears richplastow.com/support/SBW.md */
+html.SBW-15 { padding-right:15px } /* OS X */
+html.SBW-17 { padding-right:17px } /* Most Windows */
+html.SBW-12 { padding-right:12px } /* Windows 10 Edge */
+html.SBW-0  { }                    /* Not recognised */
+
+
+
+/* UTILITY */
+html.B4-I4 .hidden-B4-I4 {
+    visibility: hidden; /* hide until the site’s custom fonts are ready */
+}
+html.B4-JS .hidden-B4-JS {
+    visibility: hidden; /* hide until the site’s JavaScript is ready */
+}
+
 
 
 
 /* BLOCK */
 
-body, h2, h3, h4 {
+body, h1, .h1, h2, h3, h4 {
     font-family: 'JuneRegular', arial, sans-serif;
     font-weight: 400;
     font-style: normal;
 }
-h1 {
-    font-family: 'JuneLight', arial, sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 4em;
+h1, .h1 {
+    font-size: 3.25em;
     text-transform: uppercase;
-}
-h1 a {
-    color: inherit;
-    font-family: inherit;
-    font-weight: inherit;
 }
 h3, h4 {
     font-size: 1.491em;
@@ -136,9 +90,6 @@ h3, h4 {
 h4 {
     margin-bottom: 0.5em;
     line-height: 1.25;
-}
-h4.lead {
-    font-size: 1.55em;
 }
 p {
     font-size: 1.07rem;
@@ -156,9 +107,6 @@ a {
     cursor:  pointer;
     transition: color 0.5s;
 }
-h4.lead a {
-    display: inline;
-}
 a:hover {
     color: #000!important;
     text-decoration: underline!important;
@@ -173,9 +121,6 @@ em, i {
     font-family: 'JuneItalic', arial, sans-serif;
     font-weight: 400;
     font-style: italic;
-}
-.fontello {
-    font-family: 'FontelloRuf';
 }
 
 
@@ -302,11 +247,8 @@ dd .rpcom-slug {
 /* SHARE AND MENU ICON */
 
 .icon >a {
-  background: yellow;
     position: fixed;
     top: 0;
-    /*transform: scale(0.04, 0.04); /* Edge scales SVGs better than using `width/height: 3em` */*/
-    /*padding: 10em;*/
     cursor: pointer; /* prevent occasional Firefox jitter */
     z-index: 999;
 }
@@ -413,52 +355,124 @@ body.show-share #share {
 
 
 
-/* LOGO */
+/* TOP (LOGO + INTRO) */
 
-#rp-initials >a {
-  background: yellow;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 3.2em;
-    height: 3.2em;
-    padding: 0 0.2em 0 0.5em;
-    z-index: 999;
-}
-#rp-initials >a #rp-initial-r,
-#rp-initials >a #rp-initial-p {
-    transition: 0.3s;
-}
-#rp-initials >a:hover #rp-initial-r,
-#rp-initials >a:hover #rp-initial-p {
-    fill: #000;
-    stroke: #000;
-    stroke-width: 20;
-}
-#logo {
-    text-align: right;
-    line-height: 1;
+@media (max-width: 575px) {
+    #top {
+    }
 }
 @media (min-width: 576px) {
-    #logo {
-        position: absolute;
-        margin: -0.4em 0 0 -4.8em;
+    #top {
+        padding-top: 30vh;
+        margin-left: -1.25em;
     }
 }
 
 
 
 
+/* LOGO */
+
+#logo {
+    padding: 0;
+    text-align: right;
+}
+#logo svg {
+    margin-top: 0.1em;
+    width: 14.86em;
+    height: 7.43em;
+}
+#logo figcaption {
+    display: none;
+    line-height: 1.03;
+}
+
+#logo svg >* {
+    fill: #fff; /*@TODO show for legacy browsers which don’t understand `animation` */
+}
+#logo svg >*:nth-child(1)  { -webkit-animation:0.3s linear 0.0s forwards logo }
+#logo svg >*:nth-child(2)  { -webkit-animation:0.3s linear 0.1s forwards logo }
+#logo svg >*:nth-child(3)  { -webkit-animation:0.3s linear 0.2s forwards logo }
+#logo svg >*:nth-child(4)  { -webkit-animation:0.3s linear 0.3s forwards logo }
+#logo svg >*:nth-child(5)  { -webkit-animation:0.3s linear 0.4s forwards logo }
+#logo svg >*:nth-child(6)  { -webkit-animation:0.3s linear 0.4s forwards logo }
+#logo svg >*:nth-child(7)  { -webkit-animation:0.3s linear 0.5s forwards logo }
+#logo svg >*:nth-child(8)  { -webkit-animation:0.3s linear 0.5s forwards logo }
+#logo svg >*:nth-child(9)  { -webkit-animation:0.3s linear 0.5s forwards logo }
+#logo svg >*:nth-child(10) { -webkit-animation:0.3s linear 0.6s forwards logo }
+#logo svg >*:nth-child(11) { -webkit-animation:0.3s linear 0.6s forwards logo }
+#logo svg >*:nth-child(1)  {         animation:0.3s linear 0.0s forwards logo }
+#logo svg >*:nth-child(2)  {         animation:0.3s linear 0.1s forwards logo }
+#logo svg >*:nth-child(3)  {         animation:0.3s linear 0.2s forwards logo }
+#logo svg >*:nth-child(4)  {         animation:0.3s linear 0.3s forwards logo }
+#logo svg >*:nth-child(5)  {         animation:0.3s linear 0.4s forwards logo }
+#logo svg >*:nth-child(6)  {         animation:0.3s linear 0.4s forwards logo }
+#logo svg >*:nth-child(7)  {         animation:0.3s linear 0.5s forwards logo }
+#logo svg >*:nth-child(8)  {         animation:0.3s linear 0.5s forwards logo }
+#logo svg >*:nth-child(9)  {         animation:0.3s linear 0.5s forwards logo }
+#logo svg >*:nth-child(10) {         animation:0.3s linear 0.6s forwards logo }
+#logo svg >*:nth-child(11) {         animation:0.3s linear 0.6s forwards logo }
+@-webkit-keyframes logo {
+    from { fill:#fff }
+    to   { fill:#222 }
+}
+@keyframes logo {
+    from { fill:#fff }
+    to   { fill:#222 }
+}
+
+
+
+
+/* INTRO */
+
+@media (max-width: 575px) {
+    /*#intro p {
+        display: inline;
+    }*/
+}
+@media (min-width: 576px) {
+    #intro {
+        padding: 1.6em 2em 0 0.3em;
+        line-height: 1.4;
+    }
+    #intro p {
+        font-size: 1.2rem;
+    }
+}
+
+html.NO-I4 #intro {
+    opacity: 1; /* no JavaScript, so the I4 test cannot be run */
+}
+html.B4-I4 #intro,
+html.I4 #intro {
+    opacity: 0; /*@TODO show for legacy browsers which don’t understand `animation` */
+}
+html.I4.logo-FIN #intro { /* show the intro-text when the fonts are loaded and the logo-anim has finished */
+    -webkit-animation: 1s linear 0.0s forwards intro;
+            animation: 1s linear 0.0s forwards intro;
+}
+@-webkit-keyframes intro {
+    from { opacity:0 }
+    to   { opacity:1 }
+}
+@keyframes intro {
+    from { opacity:0 }
+    to   { opacity:1 }
+}
+
+
+
 /* FIGURE */
 
-figure {
+figure.carousel-image {
     position: relative;
     left: 0;
     right: 0;
     overflow: hidden;
     z-index: 1;
 }
-figure img {
+figure.carousel-image img {
     /*margin-left: -39.5%;
     width: 153%;*/
     margin-left: -8.8%;

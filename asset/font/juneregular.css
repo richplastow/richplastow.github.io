@@ -1,8 +1,0 @@
-@font-face {
-    font-family: 'JuneRegular';
-    src: url('juneregular.eot');
-    src: url('juneregular.eot') format('embedded-opentype'),
-         url('juneregular.woff') format('woff'),
-         url('juneregular.ttf') format('truetype'),
-         url('juneregular.svg#JuneRegular') format('svg');
-}

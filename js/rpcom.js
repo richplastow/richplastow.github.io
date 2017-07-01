@@ -1,4 +1,4 @@
-console.log('RPCOM 0.2.4');
+console.log('RPCOM 0.2.5');
 
 $(function () { // on load
 
@@ -31,5 +31,12 @@ $('#foot a[href]').each( function (i,el) {
        .on('click', function () { window.location = href })
 })
 
+// //// Tell CSS that the fonts are ready, as soon as they’ve loaded.
+// $('html').removeClass('pre-font')
+
+//// All JavaScript files have initialised. See richplastow.com/support/I4.md
+setTimeout( function () {
+window.dispatchEvent(new CustomEvent('JS-ok'))
+},4000)
 
 })

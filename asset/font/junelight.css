@@ -1,8 +1,0 @@
-@font-face {
-    font-family: 'JuneLight';
-    src: url('junelight.eot');
-    src: url('junelight.eot') format('embedded-opentype'),
-         url('junelight.woff') format('woff'),
-         url('junelight.ttf') format('truetype'),
-         url('junelight.svg#JuneLight') format('svg');
-}

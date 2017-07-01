@@ -1,8 +1,0 @@
-@font-face {
-    font-family: 'JuneKursiv';
-    src: url('junekursiv.eot');
-    src: url('junekursiv.eot') format('embedded-opentype'),
-         url('junekursiv.woff') format('woff'),
-         url('junekursiv.ttf') format('truetype'),
-         url('junekursiv.svg#JuneKursiv') format('svg');
-}

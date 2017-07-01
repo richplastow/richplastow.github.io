@@ -9,20 +9,21 @@ Author
 ------
 Designed, developed and authored by Rich Plastow.
 
-+ __LinkedIn:__     richardplastow
-+ __GitHub:__       richplastow
-+ __Twitter:__      @BtnWebVR
++ __LinkedIn:__     [richardplastow](https://linkedin.com/in/richardplastow)
++ __GitHub:__       [richplastow](https://github.com/richplastow)
++ __Twitter:__      [@BtnWebVR](https://twitter.com/BtnWebVR)
 + __Location:__     Brighton, UK
 
 
 Site
 ----
-+ __Last update:__  2017/06/30
-+ __Version:__      0.2.4
++ __Last update:__  2017/07/01
++ __Version:__      0.2.5
 + __Language:__     English
 + __Doctype:__      HTML5
 + __Standards:__    HTML5, CSS3
 + __Components:__   Bootstrap 4.0.0, jQuery 3.2.1, Tether 1.2.4
++ __Custom:__       CustomEventIE 1.0.0, I4 1.0.0, SBW 1.0.0
 + __Software:__     Atom, Git, Illustrator, Photoshop
 
 
@@ -66,3 +67,4 @@ Changelog
 + 0.2.2       refined favicon; reordered content
 + 0.2.3       content update
 + 0.2.4       footer and improved icons
++ 0.2.5       initial splash animation, with CustomEventIE, I4 and SBW
