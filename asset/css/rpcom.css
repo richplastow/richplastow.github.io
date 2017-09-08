@@ -1,4 +1,4 @@
-/* rpcom.css 0.2.5 */
+/* rpcom.css 0.3.0 */
 
 
 
@@ -102,7 +102,7 @@ p {
 
 a {
     outline: none!important;
-    display: inline-block;
+    /* display: inline-block; @TODO remove if not needed */
     color:   #444!important;
     cursor:  pointer;
     transition: color 0.5s;
@@ -191,12 +191,10 @@ svg {
 
 /* DL */
 
-.rpcom-table,
 dl {
     font-size: 1.065rem;
     margin-bottom: 1em;
 }
-.rpcom-table .col-sm-2,
 dt.col-sm-2 {
     text-align: right;
     letter-spacing: 1px;
@@ -207,23 +205,19 @@ dd {
     margin: 0;
 }
 @media (min-width: 576px) {
-    .rpcom-table .col-sm-2,
     dt.col-sm-2 {
         padding: 0 0.7em 0 0;
     }
 }
 @media (max-width: 575px) {
-    .rpcom-table .col-sm-2,
     dt.col-sm-2 {
         text-align: left;
     }
 }
-.rpcom-table .col-sm-2 >*,
 dt.col-sm-2 >* {
     font-size: 0.75em;
 }
 @media (min-width: 992px) {
-    .rpcom-table .col-sm-2 >*,
     dt.col-sm-2 >* {
         font-size: 0.7em;
     }
@@ -234,7 +228,6 @@ dt.col-sm-2 >* {
 
 /* SLUG IN DD */
 
-.rpcom-table .rpcom-slug,
 dd .rpcom-slug {
     font-size: 0.78em; /* reverse effect of 1.07rem */
     padding-top: 0.2em;

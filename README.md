@@ -1,6 +1,9 @@
 richplastow.github.io
 =====================
 
++ __Last update:__  2017/09/08
++ __Version:__      0.3.0
+
 Portfolio website for Rich Plastow, freelance Web Designer and Web App Developer
 --------------------------------------------------------------------------------
 
@@ -17,13 +20,11 @@ Designed, developed and authored by Rich Plastow.
 
 Site
 ----
-+ __Last update:__  2017/07/01
-+ __Version:__      0.2.5
 + __Language:__     English
 + __Doctype:__      HTML5
 + __Standards:__    HTML5, CSS3
 + __Components:__   Bootstrap 4.0.0, jQuery 3.2.1, Tether 1.2.4
-+ __Custom:__       CustomEventIE 1.0.0, I4 1.0.0, SBW 1.0.0
++ __Custom:__       w4 0.0.12
 + __Software:__     Atom, Git, Illustrator, Photoshop
 
 
@@ -43,22 +44,22 @@ Icon
 
 Tested
 ------
-+ __Android:__      Browser 4.4+
-+ __iOS:__          Safari 7+
-+ __Windows 10:__   Edge 14+, IE 11
-+ __Windows 7:__    IE 10
-+ __Windows XP:__   Firefox 29+, Chrome 22+, Opera 15+
-+ __OS X M’Lion:__  Safari 6.2+
++ __Android:__             Browser 4.4+
++ __iOS:__                 Safari 7+
++ __Windows 10:__          Edge 14+, IE 11
++ __Windows 7:__           IE 10
++ __Windows XP:__          Firefox 29+, Chrome 22+, Opera 15+
++ __OS X Mountain Lion:__  Safari 6.2+
 
 
 Changelog
 ---------
 + Initial commit
-+ 0.0.1-1     create ‘package.json’; add ‘Changelog’ and ‘Workflow’ sections to ‘README.md’;
++ 0.0.1-1     create ‘package.json’; add ‘Changelog’ and ‘Workflow’ sections to…
 + 0.0.1-2     add minimal ‘.gitignore’; add minimal ‘index.html’;
 + 0.1.0       ready for initial test release;
-+ 0.1.1-1     create ‘CNAME’ record; install Zurb Foundation Essentials v5.4.6; content placeholders;
-+ 0.1.1-2     part way through adding content; ‘June’ and ‘Fontello’ fonts; holding-page;
++ 0.1.1-1     create ‘CNAME’ record; install Zurb Foundation Essentials v5.4.6;…
++ 0.1.1-2     part way through adding content; ‘June’ and ‘Fontello’ fonts; hol…
 + 0.1.2       add ‘CNAME’ record; ready to push holding-page to live;
 + 0.1.4       with google verification meta tag;
 + 0.1.6       various minor amends; ready for holding page;
@@ -68,3 +69,4 @@ Changelog
 + 0.2.3       content update
 + 0.2.4       footer and improved icons
 + 0.2.5       initial splash animation, with CustomEventIE, I4 and SBW
++ 0.3.0       five case studies marked up
