@@ -1,4 +1,4 @@
-console.log('RPCOM 0.3.0');
+console.log('RPCOM 0.3.1');
 
 $(function () { // on load
 

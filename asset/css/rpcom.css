@@ -1,4 +1,4 @@
-/* rpcom.css 0.3.0 */
+/* rpcom.css 0.3.1 */
 
 
 
@@ -102,7 +102,7 @@ p {
 
 a {
     outline: none!important;
-    /* display: inline-block; @TODO remove if not needed */
+    display: inline-block;
     color:   #444!important;
     cursor:  pointer;
     transition: color 0.5s;
