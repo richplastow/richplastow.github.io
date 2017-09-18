@@ -1,4 +1,4 @@
-/* rpcom.css 1.0.0 */
+/* rpcom.css 1.0.1 */
 
 
 
@@ -264,7 +264,8 @@ dt.col-sm-2 >* {
 dd .rpcom-slug {
     font-size: 0.78em; /* reverse effect of 1.07rem */
     padding-top: 0.2em;
-    transform: translateY(0.1em);
+    -webkit-transform: translateY(0.1em);
+            transform: translateY(0.1em);
 }
 
 
@@ -304,19 +305,19 @@ dd .rpcom-slug {
 @media (min-width: 1200px) {
     .icon >a svg { width:64px; height:64px; }
 }
-.icon >a rect:nth-child(1) {
+.icon svg rect:nth-child(1) {
     transition: 0.3s 0.0s;
 }
-.icon >a rect:nth-child(2) {
+.icon svg rect:nth-child(2) {
     transition: 0.3s 0.1s;
 }
-.icon >a rect:nth-child(3) {
+.icon svg rect:nth-child(3) {
     transition: 0.3s 0.2s;
 }
-.icon >a rect:nth-child(4) {
+.icon svg rect:nth-child(4) {
     transition: 0.3s 0.3s;
 }
-.icon >a rect:nth-child(5) {
+.icon svg rect:nth-child(5) {
     transition: 0.3s 0.4s;
 }
 .icon >a rect {
@@ -329,6 +330,43 @@ dd .rpcom-slug {
     stroke: #000;
     stroke-width: 20;
 }
+
+
+
+
+/* MENU ICON AND BTN */
+
+.menu-btn svg rect:nth-child(1) {
+    -webkit-transform-origin: 140px 320px;
+            transform-origin: 140px 320px;
+}
+.menu-btn svg rect:nth-child(2) {
+    -webkit-transform-origin: 340px 320px;
+            transform-origin: 340px 320px;
+}
+.menu-btn svg rect:nth-child(3) {
+    -webkit-transform-origin: 540px 320px;
+            transform-origin: 540px 320px;
+}
+
+body.show-menu .menu-btn svg rect:nth-child(1) {
+    -webkit-transform: rotate(45deg) scale(1.2, 1) translate(-150px, 90px);
+            transform: rotate(45deg) scale(1.2, 1) translate(-150px, 90px);
+}
+body.show-menu .menu-btn svg rect:nth-child(2) {
+    -webkit-transform: scale(0.5,0);
+            transform: scale(0.5,0);
+}
+body.show-menu .menu-btn svg rect:nth-child(3) {
+    -webkit-transform: rotate(-45deg) scale(1.2, 1) translate(0, -400px);
+            transform: rotate(-45deg) scale(1.2, 1) translate(0, -400px);
+}
+body.show-menu .menu-btn.hidden-sm-up svg rect:nth-child(3) {
+    -webkit-transform: rotate(-45deg) scale(1.2, 1) translate(60px, -420px);
+            transform: rotate(-45deg) scale(1.2, 1) translate(60px, -420px);
+}
+
+
 
 
 
@@ -347,10 +385,10 @@ dd .rpcom-slug {
     transition: margin-left 0.5s, opacity 0.5s, width 0.5s;
 }
 .container-fluid {
-    transition: transform 0.5s;
+    transition: 0.5s;
 }
 #icon-menu >a {
-    transition: transform 0.5s;
+    transition: 0.5s;
 }
 #menu ul {
     padding: 0 0 0 0.5em;
@@ -378,18 +416,22 @@ body.show-menu #menu {
         width: 70%;
     }
     body.show-menu .container-fluid {
-        transform: translateX(70%);
+        -webkit-transform: translateX(70%);
+                transform: translateX(70%);
     }
 }
 @media (min-width: 576px) {
     body.show-menu .container-fluid {
-        transform: translateX(10em);
+        -webkit-transform: translateX(10em);
+                transform: translateX(10em);
     }
     body.show-menu #foot {
-        transform: translateX(12em);
+        -webkit-transform: translateX(12em);
+                transform: translateX(12em);
     }
     body.show-menu #icon-menu >a {
-        transform: translateX(15em);
+        -webkit-transform: translateX(15em);
+                transform: translateX(15em);
     }
 }
 
@@ -665,7 +707,7 @@ figure.carousel-image img {
     cursor: default;
     z-index: 90;
     pointer-events: none;
-    transition: background 0.5s, margin-left 0.5s, transform 0.5s;
+    transition: 0.5s;
 }
 #foot:hover {
     background: #000;
@@ -728,18 +770,20 @@ figure.carousel-image img {
 }
 
 #foot a svg {
-    transition: transform 0.3s;
+    transition: 0.3s;
 }
 #foot a svg {
-    transform-origin: center;
+    -webkit-transform-origin: center;
+            transform-origin: center;
 }
 #foot a:hover svg {
-    transform: scale(1.1, 1.1);
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
 }
 #foot a rect,
 #foot a path {
     fill: #ccc;
-    transition: fill 0.3s;
+    transition: 0.3s;
 }
 #foot a:hover rect,
 #foot a:hover path {

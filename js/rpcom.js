@@ -1,6 +1,36 @@
-console.log('RPCOM 1.0.0');
+console.log('RPCOM 1.0.1');
 
-$(function () { // on load
+
+//// Polyfill `[].indexOf()`:
+//// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf#Polyfill
+if (! Array.prototype.indexOf)
+  Array.prototype.indexOf = function(searchValue, index) {
+    var len = this.length >>> 0;
+    index |= 0;
+    if (index < 0)
+      index = Math.max(len - index, 0);
+    else if (index >= len)
+      return -1;
+    if (searchValue === undefined)
+      do {
+        if (index in this && this[index] === undefined)
+          return index;
+      } while (++index !== len)
+    else
+      do {
+        if (this[index] === searchValue)
+          return index;
+      } while (++index !== len)
+    return -1;
+  };
+
+
+//// On load...
+$(function () {
+
+//// Handy shortcuts.
+var $body = $('body')
+  , $document = $(document)
 
 
 //// Use Bootstrap’s tooltip component on all elements with a 'title' attribute.
@@ -13,19 +43,43 @@ $('.ma_ling').each( function (i,el) {
     $('.at', $el).html('@')
 })
 
-//// Keep track of the user’s focus.
-var $contentFocus
-$('#content a').on('focus', function () { $contentFocus = $(this) })
 
+//// Get all navigation-menu links.
+var navs = []
+$('#menu a').each( function () {
+    var anchor, $target
+    if (! ( anchor = this.href.match(/#[-a-z0-9]+$/) ) ) return
+    if (0 === ( $target = $(anchor[0]) ).length ) return
+    navs.push({
+        anchor:  anchor[0].substr(1)
+      , $link:   $(this)
+      , $target: $target
+    })
+})
+
+//// Highlight current section in the navigation menu.
+var prevTop = null
+$document.scroll(focusMenu)
+function focusMenu () {
+    if (! $body.hasClass('show-menu') ) return
+    var currTop = $(this).scrollTop()
+    if (prevTop === currTop) return
+    prevTop = currTop
+    prevNav = navs[0]
+    for (var i=1, nav, prevNav; nav=navs[i]; i++) {
+        prevNav = navs[i-1]
+        if ( nav.$target.offset().top > currTop + 10 )
+            return prevNav.$link.focus()
+    }
+}
 
 //// Enable the ‘menu’ button.
-var $body = $('body')
 $('.menu-btn').on('click', function () {
     if ( $body.hasClass('show-menu') ) {
         closeMenu()
     } else {
         $body.addClass('show-menu')
-        $('#menu').focus()
+        focusMenu()
         $('.menu-btn a, a.menu-btn').attr('title', 'Close the navigation menu')
         $('#content a').each(
             function () { this.setAttribute('tabindex', '-1') }
@@ -42,8 +96,9 @@ $('#cover').on('click', function () {
         closeMenu()
 })
 
-//// Deal with navigation-menu clicks.
-$('#menu').on('click', function (evt) {
+//// Deal with navigation-menu clicks, and also clicks on <A> elements in the
+//// main content.
+$('#menu, #content a').on('click', function (evt) {
     closeMenu()
     var anchor, target
     if (evt.target && evt.target.href) {
@@ -70,7 +125,6 @@ function closeMenu () {
         function () { this.removeAttribute('tabindex') }
     )
     $('.menu-btn a, a.menu-btn').attr('title', 'Open the navigation menu')
-    if ($contentFocus) $contentFocus.focus()
 }
 
 //// Prevent browser’s status-bar opening when a footer link is hovered.
