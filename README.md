@@ -2,7 +2,7 @@ richplastow.github.io
 =====================
 
 + __Last update:__  2017/09/09
-+ __Version:__      0.3.1
++ __Version:__      0.3.2
 
 Portfolio website for Rich Plastow, freelance Web Designer and Web App Developer
 --------------------------------------------------------------------------------
@@ -70,4 +70,5 @@ Changelog
 + 0.2.4       footer and improved icons
 + 0.2.5       initial splash animation, with CustomEventIE, I4 and SBW
 + 0.3.0       five case studies marked up
-+ 0.3.1       xx
++ 0.3.1       content ok for initial launch
++ 0.3.2       css good for printing/pdfs; menu animates scroll

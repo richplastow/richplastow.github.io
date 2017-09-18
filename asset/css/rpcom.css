@@ -1,36 +1,52 @@
-/* rpcom.css 0.3.1 */
+/* rpcom.css 0.3.2 */
 
 
 
 
 /* BREAKPOINTS */
 
+/* print */
+@media print {
+    html {
+        font-size: 0.77rem;
+    }
+}
+
 /* sm - small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767px) {
+@media screen and (min-width: 576px) and (max-width: 767px) {
     html {
         font-size: 0.622rem;
     }
 }
 
 /* md - medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991px) {
+@media screen and (min-width: 768px) and (max-width: 991px) {
     html {
         font-size: 0.83rem;
     }
 }
 
 /* lg - large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199px) {
+@media screen and (min-width: 992px) and (max-width: 1199px) {
     html {
         font-size: 1.105rem;
     }
 }
 
 /* xl - extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
     html {
         font-size: 1.315rem;
     }
+}
+
+
+
+
+/* MISC */
+
+* {
+    outline: none!important;
 }
 
 
@@ -47,34 +63,39 @@
     }
 }
 html {
-    overflow-y: hidden;
+    overflow-x: hidden;
+    /*overflow-y: hidden; @TODO reinstate for splash-load */
 }
+/* @TODO reinstate
 html.I4.JS {
     overflow-y: auto;
     padding-right: 0;
 }
 
-/* Prevent content-jump when scrollbar appears richplastow.com/support/SBW.md */
-html.SBW-15 { padding-right:15px } /* OS X */
-html.SBW-17 { padding-right:17px } /* Most Windows */
-html.SBW-12 { padding-right:12px } /* Windows 10 Edge */
-html.SBW-0  { }                    /* Not recognised */
+/* Prevent content-jump when scrollbar appears richplastow.com/support/SBW.md * /
+html.SBW-15 { padding-right:15px } /* OS X * /
+html.SBW-17 { padding-right:17px } /* Most Windows * /
+html.SBW-12 { padding-right:12px } /* Windows 10 Edge * /
+html.SBW-0  { }                    /* Not recognised * /
 
 
-
-/* UTILITY */
+/* UTILITY * /
 html.B4-I4 .hidden-B4-I4 {
-    visibility: hidden; /* hide until the site’s custom fonts are ready */
+    visibility: hidden; /* hide until the site’s custom fonts are ready * /
 }
 html.B4-JS .hidden-B4-JS {
-    visibility: hidden; /* hide until the site’s JavaScript is ready */
+    visibility: hidden; /* hide until the site’s JavaScript is ready * /
 }
+*/
 
 
 
 
 /* BLOCK */
 
+article {
+    margin-bottom: 1em;
+}
 body, h1, .h1, h2, h3, h4 {
     font-family: 'JuneRegular', arial, sans-serif;
     font-weight: 400;
@@ -83,6 +104,10 @@ body, h1, .h1, h2, h3, h4 {
 h1, .h1 {
     font-size: 3.25em;
     text-transform: uppercase;
+}
+h2, .h2,
+h3, .h3 {
+    margin-top: 0.5em;
 }
 h3, h4 {
     font-size: 1.491em;
@@ -101,7 +126,6 @@ p {
 /* INLINE */
 
 a {
-    outline: none!important;
     display: inline-block;
     color:   #444!important;
     cursor:  pointer;
@@ -144,7 +168,7 @@ svg {
     width: 0.92em;
     height: 0.92em;
     margin: -0.15em 0.04em 0 0.02em;
-    outline: 4px solid red;
+    /* outline: 4px solid red; */ /* this is just for dev */
 }
 .at {
     font-family: 'JuneRegular', arial, sans-serif;
@@ -165,7 +189,7 @@ svg {
 }
 .rpcom-slug li {
     display: inline-block;
-    margin: 0 0.1em 0.35em 0;
+    margin: 0.35em 0.1em 0 0;
     background: #222;
     border-radius: 0.2em;
     font-weight: bold;
@@ -185,7 +209,16 @@ svg {
 .rpcom-slug li:hover a {
     color: #fff!important;
 }
-
+@media print {
+    .rpcom-slug li {
+        padding: 0 0 0.05em;
+        border: 1px solid #000;
+        background: #FFF;
+    }
+    .rpcom-slug li a {
+        color: #000!important;
+    }
+}
 
 
 
@@ -193,7 +226,7 @@ svg {
 
 dl {
     font-size: 1.065rem;
-    margin-bottom: 1em;
+    margin-bottom: 0;
 }
 dt.col-sm-2 {
     text-align: right;
@@ -239,6 +272,12 @@ dd .rpcom-slug {
 
 /* SHARE AND MENU ICON */
 
+@media print {
+    #icon-share, #icon-menu {
+        display: none;
+    }
+}
+
 .icon >a {
     position: fixed;
     top: 0;
@@ -249,7 +288,8 @@ dd .rpcom-slug {
     left: 0;
 }
 #icon-menu  >a {
-    right: 0;
+    left: 0;
+    padding-top: 0.2em;
 }
 .icon >a svg {
     width:  32px;
@@ -293,30 +333,86 @@ dd .rpcom-slug {
 
 
 
-/* SHARE */
+/* MENU */
 
-#share {
-    background: green;
+#menu {
     position: fixed;
     top: 0;
     bottom: 0;
-    left: -100%;
-    width: 100%;
+    margin-left: -15em;
+    width: 15em;
+    overflow: auto;
+    opacity: 0;
     z-index: 99;
-    transition: left 0.5s, width 0.5s;
+    transition: margin-left 0.5s, opacity 0.5s, width 0.5s;
 }
-body.show-share #share {
-    left: 0;
+.container-fluid {
+    transition: transform 0.5s;
+}
+#icon-menu >a {
+    transition: transform 0.5s;
+}
+#menu ul {
+    padding: 0 0 0 0.5em;
+}
+#menu li {
+    list-style: none;
+    padding: 0.3em 0 0 0;
+}
+#menu li a {
+    display: block;
+}
+#menu li hr {
+    background: transparent;
+    border: none;
+    height: 0.3em;
+    margin: 0;
+}
+body.show-menu #menu {
+    margin-left: 0;
+    opacity: 1;
 }
 @media (max-width: 575px) {
-    #share {
-        width: 100%;
+    body.show-menu #menu {
+        bottom: 3em;
+        width: 70%;
+    }
+    body.show-menu .container-fluid {
+        transform: translateX(70%);
     }
 }
 @media (min-width: 576px) {
-    #share {
-        width: 30em;
+    body.show-menu .container-fluid {
+        transform: translateX(10em);
     }
+    body.show-menu #foot {
+        transform: translateX(12em);
+    }
+    body.show-menu #icon-menu >a {
+        transform: translateX(15em);
+    }
+}
+
+
+
+
+/* COVER */
+
+#cover {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0);
+    visibility: hidden;
+    z-index: 95;
+    transition: background 0.5s, visibility 0.5s 0s;
+}
+body.show-menu #cover {
+    background: rgba(255,255,255,0.7);
+    visibility: visible;
+    transition: background 0.5s;
 }
 
 
@@ -324,6 +420,7 @@ body.show-share #share {
 
 /* MENU */
 
+/*
 #menu {
     background: cyan;
     position: fixed;
@@ -334,6 +431,9 @@ body.show-share #share {
     z-index: 99;
     transition: left 0.5s, margin-left 0.5s;
 }
+.container-fluid {
+    transition: transform 0.5s;
+}
 @media (max-width: 575px) {
     body.show-menu #menu {
         left: 0;
@@ -341,20 +441,27 @@ body.show-share #share {
 }
 @media (min-width: 576px) {
     body.show-menu #menu {
-        margin-left: -30em;
+        margin-left: 15em;
+    }
+    body.show-menu .container-fluid {
+        transform: translateX(15em);
     }
 }
-
+*/
 
 
 
 /* TOP (LOGO + INTRO) */
 
-@media (max-width: 575px) {
+#top {
+    padding-top: 5em;
+}
+@media screen and (max-width: 575px) {
     #top {
+        padding-top: 20vh;
     }
 }
-@media (min-width: 576px) {
+@media screen and (min-width: 576px) {
     #top {
         padding-top: 30vh;
         margin-left: -1.25em;
@@ -367,8 +474,19 @@ body.show-share #share {
 /* LOGO */
 
 #logo {
-    padding: 0;
-    text-align: right;
+    margin: 0;
+}
+@media (max-width: 575px) {
+    #logo {
+        padding-left: 15px;
+        text-align: left;
+    }
+}
+@media (min-width: 576px) {
+    #logo {
+        padding: 0;
+        text-align: right;
+    }
 }
 #logo svg {
     margin-top: 0.1em;
@@ -380,8 +498,9 @@ body.show-share #share {
     line-height: 1.03;
 }
 
+/*
 #logo svg >* {
-    fill: #fff; /*@TODO show for legacy browsers which don’t understand `animation` */
+    fill: #fff; /*@TODO show for legacy browsers which don’t understand `animation` * /
 }
 #logo svg >*:nth-child(1)  { -webkit-animation:0.3s linear 0.0s forwards logo }
 #logo svg >*:nth-child(2)  { -webkit-animation:0.3s linear 0.1s forwards logo }
@@ -413,7 +532,7 @@ body.show-share #share {
     from { fill:#fff }
     to   { fill:#222 }
 }
-
+*/
 
 
 
@@ -434,14 +553,15 @@ body.show-share #share {
     }
 }
 
+/* @TODO reinstate
 html.NO-I4 #intro {
-    opacity: 1; /* no JavaScript, so the I4 test cannot be run */
+    opacity: 1; /* no JavaScript, so the I4 test cannot be run * /
 }
 html.B4-I4 #intro,
 html.I4 #intro {
-    opacity: 0; /*@TODO show for legacy browsers which don’t understand `animation` */
+    opacity: 0; /*@TODO show for legacy browsers which don’t understand `animation` * /
 }
-html.I4.logo-FIN #intro { /* show the intro-text when the fonts are loaded and the logo-anim has finished */
+html.I4.logo-FIN #intro { /* show the intro-text when the fonts are loaded and the logo-anim has finished * /
     -webkit-animation: 1s linear 0.0s forwards intro;
             animation: 1s linear 0.0s forwards intro;
 }
@@ -453,6 +573,47 @@ html.I4.logo-FIN #intro { /* show the intro-text when the fonts are loaded and t
     from { opacity:0 }
     to   { opacity:1 }
 }
+*/
+
+
+
+
+/* MAIN */
+
+#main section {
+    page-break-inside: avoid;
+}
+#about {
+    margin-top: 2em;
+}
+
+
+
+
+/* CASE STUDIES */
+
+#case-studies {
+    margin-bottom: 2em;
+}
+#case-studies article {
+    page-break-before: always;
+}
+#case-studies .container {
+    page-break-inside: avoid;
+}
+@media screen {
+    #case-studies article {
+        margin-top: 3em;
+    }
+}
+#case-studies h2 {
+    margin-bottom: 0;
+}
+.case-studies-lower b {
+    display: inline-block;
+    margin-top: 2.7em;
+}
+
 
 
 
@@ -476,7 +637,22 @@ figure.carousel-image img {
 
 
 
+/* CONTACT */
+
+#contact {
+    margin-bottom: 6em;
+}
+
+
+
+
 /* FOOT */
+
+@media print {
+    #foot {
+        display: none;
+    }
+}
 
 #foot {
     position: fixed;
@@ -487,11 +663,9 @@ figure.carousel-image img {
     letter-spacing: 1px;
     text-transform: uppercase;
     cursor: default;
-    z-index: 999;
-    transition: background 0.5s;
-}
-#foot {
+    z-index: 90;
     pointer-events: none;
+    transition: background 0.5s, margin-left 0.5s, transform 0.5s;
 }
 #foot:hover {
     background: #000;
@@ -504,11 +678,12 @@ figure.carousel-image img {
 #foot a:hover {
     color: #fff!important;
 }
-@media (max-width: 575px) {
+@media screen and (max-width: 575px) {
     #foot {
         display: table;
         left: 0;
         width: 100%;
+        z-index: 100;
     }
     #foot a {
         display: table-cell;

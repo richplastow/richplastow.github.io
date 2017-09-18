@@ -46,19 +46,25 @@
 <meta name="theme-color"                content="#ffffff">
 
 <!-- Polyfill CustomEvent for IE9+. richplastow.com/support/CustomEventIE.md -->
+<!--
 <script>!function(W,C,P){/^f/.test(typeof W[C])?0:(W[C]=function(e,p,_){p=p||{}
 _=document.createEvent(C);_.initCustomEvent(e,!!p.bubbles,!!p.cancelable,
 p.detail);return _},W[C][P]=Event[P])}(this,'CustomEvent','prototype')</script>
+-->
 
 <!-- Replace `<html class="NO-I4 NO-JS">` with "B4-I4 B4-JS". Remove "B4-I4" on
 fonts-ready. Remove "B4-JS" on JS ready. richplastow.com/support/I4.md -->
+<!--
 <script>!function(c,l){c.remove('NO-I4'),c.remove('NO-JS'),c.add('B4-JS'),c.add('B4-I4')
 l('I4-ok',function(){c.remove('B4-I4'),c.add('I4')});l('JS-ok',function(){c.remove('B4-JS'),c.add('JS')})
 }(document.documentElement.classList,window.addEventListener)</script>
+-->
 
 <!-- Tell CSS this browser’s scrollbar-width. richplastow.com/support/SBW.md -->
+<!--
 <script>document.documentElement.classList.add('SBW-'+(navigator.userAgent.match
 (/Edge\/\d+/)?12:{Mac:15,Win:17}[navigator.platform.slice(0,3)]||0))</script>
+-->
 
 <!-- Load fonts as soon as possible -->
 <style type="text/css">
@@ -83,170 +89,34 @@ l('I4-ok',function(){c.remove('B4-I4'),c.add('I4')});l('JS-ok',function(){c.remo
 </head>
 <body>
 
-<!-- Tell CSS that the fonts are ready, as soon as they’ve loaded. -->
-<pre style="position:absolute"></pre>
-<!-- $('html').removeClass('pre-font') -->
-<!--
-<span id="font-load-test-regular" style="background:gray;display:inline-block;max-width:75px;overflow-x:scroll;font:72px JuneRegular,monospace">IIII</span>
-<span id="font-load-test-bold"    style="background:pink;display:inline-block;max-width:75px;overflow-x:scroll;font:72px JuneBold,monospace">IIII</span>
-<script>!function(d,p){var el=d.querySelector(p+'regular')
-    ,log=function(m){d.querySelector('pre').innerHTML += m.join(' ') + '\n'}
-    el.scrollLeft = 10;
-    log(['1 el.scrollLeft:', el.scrollLeft,'el.offsetWidth:',el.offsetWidth]);
-    el.addEventListener('scroll', function () {
-        log(['2 el.scrollLeft:', el.scrollLeft,'el.offsetWidth:',el.offsetWidth]);
-    })
-    // setInterval( function () {
-    //   console.log(d.querySelector(p+'regular').offsetWidth);
-    // },200)
-}(document,'#font-load-test-')</script>
--->
-
-<!--
-<p id="I4" style="position:fixed;left:-99px"></p>
-<script>!function(
-    F // font-names
-  , c // callback
-  , t // timeout (optional)
-){
-  var f                        // font-name
-     ,i=0                      // iterator
-     ,E=[]                     // element references
-     ,t=t||4000                // set a default timeout, if not passed in as the third argument
-     ,d=document               // save a few bytes
-     ,S='scrollLeft'           // save a byte
-     ,w=d.querySelector('#I4') // wrap - container for the font-tester <DIV>s
-     ,p=w.parentNode           // parent of the wrap, used when deleting it
-,log=function(m){d.querySelector('pre').innerHTML += m + '\n'} //dev
-     ,l=function(i,e){ // listener for scroll-change events
-for(i=0;e=E[i++];) log(i+': '+e[S]) //dev
-          for(var i=0,e;e=E[i++];) // step through each <DIV> element (i is iterator, e is element)
-              if(1<e[S])return // the scrollbar is not at zero (ish!), so this font has not loaded
-          c() // call the callback with no argument, signifying all fonts loaded in time
-          c=function(){} // prevent the callback being called twice, eg by the `setTimeout()`
-      }
-     ,s=function(f,e){ // setup
-          var e=d.createElement('DIV') // record a reference to the font-tester <DIV> element
-          e.innerHTML='IIII' // monospace 'I' is wider than sans-serif or serif 'I'
-          e.style.cssText='max-width:99px;overflow-x:scroll;font:72px '+f+',monospace'
-          w.appendChild(e) // add the element to the DOM
-          E.push(e) // record a reference to the element
-          e[S]=9 // this will change to zero (or 1 on IE) when the non-monospace font has loaded - or if the font is already loaded, this line will have no effect
-          e.addEventListener('scroll',l) // may be triggered several times before `scrollLeft` is actually changed to 0 (or 1 on IE)
-      }
-    F=F.split(' ') // convert space-delimited font-names to an array
-    for(;f=F[i++];)s(f) // setup a <DIV> for each font
-    l() // check in case the fonts have already been loaded
-    setTimeout(function(){ // `x` allows `l()` to cancel the timer on success
-        p.removeChild(w) // clean up the DOM
-        c(t) // calling the callback with an argument signifies failure
-    },t) // give up waiting for fonts to load after four seconds, by default
-
-
-}('JuneRegular JuneBold', function(m){
-    document.querySelector('pre').innerHTML+=((m||'ok!')+'\n')
-})</script>
--->
-<!--
-<script>window.addEventListener('I4-ok',function () {
-    document.querySelector('pre').innerHTML+='OK GO\n'
-})</script>
--->
-<!-- Tell JS listeners and CSS when our custom fonts load. See /support/i4.md -->
-<!--
-<div id=I4 style=position:fixed;left:-99px></div><script>!function(F,c,t){var f,
-i=0,t=t||4000,d=document,S='scrollLeft',w=d.querySelector('#I4'),p=w.parentNode,
-E=[],s=function(f,e){e=d.createElement('DIV');e.innerHTML='IIII';e.style.cssText
-='max-width:99px;overflow-x:scroll;font:64px '+f+',monospace';w.appendChild(e);E
-.push(e);e[S]=9;e.addEventListener('scroll',l)},l=function(i,e){for(i=0;e=E[i++]
-;)if(1<e[S])return;c();c=function(){}};F=F.split(' ');for(;f=F[i++];)s(f);l()
-setTimeout(function(){p.removeChild(w);c(t)},t)}('JuneRegular JuneBold',function
-(){window.dispatchEvent(new Event('I4-ok'));document.documentElement.classList.
-remove('pre-font')})</script>
--->
-
-<!-- Load fonts as soon as possible -->
-<!--
-<style type="text/css">
-@font-face {
-    font-family: 'JuneRegular';
-    src: url('asset/font/juneregular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'JuneBold';
-    src: url('asset/font/junebold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'JuneItalic';
-    src: url('asset/font/junekursiv.woff') format('woff');
-    font-weight: 400;
-    font-style: italic;
-}
-</style>
--->
-
-
-<!-- Tell JS and CSS when all fonts are ready. richplastow.com/support/I4.md -->
-<div id=I4 style=position:fixed;left:-99px></div><script>!function(F,c,t){var f,
-i=0,t=t||4000,d=document,S='scrollLeft',w=d.querySelector('#I4'),p=w.parentNode,
-E=[],s=function(f,e){e=d.createElement('DIV');e.innerHTML='IIII';e.style.cssText
-='max-width:99px;overflow-x:scroll;font:64px '+f+',monospace';w.appendChild(e);E
-.push(e);e[S]=9;e.addEventListener('scroll',l)},l=function(i,e){for(i=0;e=E[i++]
-;)if(1<e[S])return;c();c=function(){}};F=F.split(' ');for(;f=F[i++];)s(f);l()
-setTimeout(function(){p.removeChild(w);c(t)},t)}('JuneRegular JuneBold'
-,function(){window.dispatchEvent(new CustomEvent('I4-ok'))})</script>
-
-
-<div class="hidden-B4-I4">I4 ok</div>
-
-<!--
-<div id="rp-initials">
-  <a target="_self" href="#top" title="Back to the top of the page">
-    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 853.333 853.333">
-    <path id="rp-initial-r" fill="#222222" stroke="#222222" stroke-width="0" d="M361.216,691.506c0,0-12.853-9.996-24.276-45.695L294.815,517.29c-7.854-23.562-17.138-44.27-47.125-44.27
-    	H106.101v218.486H51.836V208.838c0-29.274,19.992-48.552,52.122-48.552h133.734c84.253,0,140.659,31.416,140.659,122.809
-    	c0,21.42-0.715,58.548-27.133,104.245l-36.413,62.12c13.564,12.854,23.562,32.131,32.844,61.404l37.842,121.381
-    	c12.138,38.557,30.701,59.264,30.701,59.264h-54.977V691.506z M236.979,205.982H106.101V426.61h163.723l36.414-65.689
-    	c15.708-28.561,19.277-57.834,19.277-77.827C325.516,232.4,298.383,205.982,236.979,205.982z"/>
-    <path id="rp-initial-p" fill="#222222" stroke="#222222" stroke-width="0" d="M656.466,472.307H532.001v219.199h-52.836V208.838c0-29.274,19.992-48.552,52.121-48.552h122.287
-    	c85.682,0,139.945,68.544,139.945,154.225C793.519,400.905,739,472.307,656.466,472.307z M650.718,205.982H532.001v219.913h118.037
-    	c65.689-3.569,93.5-54.392,93.5-112.098C743.539,253.82,709.267,205.982,650.718,205.982z"/>
-    </svg>
-  </a>
-</div>
--->
-
-<div class="hidden-B4-I4 hidden-B4-JS">
+<div>
 
   <!-- SHARE AND MENU -->
-
+  <!-- @TODO reinstate share-menu
   <div id="icon-share" class="share-btn icon hidden-xs-down">
     <a title="Show share buttons">
       <svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640">
         <rect x="360" y="100" width="40" height="260"></rect>
-        <rect x="360" y="100" width="40" height="260" transform="rotate(72  380 360)"></rect><!-- Edge dislikes self-closing tags here -->
+        <rect x="360" y="100" width="40" height="260" transform="rotate(72  380 360)"></rect><!- - Edge dislikes self-closing tags here - ->
         <rect x="360" y="100" width="40" height="260" transform="rotate(144 380 360)"></rect>
         <rect x="360" y="100" width="40" height="260" transform="rotate(216 380 360)"></rect>
         <rect x="360" y="100" width="40" height="260" transform="rotate(288 380 360)"></rect>
       </svg>
     </a>
-  </div><!--#icon-share -->
+  </div><!- -#icon-share -->
 
   <div id="icon-menu" class="menu-btn icon hidden-xs-down">
-    <a title="Show the menu">
+    <a title="Open the navigation menu">
       <svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640">
-        <rect x="0" y="120" width="520" height="40"></rect>
-        <rect x="0" y="320" width="520" height="40"></rect>
-        <rect x="0" y="520" width="520" height="40"></rect>
+        <rect x="120" y="120" width="520" height="40"></rect>
+        <rect x="120" y="320" width="520" height="40"></rect>
+        <rect x="120" y="520" width="520" height="40"></rect>
       </svg>
     </a>
   </div><!--#icon-menu -->
 
 
+  <!-- @TODO reinstate share-menu
   <nav id="share" class="sidebar-popup">
     <div>
       <ul>
@@ -254,47 +124,41 @@ setTimeout(function(){p.removeChild(w);c(t)},t)}('JuneRegular JuneBold'
         <li><a target="_self" href="#share-twitter"   title="Tweet about this site">Share on Twitter</a></li>
       </ul>
     </div>
-  </nav><!--#share -->
+  </nav><!- -#share -->
 
   <nav id="menu" class="sidebar-popup">
     <div>
       <ul>
-        <li><a target="_self" href="#top"                       title="Back to the top of the page">Top</a></li>
-        <li><a target="_self" href="#about"                     title="A quick overview of what I do">About</a></li>
-        <li>
-          <a target="_self" href="#work"                        title="A selection of my client projects">Work</a>
-          <ul>
-            <li><a target="_self" href="#web-apps"              title="Some of my web application development">Web apps</a></li>
-            <li><a target="_self" href="#websites"              title="Websites I’ve designed and built">Websites</a></li>
-            <li><a target="_self" href="#graphic-design"        title="Projects from my days as a graphic designer">Graphic design</a></li>
-          </ul>
-        </li>
-        <li><a target="_self" href="#clients"                   title="Who I’ve worked with">Clients</a></li>
-        <li><a target="_self" href="#skills-and-qualifications" title="How I make what I make">Skills &amp; qualifications</a></li>
-        <li><a target="_self" href="#contact"                   title="Let’s get in touch!">Contact</a></li>
-        <li>
-          <a target="_self" href="#case-studies"                title="Six recent client projects">Case studies</a>
-          <ul>
-            <li><a target="_self" href="#nrm-game"              title="A multiplayer training game in a simulated bar">NRM Game</a></li>
-            <!-- <li><a target="_self" href="#edf-efr"               title="Animated interactive 3D guide with minigames">EDF EFR</a></li> -->
-            <li><a target="_self" href="#cell-survivor"         title="Educational game to raise AIDS awareness">Cell Survivor</a></li>
-            <li><a target="_self" href="#looptopia"             title="An otherworldly musical experience">Looptopia</a></li>
-            <li><a target="_self" href="#aatc"                  title="A lightweight, easy-to-update, responsive website">Arms Around The Child</a></li>
-            <li><a target="_self" href="#dream-vacation"        title="Holiday designer and competition">Win Your Dream Vacation</a></li>
-          </ul>
-        </li>
+        <!-- <li><a tabindex="-1" target="_self" href="#top"                       title="Back to the top of the page">Top</a></li> -->
+        <li><a tabindex="-1" target="_self" href="#about"                     title="A quick overview of what I do">About</a></li>
+        <li><a tabindex="-1" target="_self" href="#web-apps"                  title="Some of my web application development projects">Web apps</a></li>
+        <li><a tabindex="-1" target="_self" href="#websites"                  title="Websites I’ve designed and built">Websites</a></li>
+        <li><a tabindex="-1" target="_self" href="#graphic-design"            title="Projects from my days as a graphic designer">Graphic design</a></li>
+        <li><a tabindex="-1" target="_self" href="#clients"                   title="Who I’ve worked with">Clients</a></li>
+        <li><a tabindex="-1" target="_self" href="#skills-and-qualifications" title="How I make what I make">Skills and qualifications</a></li>
+        <li><hr></li>
+        <li><a tabindex="-1" target="_self" href="#bar-sim-game"              title="A multiplayer training game in a simulated bar">Bar Sim Game</a></li>
+        <!-- <li><a tabindex="-1" target="_self" href="#edf-efr"                   title="Animated interactive 3D guide with minigames">EDF EFR</a></li> -->
+        <li><a tabindex="-1" target="_self" href="#cell-survivor"             title="Educational game to raise AIDS awareness">Cell Survivor</a></li>
+        <li><a tabindex="-1" target="_self" href="#looptopia"                 title="An otherworldly musical experience">Looptopia</a></li>
+        <li><a tabindex="-1" target="_self" href="#aatc"                      title="A lightweight, easy-to-update, responsive website">Arms Around The Child</a></li>
+        <li><a tabindex="-1" target="_self" href="#dream-vacation"            title="Holiday designer and competition">Win Your Dream Vacation</a></li>
+        <li><hr></li>
+        <li><a tabindex="-1" target="_self" href="#contact"                   title="Let’s get in touch!">Contact</a></li>
       </ul>
     </div>
   </nav><!--#menu -->
 
-</div><!--.hidden-B4-I4.hidden-B4-JS -->
+  <div id="cover"></div>
+
+</div>
 
 
 
 
-<!-- MAIN CONTENT -->
+<!-- CONTENT -->
 
-<div class="container-fluid"><!-- full width layout, lets carousel images reach to window edges -->
+<div id="content" class="container-fluid"><!-- full width layout, lets carousel images reach to window edges -->
 
 
   <header class="container"><!-- fixed width -->
@@ -351,13 +215,13 @@ setTimeout(function(){p.removeChild(w);c(t)},t)}('JuneRegular JuneBold'
 <script>document.querySelector('#logo .FIN').addEventListener('animationend',
 function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TODO fix on OS X Safari 6.2 -->
 
-      <div id="intro" class="col-sm-8 hidden-B4-I4">
+      <div id="intro" class="col-sm-8">
         <p>
-        I’m a creative
-          <a href="https://en.wikipedia.org/wiki/Web_application"
-             title="Find out about web applications">web application
-          developer</a> with twenty years’ experience working for digital
-          agencies and publishing houses in London and Brighton.
+          I’m a creative
+          <a href="https://en.wikipedia.org/wiki/Web_application" title="Find out about web applications">web application</a>
+          <a href="https://en.wikipedia.org/wiki/Web_developer" title="Find out about web developers">developer</a>
+          with twenty years’ experience working for digital
+          agencies and publishing houses <span style="white-space:nowrap">in London</span> and Brighton.
         </p>
       </div>
 
@@ -368,10 +232,11 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
   <!-- CAROUSEL WILL PLACED HERE BY JAVASCRIPT -->
 
 
-  <div class="container hidden-B4-I4 hidden-B4-JS">
+  <div id="main" class="container">
 
     <section class="row" id="about">
       <div class="col-sm-10 offset-sm-2">
+        <div style="clear:both"></div><!-- fix Chrome print bug -->
         <h2>About</h2>
         <p>I build beautiful,
           <a href="https://en.wikipedia.org/wiki/Usability"           title="Find out about usability">user friendly,</a>
@@ -404,91 +269,86 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
     </section><!--#about -->
 
 
-    <section id="work">
+    <section id="web-apps">
       <div class="row">
-        <h2 class="col-sm-10 offset-sm-2">Work</h2>
+        <h2 class="col-sm-10 offset-sm-2">Web apps</h2>
       </div>
+      <dl class="row">
+        <dt class="col-sm-2"><time>2017</time></dt>
+        <dd class="col-sm-10"><a target="_self" href="#bar-sim-game" title="Read the ‘Bar Sim Game’ case study">3D multiplayer game</a> for <a href="https://en.wikipedia.org/wiki/Diageo" title="Find out about Diageo">Diageo</a> with a unique financial simulation, in <a href="http://es6-features.org/" title="Find out about ES6">ES6</a> and <a href="https://en.wikipedia.org/wiki/Three.js" title="Find out about Three.js">Three.js</a></dd>
+        <dt class="col-sm-2"><time>2016</time></dt>
+        <dd class="col-sm-10">Animated <!--<a target="_self" href="#edf-efr" title="Read the ‘EDF EFR’ case study">-->interactive 3D guide<!--</a>--> with minigames for <a href="https://en.wikipedia.org/wiki/EDF_Energy" title="Find out about EDF">EDF,</a> built in <a href="https://en.wikipedia.org/wiki/TypeScript" title="Find out about TypeScript">TypeScript</a> and <a href="https://en.wikipedia.org/wiki/Angular_(application_platform)" title="Find out about Angular">Angular</a></dd>
+        <dt class="col-sm-2"><time>2015</time></dt>
+        <dd class="col-sm-10"><a target="_self" href="#cell-survivor" title="Read the ‘Cell Survivor’ case study">‘Cell Survivor’,</a> an educational game for <a href="https://en.wikipedia.org/wiki/International_HIV/AIDS_Alliance" title="Find out about AIDS Alliance">AIDS Alliance,</a> using <a href="https://en.wikipedia.org/wiki/CoffeeScript" title="Find out about CoffeeScript">CoffeeScript</a> and <a href="https://phaser.io/learn" title="Find out about Phaser">Phaser</a></dd>
+        <dt class="col-sm-2"><time>2014</time></dt>
+        <dd class="col-sm-10"><a target="_self" href="#looptopia" title="Read the ‘Looptopia’ case study">‘Looptopia’,</a> a 3D landscape where users create music collaboratively, built in <a href="https://en.wikipedia.org/wiki/Meteor_(web_framework)" title="Find out about Meteor">Meteor</a></dd>
+        <dt class="col-sm-2"><time>2014</time></dt>
+        <dd class="col-sm-10"><a target="_self" href="#dream-vacation" title="Read the ‘Win Your Dream Vacation’ case study">‘Win Your Dream Vacation’</a> for US travel agent <a href="https://en.wikipedia.org/wiki/RCI_(company)" title="Find out about RCI">RCI,</a> using <a href="https://en.wikipedia.org/wiki/NodeJS" title="Find out about Node">Node</a> and a <a href="https://en.wikipedia.org/wiki/MongoDB" title="Find out about Mongo">Mongo</a> database</dd>
+        <dt class="col-sm-2"><time>2013</time></dt>
+        <dd class="col-sm-10">Drag-and-drop email composer for web-marketers <a href="http://www.smartfocus.com/en/company" title="Find out about SmartFocus">SmartFocus,</a> based on <a href="http://wordpress.org/about/" title="Find out about WordPress">WordPress</a></dd>
+        <dt class="col-sm-2"><time>2012</time></dt>
+        <dd class="col-sm-10">Suite of multilingual data-capture iPad apps for <a href="https://en.wikipedia.org/wiki/Winsor_%26_Newton" title="Find out about Winsor &amp; Newton">Winsor &amp; Newton,</a> with <a href="https://en.wikipedia.org/wiki/PHP" title="Find out about PHP">PHP</a> backend</dd>
+        <dt class="col-sm-2"><time>2012</time></dt>
+        <dd class="col-sm-10">In-store touchscreen catalogue for footwear brand <a href="https://en.wikipedia.org/wiki/Kurt_Geiger" title="Find out about Kurt Geiger">Kurt Geiger,</a> built in <a href="https://en.wikipedia.org/wiki/ActionScript" title="Find out about ActionScript">ActionScript</a></dd>
+        <dt class="col-sm-2"><time>2011</time></dt>
+        <dd class="col-sm-10">‘Smarter Living’, a lifestyle and pension calculator for <a href="http://www.zurich.co.uk/aboutus/zurichintheuk/" title="Find out about Zurich Insurance">Zurich Insurance,</a> using <a href="http://jquery.com/" title="Find out about jQuery">jQuery</a></dd>
+        <dt class="col-sm-2"><time>2008</time></dt>
+        <dd class="col-sm-10">‘Preview’, a magazine and <a href="https://en.wikipedia.org/wiki/Online_magazine" title="Find out about e-zines">e-zine</a> with embedded video for <a href="https://en.wikipedia.org/wiki/Blockbuster_LLC" title="Find out about Blockbuster">Blockbuster,</a> built in <a href="https://en.wikipedia.org/wiki/Adobe_Flash" title="Find out about Flash">Flash</a></dd>
+        <dt class="col-sm-2"><time>2008</time></dt>
+        <dd class="col-sm-10">‘Body Shape Challenge’, a <a href="https://en.wikipedia.org/wiki/Browser_game" title="Find out about browser games">browser game</a> for <a href="https://en.wikipedia.org/wiki/New_Look_(company)" title="Find out about New Look">New Look,</a> shortlisted for an <a href="http://www.the-cma.com/news/apa-rebrands-to-the-cma" title="Find out about the CMA/APA Awards">APA Award</a></dd>
+      </dl>
+    </section><!--#web-apps -->
 
-      <article id="web-app-development">
-        <div class="row">
-          <h3 class="col-sm-10 offset-sm-2">Web apps</h3>
-        </div>
-        <dl class="row">
-          <dt class="col-sm-2"><time>2017</time></dt>
-          <dd class="col-sm-10"><a target="_self" href="#nrm-game" title="Read the ‘NRM Game’ case study">3D multiplayer game</a> for <a href="https://en.wikipedia.org/wiki/Diageo" title="Find out about Diageo">Diageo</a> with a unique financial simulation, in <a href="http://es6-features.org/" title="Find out about ES6">ES6</a> and <a href="https://en.wikipedia.org/wiki/Three.js" title="Find out about Three.js">Three.js</a></dd>
-          <dt class="col-sm-2"><time>2016</time></dt>
-          <dd class="col-sm-10">Animated <!--<a target="_self" href="#edf-efr" title="Read the ‘EDF EFR’ case study">-->interactive 3D guide<!--</a>--> with minigames for <a href="https://en.wikipedia.org/wiki/EDF_Energy" title="Find out about EDF">EDF,</a> built in <a href="https://en.wikipedia.org/wiki/TypeScript" title="Find out about TypeScript">TypeScript</a> and <a href="https://en.wikipedia.org/wiki/Angular_(application_platform)" title="Find out about Angular">Angular</a></dd>
-          <dt class="col-sm-2"><time>2015</time></dt>
-          <dd class="col-sm-10"><a target="_self" href="#cell-survivor" title="Read the ‘Cell Survivor’ case study">‘Cell Survivor’,</a> an educational game for <a href="https://en.wikipedia.org/wiki/International_HIV/AIDS_Alliance" title="Find out about AIDS Alliance">AIDS Alliance,</a> using <a href="https://en.wikipedia.org/wiki/CoffeeScript" title="Find out about CoffeeScript">CoffeeScript</a> and <a href="https://phaser.io/learn" title="Find out about Phaser">Phaser</a></dd>
-          <dt class="col-sm-2"><time>2014</time></dt>
-          <dd class="col-sm-10"><a target="_self" href="#looptopia" title="Read the ‘Looptopia’ case study">‘Looptopia’,</a> a 3D landscape where users create music collaboratively, built in <a href="https://en.wikipedia.org/wiki/Meteor_(web_framework)" title="Find out about Meteor">Meteor</a></dd>
-          <dt class="col-sm-2"><time>2014</time></dt>
-          <dd class="col-sm-10"><a target="_self" href="#dream-vacation" title="Read the ‘Win Your Dream Vacation’ case study">‘Win Your Dream Vacation’</a> for US travel agent <a href="https://en.wikipedia.org/wiki/RCI_(company)" title="Find out about RCI">RCI,</a> using <a href="https://en.wikipedia.org/wiki/NodeJS" title="Find out about Node">Node</a> and a <a href="https://en.wikipedia.org/wiki/MongoDB" title="Find out about Mongo">Mongo</a> database</dd>
-          <dt class="col-sm-2"><time>2013</time></dt>
-          <dd class="col-sm-10">Drag-and-drop email composer for web-marketers <a href="http://www.smartfocus.com/en/company" title="Find out about SmartFocus">SmartFocus,</a> based on <a href="http://wordpress.org/about/" title="Find out about WordPress">WordPress</a></dd>
-          <dt class="col-sm-2"><time>2012</time></dt>
-          <dd class="col-sm-10">Suite of multilingual data-capture iPad apps for <a href="https://en.wikipedia.org/wiki/Winsor_%26_Newton" title="Find out about Winsor &amp; Newton">Winsor &amp; Newton,</a> with <a href="https://en.wikipedia.org/wiki/PHP" title="Find out about PHP">PHP</a> backend</dd>
-          <dt class="col-sm-2"><time>2012</time></dt>
-          <dd class="col-sm-10">In-store touchscreen catalogue for footwear brand <a href="https://en.wikipedia.org/wiki/Kurt_Geiger" title="Find out about Kurt Geiger">Kurt Geiger,</a> built in <a href="https://en.wikipedia.org/wiki/ActionScript" title="Find out about ActionScript">ActionScript</a></dd>
-          <dt class="col-sm-2"><time>2011</time></dt>
-          <dd class="col-sm-10">‘Smarter Living’, a lifestyle and pension calculator for <a href="http://www.zurich.co.uk/aboutus/zurichintheuk/" title="Find out about Zurich Insurance">Zurich Insurance,</a> using <a href="http://jquery.com/" title="Find out about jQuery">jQuery</a></dd>
-          <dt class="col-sm-2"><time>2008</time></dt>
-          <dd class="col-sm-10">‘Preview’, a magazine and <a href="https://en.wikipedia.org/wiki/Online_magazine" title="Find out about e-zines">e-zine</a> with embedded video for <a href="https://en.wikipedia.org/wiki/Blockbuster_LLC" title="Find out about Blockbuster">Blockbuster,</a> built in <a href="https://en.wikipedia.org/wiki/Adobe_Flash" title="Find out about Flash">Flash</a></dd>
-          <dt class="col-sm-2"><time>2008</time></dt>
-          <dd class="col-sm-10">‘Body Shape Challenge’, a <a href="https://en.wikipedia.org/wiki/Browser_game" title="Find out about browser games">browser game</a> for <a href="https://en.wikipedia.org/wiki/New_Look_(company)" title="Find out about New Look">New Look,</a> shortlisted for an <a href="http://www.the-cma.com/news/apa-rebrands-to-the-cma" title="Find out about the CMA/APA Awards">APA Award</a></dd>
-        </dl>
-      </article>
 
-      <article id="websites">
-        <div class="row">
-          <h3 class="col-sm-10 offset-sm-2">Websites</h3>
-        </div>
-        <dl class="row">
-          <dt class="col-sm-2"><time>2016</time></dt>
-          <dd class="col-sm-10">A <a href="https://en.wikipedia.org/wiki/WooCommerce" title="Find out about WooCommerce">WooCommerce</a> site where customers create custom books, and then the backend generates press-ready PDFs and FTPs them to a <a href="https://en.wikipedia.org/wiki/Print_on_demand" title="Find out about print-on-demand">print-on-demand</a> service</dd>
-          <dt class="col-sm-2"><time>2015</time></dt>
-          <dd class="col-sm-10">A <a href="https://en.wikipedia.org/wiki/Digital_asset_management" title="Find out about digital asset management">Digital Asset Management</a> theme which automatically captures media metadata</dd>
-          <dt class="col-sm-2"><time>2014</time></dt>
-          <dd class="col-sm-10">‘Don’t Quote Me’, a shareable random quote generator built for <a href="https://en.wikipedia.org/wiki/Tesco" title="Find out about Tesco">Tesco</a> and <a href="https://en.wikipedia.org/wiki/TalkTalk_TV_Store" title="Find out about Blinkbox">Blinkbox</a></dd>
-          <dt class="col-sm-2"><time>2014</time></dt>
-          <dd class="col-sm-10"><a href="http://lookabout.wpengine.com/" title="Find out about Lookabout">‘Lookabout’,</a> a plugin where 3D portraits in a gallery respond to cursor movement</dd>
-<!--          <dt class="col-sm-2"><time>2014</time></dt>-->
-<!--          <dd class="col-sm-10"><a href="https://en.wikipedia.org/wiki/Responsive_web_design" title="Find out about responsive web design">Responsive layout</a> and new features for hairdresser <a href="http://www.headmasters.com/about/" title="Find out about Headmasters">Headmasters’</a> existing website</dd>-->
-          <dt class="col-sm-2"><time>2013</time></dt>
-          <dd class="col-sm-10">Site with innovative page transition system for property company <a href="http://thackerayestates.com/about-us/" title="Find out about Thackeray Estates">Thackeray Estates</a></dd>
-          <dt class="col-sm-2"><time>2013</time></dt>
-          <dd class="col-sm-10">Custom <a href="https://en.wikipedia.org/wiki/WordPress#Themes" title="Find out about WordPress themes">responsive WordPress theme</a> and plugins based on <a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)" title="Find out about Bootstrap">Bootstrap,</a> for fashion commentator <a href="https://en.wikipedia.org/wiki/Caryn_Franklin" title="Find out about Caryn Franklin">Caryn Franklin</a>
-                                and childrens’ charity <a target="_self" href="#aatc" title="‘Arms Around The Child’ case study">Arms Around The Child</a></dd>
-          <dt class="col-sm-2"><time>2012</time></dt>
-          <dd class="col-sm-10">Promotional <a href="https://en.wikipedia.org/wiki/Microsite" title="Find out about microsites">microsite</a> with HTML5 animations for the <a href="https://en.wikipedia.org/wiki/Ford_B-Max" title="Find out about the Ford B-Max">Ford B-Max</a> launch campaign</dd>
-          <dt class="col-sm-2"><time>2009</time></dt>
-          <dd class="col-sm-10"><a href="https://en.wikipedia.org/wiki/E-commerce" title="Find out about e-commerce">E-commerce</a> site for London hi-fi retailer <a href="https://audiogold.co.uk/about-us/" title="Find out about Audio Gold">Audio Gold,</a> in <a href="https://en.wikipedia.org/wiki/WordPress" title="Find out about WordPress">WordPress</a> and <a href="https://en.wikipedia.org/wiki/WooCommerce" title="Find out about WooCommerce">WooCommerce</a></dd>
-          <dt class="col-sm-2"><time>2008</time></dt>
-          <dd class="col-sm-10">Custom site design and build for fashion label <a href="http://www.markfast.net/about.htm" title="Find out about Mark Fast">Mark Fast,</a> using a bespoke <a href="https://en.wikipedia.org/wiki/PHP" title="Find out about PHP">PHP</a> CMS</dd>
-          <dt class="col-sm-2"><time>2005</time></dt>
-          <dd class="col-sm-10">Site with custom event-listing for London music venue <a href="http://www.greennote.co.uk/about-us/" title="Find out about Green Note">Green Note,</a> using <a href="https://en.wikipedia.org/wiki/Joomla" title="Find out about Joomla">Joomla</a></dd>
-        </dl>
-      </article>
+    <section id="websites">
+      <div class="row">
+        <h2 class="col-sm-10 offset-sm-2">Websites</h2>
+      </div>
+      <dl class="row">
+        <dt class="col-sm-2"><time>2016</time></dt>
+        <dd class="col-sm-10">A <a href="https://en.wikipedia.org/wiki/WooCommerce" title="Find out about WooCommerce">WooCommerce</a> site where customers create custom books, and then the backend generates press-ready PDFs and FTPs them to a <a href="https://en.wikipedia.org/wiki/Print_on_demand" title="Find out about print-on-demand">print-on-demand</a> service</dd>
+        <dt class="col-sm-2"><time>2015</time></dt>
+        <dd class="col-sm-10">A <a href="https://en.wikipedia.org/wiki/Digital_asset_management" title="Find out about digital asset management">Digital Asset Management</a> theme which automatically captures media metadata</dd>
+        <dt class="col-sm-2"><time>2014</time></dt>
+        <dd class="col-sm-10">‘Don’t Quote Me’, a shareable random quote generator built for <a href="https://en.wikipedia.org/wiki/Tesco" title="Find out about Tesco">Tesco</a> and <a href="https://en.wikipedia.org/wiki/TalkTalk_TV_Store" title="Find out about Blinkbox">Blinkbox</a></dd>
+        <dt class="col-sm-2"><time>2014</time></dt>
+        <dd class="col-sm-10"><a href="http://lookabout.wpengine.com/" title="Find out about Lookabout">‘Lookabout’,</a> a plugin where 3D portraits in a gallery respond to cursor movement</dd>
+<!--        <dt class="col-sm-2"><time>2014</time></dt>-->
+<!--        <dd class="col-sm-10"><a href="https://en.wikipedia.org/wiki/Responsive_web_design" title="Find out about responsive web design">Responsive layout</a> and new features for hairdresser <a href="http://www.headmasters.com/about/" title="Find out about Headmasters">Headmasters’</a> existing website</dd>-->
+        <dt class="col-sm-2"><time>2013</time></dt>
+        <dd class="col-sm-10">Site with innovative page transition system for property company <a href="http://thackerayestates.com/about-us/" title="Find out about Thackeray Estates">Thackeray Estates</a></dd>
+        <dt class="col-sm-2"><time>2013</time></dt>
+        <dd class="col-sm-10">Custom <a href="https://en.wikipedia.org/wiki/WordPress#Themes" title="Find out about WordPress themes">responsive WordPress theme</a> and plugins based on <a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)" title="Find out about Bootstrap">Bootstrap,</a> for fashion commentator <a href="https://en.wikipedia.org/wiki/Caryn_Franklin" title="Find out about Caryn Franklin">Caryn Franklin</a>
+                              and childrens’ charity <a target="_self" href="#aatc" title="‘Arms Around The Child’ case study">Arms Around The Child</a></dd>
+        <dt class="col-sm-2"><time>2012</time></dt>
+        <dd class="col-sm-10">Promotional <a href="https://en.wikipedia.org/wiki/Microsite" title="Find out about microsites">microsite</a> with HTML5 animations for the <a href="https://en.wikipedia.org/wiki/Ford_B-Max" title="Find out about the Ford B-Max">Ford B-Max</a> launch campaign</dd>
+        <dt class="col-sm-2"><time>2009</time></dt>
+        <dd class="col-sm-10"><a href="https://en.wikipedia.org/wiki/E-commerce" title="Find out about e-commerce">E-commerce</a> site for London hi-fi retailer <a href="https://audiogold.co.uk/about-us/" title="Find out about Audio Gold">Audio Gold,</a> in <a href="https://en.wikipedia.org/wiki/WordPress" title="Find out about WordPress">WordPress</a> and <a href="https://en.wikipedia.org/wiki/WooCommerce" title="Find out about WooCommerce">WooCommerce</a></dd>
+        <dt class="col-sm-2"><time>2008</time></dt>
+        <dd class="col-sm-10">Custom site design and build for fashion label <a href="http://www.markfast.net/about.htm" title="Find out about Mark Fast">Mark Fast,</a> using a bespoke <a href="https://en.wikipedia.org/wiki/PHP" title="Find out about PHP">PHP</a> CMS</dd>
+        <dt class="col-sm-2"><time>2005</time></dt>
+        <dd class="col-sm-10">Site with custom event-listing for London music venue <a href="http://www.greennote.co.uk/about-us/" title="Find out about Green Note">Green Note,</a> using <a href="https://en.wikipedia.org/wiki/Joomla" title="Find out about Joomla">Joomla</a></dd>
+      </dl>
+    </section><!--#websites -->
 
-      <article id="graphic-design">
-        <div class="row">
-          <h3 class="col-sm-10 offset-sm-2">Graphic design</h3>
-        </div>
-        <dl class="row">
-          <dt class="col-sm-2"><time>2006</time></dt>
-          <dd class="col-sm-10">Brand redesign for <a href="https://en.wikipedia.org/wiki/GVA_(business)" title="Find out about GVA">GVA,</a> the UK’s largest independent commercial property agency</dd>
-          <dt class="col-sm-2"><time>2004</time></dt>
-          <dd class="col-sm-10">Visual identity and brand guidelines for <a href="http://www.pvdatabase.org/projects_view_detailsmore.php?ID=225" title="Find out about MSK">MSK,</a> Japan’s largest photovoltaics specialist</dd>
-          <dt class="col-sm-2"><time>2003</time></dt>
-          <dd class="col-sm-10">Design of award-winning customer magazines for <a href="https://en.wikipedia.org/wiki/Britannia_Building_Society" title="Find out about Britannia">Britannia,</a> <a href="https://en.wikipedia.org/wiki/Land_Rover" title="Find out about Land Rover">Land Rover</a> and <a href="https://en.wikipedia.org/wiki/Volvo_Cars" title="Find out about Volvo">Volvo</a></dd>
-          <dt class="col-sm-2"><time>2001</time></dt>
-          <dd class="col-sm-10">Template design for a major brand refresh of <a href="https://en.wikipedia.org/wiki/Radio_Times" title="Find out about Radio Times">Radio Times</a> at <a href="https://en.wikipedia.org/wiki/BBC_Worldwide" title="Find out about BBC Worldwide">BBC Worldwide</a></dd>
-          <dt class="col-sm-2"><time>1999</time></dt>
-          <dd class="col-sm-10">Won an award for brand development of the <a href="http://www.thomson.co.uk/destinations/info/skytours-holidays" title="Find out about Skytours">Skytours</a> brochure at <a href="https://en.wikipedia.org/wiki/Thomson_Holidays" title="Find out about Thomson Holidays">Thomson Holidays</a></dd>
-        </dl>
-      </article>
 
-    </section><!--#work -->
+    <section id="graphic-design">
+      <div class="row">
+        <h2 class="col-sm-10 offset-sm-2">Graphic design</h2>
+      </div>
+      <dl class="row">
+        <dt class="col-sm-2"><time>2006</time></dt>
+        <dd class="col-sm-10">Brand redesign for <a href="https://en.wikipedia.org/wiki/GVA_(business)" title="Find out about GVA">GVA,</a> the UK’s largest independent commercial property agency</dd>
+        <dt class="col-sm-2"><time>2004</time></dt>
+        <dd class="col-sm-10">Visual identity and brand guidelines for <a href="http://www.pvdatabase.org/projects_view_detailsmore.php?ID=225" title="Find out about MSK">MSK,</a> Japan’s largest photovoltaics specialist</dd>
+        <dt class="col-sm-2"><time>2003</time></dt>
+        <dd class="col-sm-10">Design of award-winning customer magazines for <a href="https://en.wikipedia.org/wiki/Britannia_Building_Society" title="Find out about Britannia">Britannia,</a> <a href="https://en.wikipedia.org/wiki/Land_Rover" title="Find out about Land Rover">Land Rover</a> and <a href="https://en.wikipedia.org/wiki/Volvo_Cars" title="Find out about Volvo">Volvo</a></dd>
+        <dt class="col-sm-2"><time>2001</time></dt>
+        <dd class="col-sm-10">Template design for a major brand refresh of <a href="https://en.wikipedia.org/wiki/Radio_Times" title="Find out about Radio Times">Radio Times</a> at <a href="https://en.wikipedia.org/wiki/BBC_Worldwide" title="Find out about BBC Worldwide">BBC Worldwide</a></dd>
+        <dt class="col-sm-2"><time>1999</time></dt>
+        <dd class="col-sm-10">Won an award for brand development of the <a href="http://www.thomson.co.uk/destinations/info/skytours-holidays" title="Find out about Skytours">Skytours</a> brochure at <a href="https://en.wikipedia.org/wiki/Thomson_Holidays" title="Find out about Thomson Holidays">Thomson Holidays</a></dd>
+      </dl>
+    </section><!--#graphic-design -->
 
 
     <section class="row" id="clients">
@@ -606,61 +466,22 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
     </section><!--#skills-and-qualifications -->
 
 
-    <section id="contact">
-      <div class="row">
-        <h2 class="col-sm-10 offset-sm-2">Contact</h2>
-      </div>
-      <dl class="row">
-        <dt class="col-sm-2"><b>Profile</b></dt>
-        <dd class="col-sm-10">
-          <a title="Visit my LinkedIn profile" href="https://linkedin.com/in/richardplastow">linkedin.com/in/richardplastow</a>
-        </dd>
-        <dt class="col-sm-2"><b>Email</b></dt>
-        <dd class="col-sm-10">
-          <a class="ma_ling" title="Drop me an email" href="mailto:rich_ma_ling@richplastow.com">rich<span class="at"><span style="display:none">_ma_ling</span><img src="asset/font/at-sign-dark.svg" alt="AT"></span>richplastow.com</a>
-        </dd>
-        <dt class="col-sm-2"><b>GitHub</b></dt>
-        <dd class="col-sm-10">
-          <a title="Check out my GitHub projects" href="https://github.com/richplastow">github.com/richplastow</a>
-        </dd>
-        <dt class="col-sm-2"><b>Twitter</b></dt>
-        <dd class="col-sm-10">
-          <a title="Visit my Twitter feed, @RichPlastow" href="https://twitter.com/RichPlastow">twitter.com/RichPlastow</a>
-        </dd>
-      </dl>
-    </section><!--#contact -->
-
-
-  </div><!--.container -->
+  </div><!--#main -->
 
 
 
 
   <section id="case-studies">
 
-    <div class="container hidden-B4-I4 hidden-B4-JS">
-      <div class="row">
-        <h2 class="col-sm-10 offset-sm-2">Case studies</h2>
-      </div>
-    </div>
-
-
-    <article id="nrm-game" class="hidden-B4-I4 hidden-B4-JS">
+    <article id="bar-sim-game">
 
       <div class="container">
 
-        <div class="row">
-          <h4 class="col-sm-10 offset-sm-2">This multiplayer HTML5 ‘serious game’ combines a custom
-            <a href="https://en.wikipedia.org/wiki/List_of_WebGL_frameworks" title="Find out about other WebGL frameworks">3D framework</a>
-            with an advanced <a href="https://en.wikipedia.org/wiki/Business_simulation" title="Find out about business simulations">business simulation,</a>
-            to provide a fun and social learning tool for
-            <a href="https://en.wikipedia.org/wiki/Diageo" title="Find out about Diageo">Diageo</a> staff.
-          </h4>
-        </div>
-
         <dl class="row">
-          <dt class="col-sm-2"><b>Project</b></dt>
-          <dd class="col-sm-10"><b>Net Revenue Management Game</b></dd>
+          <dt class="col-sm-2 case-studies-lower"><b>Case Study</b></dt>
+          <dd class="col-sm-10"><h2>Bar Sim Game</h2></dd>
+          <dt class="col-sm-2"><b>Client</b></dt>
+          <dd class="col-sm-10"><b>Diageo</b></dd>
           <dt class="col-sm-2"><b>Date</b></dt>
           <dd class="col-sm-10"><time datetime="2017-05">May 2017</time></dd>
           <dt class="col-sm-2"><b>Skills</b></dt>
@@ -689,15 +510,30 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
         </dl><!--.row -->
 
         <div class="row">
-          <p class="col-sm-10 offset-sm-2">As part of a two-day training course
-            which all of Diageo’s staff around the world attend, this
+          <div class="col-sm-10 offset-sm-2">
+            <div style="clear:both"></div><!-- fix Chrome print bug -->
+            <h4>
+              This multiplayer HTML5 ‘serious game’ combines a custom
+              <a href="https://en.wikipedia.org/wiki/List_of_WebGL_frameworks" title="Find out about other WebGL frameworks">3D framework</a>
+              with an advanced <a href="https://en.wikipedia.org/wiki/Business_simulation" title="Find out about business simulations">business simulation,</a>
+              to provide a fun and social learning tool for
+              <a href="https://en.wikipedia.org/wiki/Diageo" title="Find out about Diageo">Diageo</a> staff.
+            </h4>
+          </div>
+        </div>
+
+        <div class="row">
+          <p class="col-sm-10 offset-sm-2">
+            This
             <a href="https://en.wikipedia.org/wiki/Serious_game" title="Find out about serious games">serious game</a>
-            is played by four teams of three people. Each team has a laptop and
-            controls the marketing budget of a
+            has been designed to reinforce learning during a two-day training
+            course. It’s played by four teams of three people, where each team
+            has a laptop and controls the marketing budget of a
             <a href="https://en.wikipedia.org/wiki/Business_simulation" title="Find out about business simulations">simulated bar.</a>
             The goal is to maximise end-of-year profit, with help from a
             facilitator who can monitor their progress in real time.</p>
-          <p class="col-sm-10 offset-sm-2">An outline for the game mechanic and
+          <p class="col-sm-10 offset-sm-2">
+            An outline for the game mechanic and
             learning objectives had been agreed before I came on board. I
             produced a detailed
             <a href="https://en.wikipedia.org/wiki/Functional_specification" title="Find out about functional specs">functional spec</a>
@@ -705,7 +541,8 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
             <a href="https://en.wikipedia.org/wiki/Website_wireframe" title="Find out about wireframes">wireframes,</a>
             wrote all of the code, and worked with the client’s art director on
             graphic design and photography.</p>
-          <p class="col-sm-10 offset-sm-2">I created a custom framework on top of
+          <p class="col-sm-10 offset-sm-2">
+            I created a custom framework on top of
             <a href="https://en.wikipedia.org/wiki/Three.js" title="Find out about Three.js">Three.js,</a>
             which allowed us to create the 3D bar scene very quickly, and add
             real photos of Diageo’s staff drinking at the bar! I also built a
@@ -717,7 +554,7 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
       </div><!--.container -->
 
       <figure class="carousel-image">
-        <img src="asset/img/rich-plastow-projects-2017-nrm-game-3000x1250.jpg"
+        <img src="asset/img/rich-plastow-projects-2017-bar-sim-game-3000x1250.jpg"
              alt="Four laptops, showing multiplayer views of the net revenue management game"
              width="3000" height="1250">
       </figure>
@@ -771,25 +608,18 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
 
       </div><!--.container -->
 
-    </article><!--#nrm-game -->
+    </article><!--#bar-sim-game -->
 
 
-    <article id="cell-survivor" class="hidden-B4-I4 hidden-B4-JS">
+    <article id="cell-survivor">
 
       <div class="container">
 
-        <div class="row">
-          <h4 class="col-sm-10 offset-sm-2">This
-            <a href="https://en.wikipedia.org/wiki/Retrogaming" title="Find out about retro gaming">retro-style</a>
-            <a href="https://en.wikipedia.org/wiki/Browser_game" title="Find out about browser games">online game</a>
-            is fun to play but also carries a serious message, and has helped to
-            raise awareness of HIV among young people around the world.
-          </h4>
-        </div>
-
         <dl class="row">
-          <dt class="col-sm-2"><b>Project</b></dt>
-          <dd class="col-sm-10"><b>Cell Survivor</b></dd>
+          <dt class="col-sm-2 case-studies-lower"><b>Case Study</b></dt>
+          <dd class="col-sm-10"><h2>Cell Survivor</h2></dd>
+          <dt class="col-sm-2"><b>Client</b></dt>
+          <dd class="col-sm-10"><b>AIDS Alliance</b></dd>
           <dt class="col-sm-2"><b>Date</b></dt>
           <dd class="col-sm-10"><time datetime="2015-12">December 2015</time></dd>
           <dt class="col-sm-2"><b>Skills</b></dt>
@@ -814,6 +644,19 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
             </ul>
           </dd>
         </dl><!--.row -->
+
+        <div class="row">
+          <div class="col-sm-10 offset-sm-2">
+            <div style="clear:both"></div><!-- fix Chrome print bug -->
+            <h4>
+              This
+              <a href="https://en.wikipedia.org/wiki/Retrogaming" title="Find out about retro gaming">retro-style</a>
+              <a href="https://en.wikipedia.org/wiki/Browser_game" title="Find out about browser games">online game</a>
+              is fun to play but also carries a serious message, and has helped to
+              raise awareness of HIV among young people around the world.
+            </h4>
+          </div>
+        </div>
 
         <div class="row">
           <p class="col-sm-10 offset-sm-2">Brighton-based charity
@@ -879,24 +722,15 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
     </article><!--#cell-survivor -->
 
 
-    <article id="looptopia" class="hidden-B4-I4 hidden-B4-JS">
+    <article id="looptopia">
 
       <div class="container">
 
-        <div class="row">
-          <h4 class="col-sm-10 offset-sm-2">Launched at Brighton Digital Festival,
-            <a href="https://looptopia.loop.coop/" title="Find out about Looptopia">Looptopia</a>
-            combines a range of new technologies including
-            <a href="https://en.wikipedia.org/wiki/WebGL" title="Find out about WebGL">WebGL,</a>
-            <a href="https://en.wikipedia.org/wiki/WebSocket" title="Find out about WebSockets">WebSockets</a> and
-            <a href="https://en.wikipedia.org/wiki/HTML5_Audio" title="Find out about Web Audio">Web Audio</a>
-            to deliver an otherworldly musical experience.
-          </h4>
-        </div>
-
         <dl class="row">
-          <dt class="col-sm-2"><b>Project</b></dt>
-          <dd class="col-sm-10"><b>Looptopia public beta</b></dd>
+          <dt class="col-sm-2 case-studies-lower"><b>Case Study</b></dt>
+          <dd class="col-sm-10"><h2>Looptopia</h2></dd>
+          <dt class="col-sm-2"><b>Client</b></dt>
+          <dd class="col-sm-10"><b>Loop.Coop</b></dd>
           <dt class="col-sm-2"><b>Date</b></dt>
           <dd class="col-sm-10"><time datetime="2014-09">September 2014</time></dd>
           <dt class="col-sm-2"><b>Skills</b></dt>
@@ -928,6 +762,21 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
             </ul>
           </dd>
         </dl><!--.row -->
+
+        <div class="row">
+          <div class="col-sm-10 offset-sm-2">
+            <div style="clear:both"></div><!-- fix Chrome print bug -->
+            <h4>
+              Launched at Brighton Digital Festival,
+              <a href="https://looptopia.loop.coop/" title="Find out about Looptopia">Looptopia</a>
+              combines a range of new technologies including
+              <a href="https://en.wikipedia.org/wiki/WebGL" title="Find out about WebGL">WebGL,</a>
+              <a href="https://en.wikipedia.org/wiki/WebSocket" title="Find out about WebSockets">WebSockets</a> and
+              <a href="https://en.wikipedia.org/wiki/HTML5_Audio" title="Find out about Web Audio">Web Audio</a>
+              to deliver otherworldly musical experiences.
+            </h4>
+          </div>
+        </div>
 
         <div class="row">
           <p class="col-sm-10 offset-sm-2">
@@ -997,25 +846,15 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
     </article><!--#looptopia -->
 
 
-    <article id="aatc" class="hidden-B4-I4 hidden-B4-JS">
+    <article id="aatc">
 
       <div class="container">
 
-        <div class="row">
-          <h4 class="col-sm-10 offset-sm-2">I developed a suite of
-            <a href="https://en.wikipedia.org/wiki/WordPress#Plugins" title="Find out about WordPress plugins">custom WordPress plugins,</a>
-            along with a
-            <a href="https://en.wikipedia.org/wiki/WordPress#Themes" title="Find out about WordPress themes">custom WordPress theme</a>
-            based on
-            <a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)" title="Find out about Bootstrap">Bootstrap,</a>
-            to create this lightweight, easy-to-update,
-            <a href="https://en.wikipedia.org/wiki/Responsive_web_design" title="Find out about responsive web design">responsive website.</a>
-          </h4>
-        </div>
-
         <dl class="row">
-          <dt class="col-sm-2"><b>Project</b></dt>
-          <dd class="col-sm-10"><b>Arms Around The Child site refresh</b></dd>
+          <dt class="col-sm-2 case-studies-lower"><b>Case Study</b></dt>
+          <dd class="col-sm-10"><h2>Responsive website refresh</h2></dd>
+          <dt class="col-sm-2"><b>Client</b></dt>
+          <dd class="col-sm-10"><b>Arms Around The Child</b></dd>
           <dt class="col-sm-2"><b>Date</b></dt>
           <dd class="col-sm-10"><time datetime="2013-11">November 2013</time></dd>
           <dt class="col-sm-2"><b>Skills</b></dt>
@@ -1038,6 +877,22 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
             </ul>
           </dd>
         </dl><!--.row -->
+
+        <div class="row">
+          <div class="col-sm-10 offset-sm-2">
+            <div style="clear:both"></div><!-- fix Chrome print bug -->
+            <h4>
+              I developed a suite of
+              <a href="https://en.wikipedia.org/wiki/WordPress#Plugins" title="Find out about WordPress plugins">custom WordPress plugins,</a>
+              along with a
+              <a href="https://en.wikipedia.org/wiki/WordPress#Themes" title="Find out about WordPress themes">custom WordPress theme</a>
+              based on
+              <a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)" title="Find out about Bootstrap">Bootstrap,</a>
+              to create this lightweight, easy-to-update,
+              <a href="https://en.wikipedia.org/wiki/Responsive_web_design" title="Find out about responsive web design">responsive website.</a>
+            </h4>
+          </div>
+        </div>
 
         <div class="row">
           <p class="col-sm-10 offset-sm-2">
@@ -1106,23 +961,15 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
     </article><!--#aatc -->
 
 
-    <article id="dream-vacation" class="hidden-B4-I4 hidden-B4-JS">
+    <article id="dream-vacation">
 
       <div class="container">
 
-        <div class="row">
-          <h4 class="col-sm-10 offset-sm-2">A web app I built using
-            <a href="https://en.wikipedia.org/wiki/NodeJS" title="Find out about Node">Node,</a>
-            <a href="https://en.wikipedia.org/wiki/MongoDB" title="Find out about Mongo">Mongo</a> and
-            <a href="https://en.wikipedia.org/wiki/JQuery" title="Find out about JQuery">JQuery,</a>
-            which was the centerpiece of a ten week promotional campaign. By the
-            end, 150,000 users had registered and designed a dream holiday.
-          </h4>
-        </div>
-
         <dl class="row">
-          <dt class="col-sm-2"><b>Project</b></dt>
-          <dd class="col-sm-10"><b>Win Your Dream Vacation</b></dd>
+          <dt class="col-sm-2 case-studies-lower"><b>Case Study</b></dt>
+          <dd class="col-sm-10"><h2>Win Your Dream Vacation</h2></dd>
+          <dt class="col-sm-2"><b>Client</b></dt>
+          <dd class="col-sm-10"><b>RCI</b></dd>
           <dt class="col-sm-2"><b>Date</b></dt>
           <dd class="col-sm-10"><time datetime="2014-04">April 2014</time></dd>
           <dt class="col-sm-2"><b>Skills</b></dt>
@@ -1154,6 +1001,20 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
             </ul>
           </dd>
         </dl><!--.row -->
+
+        <div class="row">
+          <div class="col-sm-10 offset-sm-2">
+            <div style="clear:both"></div><!-- fix Chrome print bug -->
+            <h4>
+              A web app I built with
+              <a href="https://en.wikipedia.org/wiki/NodeJS" title="Find out about Node">Node,</a>
+              <a href="https://en.wikipedia.org/wiki/MongoDB" title="Find out about Mongo">Mongo</a> and
+              <a href="https://en.wikipedia.org/wiki/JQuery" title="Find out about JQuery">JQuery</a>
+              which was the centerpiece of a ten week promotional campaign. By the
+              end, 150,000 users had registered and designed a dream holiday.
+            </h4>
+          </div>
+        </div>
 
         <div class="row">
           <p class="col-sm-10 offset-sm-2">To celebrate their 40th anniversary,
@@ -1228,13 +1089,17 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
 
 
     <!--
-    <article id="xx" class="hidden-B4-I4 hidden-B4-JS">
+    <article id="xx">
 
       <div class="container">
 
         <div class="row">
-          <h4 class="col-sm-10 offset-sm-2">Xx.
-          </h4>
+          <div class="col-sm-10 offset-sm-2">
+            <div style="clear:both"></div><!- - fix Chrome print bug - ->
+            <h4>
+              Xx.
+            </h4>
+          </div>
         </div>
 
         <dl class="row">
@@ -1292,85 +1157,118 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
 
 
 
-  <footer id="foot" class="row hidden-B4-I4 hidden-B4-JS">
-    <a class="hidden-sm-up share-btn">
+  <div id="contact" class="container">
+    <section>
+      <div class="row">
+        <h2 class="col-sm-10 offset-sm-2">Contact</h2>
+      </div>
+      <dl class="row">
+        <dt class="col-sm-2"><b>Profile</b></dt>
+        <dd class="col-sm-10">
+          <a title="Visit my LinkedIn profile" href="https://linkedin.com/in/richardplastow">linkedin.com/in/richardplastow</a>
+        </dd>
+        <dt class="col-sm-2"><b>Email</b></dt>
+        <dd class="col-sm-10">
+          <a class="ma_ling" title="Drop me an email" href="mailto:rich_ma_ling@richplastow.com">rich<span class="at"><span style="display:none">_ma_ling</span><img src="asset/font/at-sign-dark.svg" alt="AT"></span>richplastow.com</a>
+        </dd>
+        <dt class="col-sm-2"><b>GitHub</b></dt>
+        <dd class="col-sm-10">
+          <a title="Check out my GitHub projects" href="https://github.com/richplastow">github.com/richplastow</a>
+        </dd>
+        <dt class="col-sm-2"><b>Twitter</b></dt>
+        <dd class="col-sm-10">
+          <a title="Visit my Twitter feed, @RichPlastow" href="https://twitter.com/RichPlastow">twitter.com/RichPlastow</a>
+        </dd>
+      </dl>
+    </section>
+  </div><!--#contact -->
+
+
+</div><!--#content -->
+
+
+
+
+
+<footer id="foot" class="row">
+  <!-- @TODO reinstate
+  <a class="hidden-sm-up share-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 640 640">
+      <rect x="300" y="60" width="40" height="260"></rect>
+      <rect x="176.362" y="149.827" width="40" height="260" transform="matrix(0.309 -0.9511 0.9511 0.309 -130.4483 380.1062)" ></rect>
+      <rect x="223.585" y="295.171" width="40" height="260" transform="matrix(-0.809 -0.5878 0.5878 -0.809 190.7417 912.319)" ></rect>
+      <rect x="376.409" y="295.174" width="40" height="260" transform="matrix(-0.809 0.5878 -0.5878 -0.809 967.0228 536.1422)"></rect>
+      <rect x="423.636" y="149.829" width="40" height="260" transform="matrix(0.309 0.9511 -0.9511 0.309 572.6817 -228.5656)" ></rect>
+    </svg>
+  </a>
+  -->
+  <a class="hidden-sm-up menu-btn"
+     title="Open the navigation menu">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 640 640">
+      <rect x="80" y="115" width="480" height="40"></rect>
+      <rect x="80" y="300" width="480" height="40"></rect>
+      <rect x="80" y="480" width="480" height="40"></rect>
+    </svg>
+  </a>
+  <a class="col-sm-8 ma_ling" href="mailto:rich_ma_ling@richplastow.com"
+     title="Drop me an email">
+    <span class="hidden-sm-up">
       <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 640 640">
-        <rect x="300" y="60" width="40" height="260"></rect>
-        <rect x="176.362" y="149.827" width="40" height="260" transform="matrix(0.309 -0.9511 0.9511 0.309 -130.4483 380.1062)" ></rect>
-        <rect x="223.585" y="295.171" width="40" height="260" transform="matrix(-0.809 -0.5878 0.5878 -0.809 190.7417 912.319)" ></rect>
-        <rect x="376.409" y="295.174" width="40" height="260" transform="matrix(-0.809 0.5878 -0.5878 -0.809 967.0228 536.1422)"></rect>
-        <rect x="423.636" y="149.829" width="40" height="260" transform="matrix(0.309 0.9511 -0.9511 0.309 572.6817 -228.5656)" ></rect>
+        <rect x="80"  y="480" width="480" height="40"></rect>
+        <rect x="80"  y="120" width="480" height="40"></rect>
+        <rect x="80"  y="120" width="40" height="400"></rect>
+        <rect x="520" y="120" width="40" height="400"></rect>
+      	<path d="M292.858,381.77c7.137,6.582,16.667,10.606,27.142,10.606c10.473,0,20.002-4.023,27.138-10.603
+      		l198.953-166.409l-25.664-30.68L320,352.324h0l-200.674-167.89l-25.664,30.68L292.858,381.77z"></path>
       </svg>
-    </a>
-    <a class="col-sm-8 ma_ling" href="mailto:rich_ma_ling@richplastow.com"
-       title="Drop me an email">
-      <span class="hidden-sm-up">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 640 640">
-          <rect x="80"  y="480" width="480" height="40"></rect>
-          <rect x="80"  y="120" width="480" height="40"></rect>
-          <rect x="80"  y="120" width="40" height="400"></rect>
-          <rect x="520" y="120" width="40" height="400"></rect>
-        	<path d="M292.858,381.77c7.137,6.582,16.667,10.606,27.142,10.606c10.473,0,20.002-4.023,27.138-10.603
-        		l198.953-166.409l-25.664-30.68L320,352.324h0l-200.674-167.89l-25.664,30.68L292.858,381.77z"></path>
-        </svg>
-      </span>
-      <span class="hidden-xs-down">
-        rich<span class="at"><span style="display:none">_ma_ling</span><img src="asset/font/at-sign-light.svg" alt="AT"></span>richplastow.com
-      </span>
-    </a>
-    <span class="col-sm-4 social-icons">
-      <a href="https://www.linkedin.com/in/richardplastow/"
-         title="Visit my LinkedIn profile">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 640 640">
-        	<rect x="113.353" y="239.96" width="93.349" height="280.046"></rect>
-        	<path d="M160.027,202.619c-30.335,0-56.007-25.67-56.007-56.004c0-30.335,25.672-56.006,56.007-56.006
-        		c30.334,0,56.004,25.671,56.004,56.006C216.031,176.949,190.361,202.619,160.027,202.619z"></path>
-        	<path d="M533.418,520.006H440.07V379.984c0-37.342-9.334-74.684-46.674-74.684
-        		c-37.341,0-46.674,37.342-46.674,74.684v140.021h-93.348V239.96h93.348v32.672h4.672c11.667-23.339,42.002-42.005,77.008-42.005
-        		c86.351,0,105.016,56.01,105.016,126.019V520.006z"></path>
-        </svg>
-      </a>
-      <a href="https://github.com/richplastow"
-         title="Check out my GitHub projects">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 640 640">
-          <path d="M320.736,311.133c-0.229,0-0.497-0.01-0.736-0.02c-0.259,0.01-0.518,0.02-0.756,0.02
-          	c-63.237,0-118.961-16.013-151.893,14.223c-19.726,18.152-28.046,40.008-28.046,63.535c0,98.318,78.772,110.391,179.929,110.391
-          	h1.502c101.166,0,179.938-12.082,179.938-110.391c0-23.547-8.319-45.383-28.045-63.535
-          	C439.687,295.12,383.983,311.133,320.736,311.133z M234.729,445.479c-19.248,0-34.853-21.616-34.853-48.269
-          	c0-26.662,15.604-48.27,34.853-48.27s34.873,21.607,34.873,48.27C269.602,423.863,253.977,445.479,234.729,445.479z
-          	 M405.252,445.479c-19.248,0-34.873-21.616-34.873-48.269c0-26.662,15.625-48.27,34.873-48.27c19.237,0,34.853,21.607,34.853,48.27
-          	C440.104,423.863,424.5,445.479,405.252,445.479z M366.478,522.968c-9.136,0-27.289,0.021-46.478,0.04
-          	c-19.208-0.02-37.361-0.04-46.487-0.04c-40.376,0-200.25-3.085-200.25-195.802c0-44.348,15.207-76.792,40.077-103.803
-          	c-3.971-9.793-4.17-65.446,17.009-118.711c0,0,48.577,5.324,122.075,55.753c15.406-4.249,41.491-6.369,67.576-6.369
-          	c26.055,0,52.15,2.109,67.576,6.369c73.488-50.429,122.056-55.753,122.056-55.753c21.179,53.265,20.979,108.918,17.019,118.711
-          	c24.881,27.011,40.088,59.476,40.088,103.803C566.738,519.883,406.844,522.968,366.478,522.968z"></path>
-        </svg>
-      </a>
-      <a href="https://twitter.com/RichPlastow"
-         title="Visit my Twitter feed, @RichPlastow">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 640 640">
-          <path d="M582.032,151.147c-19.283,8.533-39.896,14.296-61.616,16.955
-          	c22.164-13.299,39.23-34.354,47.209-59.399c-20.724,12.301-43.663,21.277-68.154,26.043c-19.615-20.945-47.543-34.022-78.351-34.022
-          	c-59.289,0-107.274,48.097-107.274,107.386c0,8.422,0.886,16.623,2.771,24.491c-89.211-4.433-168.338-47.209-221.198-112.262
-          	c-9.199,15.848-14.519,34.354-14.519,53.971c0,37.235,19.062,70.149,47.875,89.432c-17.731-0.443-34.354-5.319-48.762-13.409
-          	c0,0.443,0,0.887,0,1.33c0,52.086,37.015,95.416,86.108,105.28c-8.978,2.438-18.507,3.767-28.26,3.767
-          	c-6.871,0-13.63-0.664-20.169-1.994c13.631,42.666,53.305,73.696,100.293,74.582c-36.682,28.813-83.006,45.991-133.317,45.991
-          	c-8.645,0-17.178-0.555-25.601-1.551c47.32,30.808,103.729,48.539,164.237,48.539c197.594,0,305.533-163.683,305.533-305.645
-          	c0-4.654-0.11-9.309-0.332-13.853C549.45,191.597,567.625,172.757,582.032,151.147z"></path>
-        </svg>
-      </a>
     </span>
-    <a class="hidden-sm-up menu-btn">
+    <span class="hidden-xs-down">
+      rich<span class="at"><span style="display:none">_ma_ling</span><img src="asset/font/at-sign-light.svg" alt="AT"></span>richplastow.com
+    </span>
+  </a>
+  <span class="col-sm-4 social-icons">
+    <a href="https://www.linkedin.com/in/richardplastow/"
+       title="Visit my LinkedIn profile">
       <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 640 640">
-        <rect x="80" y="115" width="480" height="40"></rect>
-        <rect x="80" y="300" width="480" height="40"></rect>
-        <rect x="80" y="480" width="480" height="40"></rect>
+      	<rect x="113.353" y="239.96" width="93.349" height="280.046"></rect>
+      	<path d="M160.027,202.619c-30.335,0-56.007-25.67-56.007-56.004c0-30.335,25.672-56.006,56.007-56.006
+      		c30.334,0,56.004,25.671,56.004,56.006C216.031,176.949,190.361,202.619,160.027,202.619z"></path>
+      	<path d="M533.418,520.006H440.07V379.984c0-37.342-9.334-74.684-46.674-74.684
+      		c-37.341,0-46.674,37.342-46.674,74.684v140.021h-93.348V239.96h93.348v32.672h4.672c11.667-23.339,42.002-42.005,77.008-42.005
+      		c86.351,0,105.016,56.01,105.016,126.019V520.006z"></path>
       </svg>
     </a>
-  </footer>
-
-
-</div><!--.container-fluid -->
+    <a href="https://github.com/richplastow"
+       title="Check out my GitHub projects">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 640 640">
+        <path d="M320.736,311.133c-0.229,0-0.497-0.01-0.736-0.02c-0.259,0.01-0.518,0.02-0.756,0.02
+        	c-63.237,0-118.961-16.013-151.893,14.223c-19.726,18.152-28.046,40.008-28.046,63.535c0,98.318,78.772,110.391,179.929,110.391
+        	h1.502c101.166,0,179.938-12.082,179.938-110.391c0-23.547-8.319-45.383-28.045-63.535
+        	C439.687,295.12,383.983,311.133,320.736,311.133z M234.729,445.479c-19.248,0-34.853-21.616-34.853-48.269
+        	c0-26.662,15.604-48.27,34.853-48.27s34.873,21.607,34.873,48.27C269.602,423.863,253.977,445.479,234.729,445.479z
+        	 M405.252,445.479c-19.248,0-34.873-21.616-34.873-48.269c0-26.662,15.625-48.27,34.873-48.27c19.237,0,34.853,21.607,34.853,48.27
+        	C440.104,423.863,424.5,445.479,405.252,445.479z M366.478,522.968c-9.136,0-27.289,0.021-46.478,0.04
+        	c-19.208-0.02-37.361-0.04-46.487-0.04c-40.376,0-200.25-3.085-200.25-195.802c0-44.348,15.207-76.792,40.077-103.803
+        	c-3.971-9.793-4.17-65.446,17.009-118.711c0,0,48.577,5.324,122.075,55.753c15.406-4.249,41.491-6.369,67.576-6.369
+        	c26.055,0,52.15,2.109,67.576,6.369c73.488-50.429,122.056-55.753,122.056-55.753c21.179,53.265,20.979,108.918,17.019,118.711
+        	c24.881,27.011,40.088,59.476,40.088,103.803C566.738,519.883,406.844,522.968,366.478,522.968z"></path>
+      </svg>
+    </a>
+    <a href="https://twitter.com/RichPlastow"
+       title="Visit my Twitter feed, @RichPlastow">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 640 640">
+        <path d="M582.032,151.147c-19.283,8.533-39.896,14.296-61.616,16.955
+        	c22.164-13.299,39.23-34.354,47.209-59.399c-20.724,12.301-43.663,21.277-68.154,26.043c-19.615-20.945-47.543-34.022-78.351-34.022
+        	c-59.289,0-107.274,48.097-107.274,107.386c0,8.422,0.886,16.623,2.771,24.491c-89.211-4.433-168.338-47.209-221.198-112.262
+        	c-9.199,15.848-14.519,34.354-14.519,53.971c0,37.235,19.062,70.149,47.875,89.432c-17.731-0.443-34.354-5.319-48.762-13.409
+        	c0,0.443,0,0.887,0,1.33c0,52.086,37.015,95.416,86.108,105.28c-8.978,2.438-18.507,3.767-28.26,3.767
+        	c-6.871,0-13.63-0.664-20.169-1.994c13.631,42.666,53.305,73.696,100.293,74.582c-36.682,28.813-83.006,45.991-133.317,45.991
+        	c-8.645,0-17.178-0.555-25.601-1.551c47.32,30.808,103.729,48.539,164.237,48.539c197.594,0,305.533-163.683,305.533-305.645
+        	c0-4.654-0.11-9.309-0.332-13.853C549.45,191.597,567.625,172.757,582.032,151.147z"></path>
+      </svg>
+    </a>
+  </span>
+</footer>
 
 
 
