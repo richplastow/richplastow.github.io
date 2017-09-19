@@ -1,4 +1,4 @@
-/* rpcom.css 1.0.1 */
+/* rpcom.css 1.0.2 */
 
 
 
@@ -108,6 +108,7 @@ h1, .h1 {
 h2, .h2,
 h3, .h3 {
     margin-top: 0.5em;
+    margin-left: -0.05em;
 }
 h3, h4 {
     font-size: 1.491em;
@@ -237,14 +238,16 @@ dt.col-sm-2 {
 dd {
     margin: 0;
 }
+@media (max-width: 575px) {
+    dt.col-sm-2 {
+        margin-top: 0.2em;
+        margin-bottom: -0.15em;
+        text-align: left;
+    }
+}
 @media (min-width: 576px) {
     dt.col-sm-2 {
         padding: 0 0.7em 0 0;
-    }
-}
-@media (max-width: 575px) {
-    dt.col-sm-2 {
-        text-align: left;
     }
 }
 dt.col-sm-2 >* {
@@ -279,7 +282,7 @@ dd .rpcom-slug {
     }
 }
 
-.icon >a {
+#icon-share >a, #icon-menu >a {
     position: fixed;
     top: 0;
     cursor: pointer; /* prevent occasional Firefox jitter */
@@ -290,7 +293,7 @@ dd .rpcom-slug {
 }
 #icon-menu  >a {
     left: 0;
-    padding-top: 0.2em;
+    padding: 0.2em 2em 1.3em 0;
 }
 .icon >a svg {
     width:  32px;
@@ -350,22 +353,21 @@ dd .rpcom-slug {
 }
 
 body.show-menu .menu-btn svg rect:nth-child(1) {
-    -webkit-transform: rotate(45deg) scale(1.2, 1) translate(-150px, 90px);
-            transform: rotate(45deg) scale(1.2, 1) translate(-150px, 90px);
+    -webkit-transform: rotate(45deg) scale(1.2, 1) translate(-90px, 30px);
+            transform: rotate(45deg) scale(1.2, 1) translate(-90px, 30px);
 }
 body.show-menu .menu-btn svg rect:nth-child(2) {
     -webkit-transform: scale(0.5,0);
             transform: scale(0.5,0);
 }
 body.show-menu .menu-btn svg rect:nth-child(3) {
-    -webkit-transform: rotate(-45deg) scale(1.2, 1) translate(0, -400px);
-            transform: rotate(-45deg) scale(1.2, 1) translate(0, -400px);
+    -webkit-transform: rotate(-45deg) scale(1.2, 1) translate(50px, -320px);
+            transform: rotate(-45deg) scale(1.2, 1) translate(50px, -320px);
 }
 body.show-menu .menu-btn.hidden-sm-up svg rect:nth-child(3) {
-    -webkit-transform: rotate(-45deg) scale(1.2, 1) translate(60px, -420px);
-            transform: rotate(-45deg) scale(1.2, 1) translate(60px, -420px);
+    -webkit-transform: rotate(-45deg) scale(1.2, 1) translate(115px, -355px);
+            transform: rotate(-45deg) scale(1.2, 1) translate(115px, -355px);
 }
-
 
 
 
@@ -379,11 +381,20 @@ body.show-menu .menu-btn.hidden-sm-up svg rect:nth-child(3) {
     bottom: 0;
     margin-left: -15em;
     width: 15em;
+    text-align: right;
     overflow: auto;
     opacity: 0;
+    -webkit-backface-visibility: hidden;
     z-index: 99;
     transition: margin-left 0.5s, opacity 0.5s, width 0.5s;
 }
+
+@media (min-width: 576px) and (max-width: 767px) {
+    #menu {
+        font-size: 1.5em;
+    }
+}
+
 .container-fluid {
     transition: 0.5s;
 }
@@ -395,7 +406,7 @@ body.show-menu .menu-btn.hidden-sm-up svg rect:nth-child(3) {
 }
 #menu li {
     list-style: none;
-    padding: 0.3em 0 0 0;
+    padding: 0.3em 0.5em 0 0;
 }
 #menu li a {
     display: block;
@@ -413,25 +424,33 @@ body.show-menu #menu {
 @media (max-width: 575px) {
     body.show-menu #menu {
         bottom: 3em;
-        width: 70%;
     }
     body.show-menu .container-fluid {
-        -webkit-transform: translateX(70%);
-                transform: translateX(70%);
+        -webkit-transform: translateX(15em);
+                transform: translateX(15em);
     }
 }
-@media (min-width: 576px) {
+@media (min-width: 576px) and (max-width: 767px) {
+    #menu {
+        font-size: 1.5em;
+    }
     body.show-menu .container-fluid {
-        -webkit-transform: translateX(10em);
-                transform: translateX(10em);
+        -webkit-transform: translateX(18.5em);
+                transform: translateX(18.5em);
     }
     body.show-menu #foot {
+        -webkit-transform: translateX(22.5em);
+                transform: translateX(22.5em);
+    }
+}
+@media (min-width: 768px) {
+    body.show-menu .container-fluid {
         -webkit-transform: translateX(12em);
                 transform: translateX(12em);
     }
-    body.show-menu #icon-menu >a {
-        -webkit-transform: translateX(15em);
-                transform: translateX(15em);
+    body.show-menu #foot {
+        -webkit-transform: translateX(14em);
+                transform: translateX(14em);
     }
 }
 
@@ -442,7 +461,7 @@ body.show-menu #menu {
 
 #cover {
     position: fixed;
-    top: 0;
+    top: -10em; /* not 0, for Android Chrome */
     bottom: 0;
     left: 0;
     right: 0;
@@ -651,6 +670,11 @@ html.I4.logo-FIN #intro { /* show the intro-text when the fonts are loaded and t
 #case-studies h2 {
     margin-bottom: 0;
 }
+@media (max-width: 575px) {
+    #case-studies h2 {
+        margin-top: 0;
+    }
+}
 .case-studies-lower b {
     display: inline-block;
     margin-top: 2.7em;
@@ -707,6 +731,7 @@ figure.carousel-image img {
     cursor: default;
     z-index: 90;
     pointer-events: none;
+    -webkit-backface-visibility: hidden;
     transition: 0.5s;
 }
 #foot:hover {
@@ -779,6 +804,14 @@ figure.carousel-image img {
 #foot a:hover svg {
     -webkit-transform: scale(1.1, 1.1);
             transform: scale(1.1, 1.1);
+}
+body.show-menu #foot a.menu-btn svg {
+    -webkit-transform: translateY(0.1em);
+            transform: translateY(0.1em);
+}
+body.show-menu #foot a.menu-btn:hover svg {
+    -webkit-transform: translateY(0.1em) scale(1.1, 1.1);
+            transform: translateY(0.1em) scale(1.1, 1.1);
 }
 #foot a rect,
 #foot a path {
