@@ -1,4 +1,4 @@
-/* rpcom.css 1.0.2 */
+/* rpcom.css 1.0.3 */
 
 
 
@@ -7,6 +7,13 @@
 
 /* print */
 @media print {
+    html {
+        font-size: 0.77rem;
+    }
+}
+
+/* xxs */
+@media screen and (max-width: 360px) {
     html {
         font-size: 0.77rem;
     }
@@ -66,6 +73,25 @@ html {
     overflow-x: hidden;
     /*overflow-y: hidden; @TODO reinstate for splash-load */
 }
+section {
+    padding-top: 1.7em;
+}
+#content {
+    padding-bottom: 4em;
+}
+@media screen and (max-width: 575px) {
+    #content {
+        margin-left: 24px;
+    }
+    section {
+        padding-top: 1.1em;
+    }
+}
+@media screen and (max-width: 360px) {
+    section {
+        padding-top: 1.65em;
+    }
+}
 /* @TODO reinstate
 html.I4.JS {
     overflow-y: auto;
@@ -87,7 +113,9 @@ html.B4-JS .hidden-B4-JS {
     visibility: hidden; /* hide until the site’s JavaScript is ready * /
 }
 */
-
+.nowrap {
+    white-space: nowrap;
+}
 
 
 
@@ -284,7 +312,7 @@ dd .rpcom-slug {
 
 #icon-share >a, #icon-menu >a {
     position: fixed;
-    top: 0;
+    top: 2em;
     cursor: pointer; /* prevent occasional Firefox jitter */
     z-index: 999;
 }
@@ -377,7 +405,7 @@ body.show-menu .menu-btn.hidden-sm-up svg rect:nth-child(3) {
 
 #menu {
     position: fixed;
-    top: 0;
+    top: 2em;
     bottom: 0;
     margin-left: -15em;
     width: 15em;
@@ -423,7 +451,7 @@ body.show-menu #menu {
 }
 @media (max-width: 575px) {
     body.show-menu #menu {
-        bottom: 3em;
+        top: 2em;
     }
     body.show-menu .container-fluid {
         -webkit-transform: translateX(15em);
@@ -479,39 +507,6 @@ body.show-menu #cover {
 
 
 
-/* MENU */
-
-/*
-#menu {
-    background: cyan;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 100%;
-    width: 100%;
-    z-index: 99;
-    transition: left 0.5s, margin-left 0.5s;
-}
-.container-fluid {
-    transition: transform 0.5s;
-}
-@media (max-width: 575px) {
-    body.show-menu #menu {
-        left: 0;
-    }
-}
-@media (min-width: 576px) {
-    body.show-menu #menu {
-        margin-left: 15em;
-    }
-    body.show-menu .container-fluid {
-        transform: translateX(15em);
-    }
-}
-*/
-
-
-
 /* TOP (LOGO + INTRO) */
 
 #top {
@@ -519,12 +514,12 @@ body.show-menu #cover {
 }
 @media screen and (max-width: 575px) {
     #top {
-        padding-top: 20vh;
+        /*padding-top: 20vh;*/
     }
 }
 @media screen and (min-width: 576px) {
     #top {
-        padding-top: 30vh;
+        /*padding-top: 30vh;*/
         margin-left: -1.25em;
     }
 }
@@ -703,15 +698,6 @@ figure.carousel-image img {
 
 
 
-/* CONTACT */
-
-#contact {
-    margin-bottom: 6em;
-}
-
-
-
-
 /* FOOT */
 
 @media print {
@@ -721,17 +707,10 @@ figure.carousel-image img {
 }
 
 #foot {
-    position: fixed;
-    margin: 0;
-    bottom: 0;
     background: #222;
     color: #ddd;
-    letter-spacing: 1px;
-    text-transform: uppercase;
     cursor: default;
-    z-index: 90;
     pointer-events: none;
-    -webkit-backface-visibility: hidden;
     transition: 0.5s;
 }
 #foot:hover {
@@ -745,34 +724,46 @@ figure.carousel-image img {
 #foot a:hover {
     color: #fff!important;
 }
+#foot p {
+    width: 100%;
+    padding: 0 1em;
+    text-align: center;
+    font-size: 0.8em;
+}
 @media screen and (max-width: 575px) {
-    #foot {
+    #foot >div {
         display: table;
         left: 0;
         width: 100%;
-        z-index: 100;
     }
-    #foot a {
+    #foot >div .social-icons {
+        display: table-row;
+        width: 100%;
+        padding: 0;
+    }
+    #foot >div .social-icons a {
         display: table-cell;
-        width: 16.66%;
+        width: 25%;
         text-align: center;
         font-size: 1.333em;
-    }
-    #foot .social-icons {
-        display: table-cell;
-        width: 50%;
-        padding: 0;
     }
 }
 @media (min-width: 576px) {
     #foot {
-        left: 3em;
-        right: 3em;
+        margin: 0 3.5em;
         border-radius: 0.3em 0.3em 0 0;
+    }
+    #foot >div {
+        width: 100%;
     }
     #foot .social-icons {
         text-align: right;
         float: right; /* IE10 fix */
+    }
+    #foot .ma_ling {
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding-left: 1.5em;
     }
 }
 @media (min-width: 576px) and (max-width: 767px) { /* sm */
@@ -786,7 +777,7 @@ figure.carousel-image img {
     }
 }
 @media (min-width: 992px) { /* lg xl /*/
-    #foot {
+    #foot .ma_ling {
         letter-spacing: 2px;
     }
     #foot a {

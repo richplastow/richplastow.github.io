@@ -105,7 +105,7 @@ l('I4-ok',function(){c.remove('B4-I4'),c.add('I4')});l('JS-ok',function(){c.remo
     </a>
   </div><!- -#icon-share -->
 
-  <div id="icon-menu" class="menu-btn icon hidden-xs-down">
+  <div id="icon-menu" class="menu-btn icon">
     <a title="Open the navigation menu">
       <svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640">
         <rect x="120" y="120" width="520" height="40"></rect>
@@ -136,6 +136,7 @@ l('I4-ok',function(){c.remove('B4-I4'),c.add('I4')});l('JS-ok',function(){c.remo
         <li><a tabindex="-1" target="_self" href="#graphic-design"            title="Projects from my days as a graphic designer">Graphic design</a></li>
         <li><a tabindex="-1" target="_self" href="#clients"                   title="Who I’ve worked with">Clients</a></li>
         <li><a tabindex="-1" target="_self" href="#skills-and-qualifications" title="How I make what I make">Skills and qualifications</a></li>
+        <li><a tabindex="-1" target="_self" href="#contact"                   title="Let’s get in touch!">Contact</a></li>
         <li><hr></li>
         <li><a tabindex="-1" target="_self" href="#bar-sim-game"              title="A multiplayer training game in a simulated bar">Bar Sim Game</a></li>
         <!-- <li><a tabindex="-1" target="_self" href="#edf-efr"                   title="Animated interactive 3D guide with minigames">EDF EFR</a></li> -->
@@ -143,8 +144,6 @@ l('I4-ok',function(){c.remove('B4-I4'),c.add('I4')});l('JS-ok',function(){c.remo
         <li><a tabindex="-1" target="_self" href="#looptopia"                 title="An otherworldly musical experience">Looptopia</a></li>
         <li><a tabindex="-1" target="_self" href="#aatc"                      title="A lightweight, easy-to-update, responsive website">Responsive website refresh</a></li>
         <li><a tabindex="-1" target="_self" href="#dream-vacation"            title="Holiday designer and competition">Win Your Dream Vacation</a></li>
-        <li><hr></li>
-        <li><a tabindex="-1" target="_self" href="#contact"                   title="Let’s get in touch!">Contact</a></li>
       </ul>
     </div>
   </nav><!--#menu -->
@@ -161,7 +160,7 @@ l('I4-ok',function(){c.remove('B4-I4'),c.add('I4')});l('JS-ok',function(){c.remo
 <div id="content" class="container-fluid"><!-- full width layout, lets carousel images reach to window edges -->
 
 
-  <header class="container"><!-- fixed width -->
+  <header class="container" id="about"><!-- fixed width -->
     <div class="row" id="top">
 
       <figure id="logo" class="col-sm-4">
@@ -221,7 +220,7 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
           <a href="https://en.wikipedia.org/wiki/Web_application" title="Find out about web applications">web application</a>
           <a href="https://en.wikipedia.org/wiki/Web_developer" title="Find out about web developers">developer</a>
           with twenty years’ experience working for digital
-          agencies and publishing houses <span style="white-space:nowrap">in London</span> and Brighton.
+          agencies and publishing houses <span class="nowrap">in London</span> and Brighton.
         </p>
       </div>
 
@@ -234,7 +233,7 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
 
   <div id="main" class="container">
 
-    <section class="row" id="about">
+    <section class="row">
       <div class="col-sm-10 offset-sm-2">
         <div style="clear:both"></div><!-- fix Chrome print bug -->
         <h2>About</h2>
@@ -261,7 +260,7 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
 
         <!-- <p>People hire me because I’m friendly, committed and professional, with a broad range of skills and an excellent eye for detail.</p> -->
 
-        <p>I am available for freelance and contract projects, working in-house or remotely.
+        <p style="margin-bottom:0">I am available for freelance and contract projects, working in-house or remotely.
           Please <a target="_self" href="#contact" title="Contact Rich Plastow">contact me</a>
           if you would like to discuss a project.
         </p>
@@ -466,6 +465,31 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
     </section><!--#skills-and-qualifications -->
 
 
+    <section id="contact">
+      <div class="row">
+        <h2 class="col-sm-10 offset-sm-2">Contact</h2>
+      </div>
+      <dl class="row">
+        <dt class="col-sm-2"><b>Email</b></dt>
+        <dd class="col-sm-10">
+          <a class="ma_ling" title="Drop me an email" href="mailto:rich_ma_ling@richplastow.com">rich<span class="at"><span style="display:none">_ma_ling</span><img src="asset/font/at-sign-dark.svg" alt="AT"></span>richplastow.com</a>
+        </dd>
+        <dt class="col-sm-2"><b>LinkedIn</b></dt>
+        <dd class="col-sm-10">
+          <a title="Visit my LinkedIn profile" href="https://linkedin.com/in/richardplastow">richardplastow</a>
+        </dd>
+        <dt class="col-sm-2"><b>GitHub</b></dt>
+        <dd class="col-sm-10">
+          <a title="Check out my GitHub projects" href="https://github.com/richplastow">richplastow</a>
+        </dd>
+        <dt class="col-sm-2"><b>Twitter</b></dt>
+        <dd class="col-sm-10">
+          <a title="Visit my Twitter feed, @RichPlastow" href="https://twitter.com/RichPlastow">@RichPlastow</a>
+        </dd>
+      </dl>
+    </section><!--#contact -->
+
+
   </div><!--#main -->
 
 
@@ -473,7 +497,7 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
 
   <section id="case-studies">
 
-    <article id="bar-sim-game">
+    <article id="bar-sim-game" style="padding-top:0">
 
       <div class="container">
 
@@ -1155,35 +1179,6 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
   </section><!--#case-studies -->
 
 
-
-
-  <div id="contact" class="container">
-    <section>
-      <div class="row">
-        <h2 class="col-sm-10 offset-sm-2">Contact</h2>
-      </div>
-      <dl class="row">
-        <dt class="col-sm-2"><b>Profile</b></dt>
-        <dd class="col-sm-10">
-          <a title="Visit my LinkedIn profile" href="https://linkedin.com/in/richardplastow">linkedin.com/in/richardplastow</a>
-        </dd>
-        <dt class="col-sm-2"><b>Email</b></dt>
-        <dd class="col-sm-10">
-          <a class="ma_ling" title="Drop me an email" href="mailto:rich_ma_ling@richplastow.com">rich<span class="at"><span style="display:none">_ma_ling</span><img src="asset/font/at-sign-dark.svg" alt="AT"></span>richplastow.com</a>
-        </dd>
-        <dt class="col-sm-2"><b>GitHub</b></dt>
-        <dd class="col-sm-10">
-          <a title="Check out my GitHub projects" href="https://github.com/richplastow">github.com/richplastow</a>
-        </dd>
-        <dt class="col-sm-2"><b>Twitter</b></dt>
-        <dd class="col-sm-10">
-          <a title="Visit my Twitter feed, @RichPlastow" href="https://twitter.com/RichPlastow">twitter.com/RichPlastow</a>
-        </dd>
-      </dl>
-    </section>
-  </div><!--#contact -->
-
-
 </div><!--#content -->
 
 
@@ -1191,83 +1186,92 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
 
 
 <footer id="foot" class="row">
-  <!-- @TODO reinstate
-  <a class="hidden-sm-up share-btn">
-    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 640 640">
-      <rect x="300" y="60" width="40" height="260"></rect>
-      <rect x="176.362" y="149.827" width="40" height="260" transform="matrix(0.309 -0.9511 0.9511 0.309 -130.4483 380.1062)" ></rect>
-      <rect x="223.585" y="295.171" width="40" height="260" transform="matrix(-0.809 -0.5878 0.5878 -0.809 190.7417 912.319)" ></rect>
-      <rect x="376.409" y="295.174" width="40" height="260" transform="matrix(-0.809 0.5878 -0.5878 -0.809 967.0228 536.1422)"></rect>
-      <rect x="423.636" y="149.829" width="40" height="260" transform="matrix(0.309 0.9511 -0.9511 0.309 572.6817 -228.5656)" ></rect>
-    </svg>
-  </a>
-  -->
-  <a class="hidden-sm-up icon menu-btn"
-     title="Open the navigation menu">
-    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 640 640">
-      <rect x="80" y="115" width="480" height="40"></rect>
-      <rect x="80" y="300" width="480" height="40"></rect>
-      <rect x="80" y="480" width="480" height="40"></rect>
-    </svg>
-  </a>
-  <a class="col-sm-8 ma_ling" href="mailto:rich_ma_ling@richplastow.com"
-     title="Drop me an email">
-    <span class="hidden-sm-up">
+  <div><!-- CSS table, at narrow window-widths -->
+    <!-- @TODO reinstate
+    <a class="hidden-sm-up share-btn">
       <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 640 640">
-        <rect x="80"  y="480" width="480" height="40"></rect>
-        <rect x="80"  y="120" width="480" height="40"></rect>
-        <rect x="80"  y="120" width="40" height="400"></rect>
-        <rect x="520" y="120" width="40" height="400"></rect>
-      	<path d="M292.858,381.77c7.137,6.582,16.667,10.606,27.142,10.606c10.473,0,20.002-4.023,27.138-10.603
-      		l198.953-166.409l-25.664-30.68L320,352.324h0l-200.674-167.89l-25.664,30.68L292.858,381.77z"></path>
+        <rect x="300" y="60" width="40" height="260"></rect>
+        <rect x="176.362" y="149.827" width="40" height="260" transform="matrix(0.309 -0.9511 0.9511 0.309 -130.4483 380.1062)" ></rect>
+        <rect x="223.585" y="295.171" width="40" height="260" transform="matrix(-0.809 -0.5878 0.5878 -0.809 190.7417 912.319)" ></rect>
+        <rect x="376.409" y="295.174" width="40" height="260" transform="matrix(-0.809 0.5878 -0.5878 -0.809 967.0228 536.1422)"></rect>
+        <rect x="423.636" y="149.829" width="40" height="260" transform="matrix(0.309 0.9511 -0.9511 0.309 572.6817 -228.5656)" ></rect>
       </svg>
+    </a>
+    <a class="hidden-sm-up icon menu-btn"
+       title="Open the navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 640 640">
+        <rect x="80" y="115" width="480" height="40"></rect>
+        <rect x="80" y="300" width="480" height="40"></rect>
+        <rect x="80" y="480" width="480" height="40"></rect>
+      </svg>
+    </a>
+    -->
+    <a class="col-sm-8 ma_ling hidden-xs-down" href="mailto:rich_ma_ling@richplastow.com"
+       title="Drop me an email">
+      <span>
+        rich<span class="at"><span style="display:none">_ma_ling</span><img src="asset/font/at-sign-light.svg" alt="AT"></span>richplastow.com
+      </span>
+    </a>
+    <span class="col-sm-4 social-icons">
+      <a href="mailto:rich_ma_ling@richplastow.com"
+        title="Drop me an email">
+        <span class="hidden-sm-up">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 640 640">
+            <rect x="80"  y="480" width="480" height="40"></rect>
+            <rect x="80"  y="120" width="480" height="40"></rect>
+            <rect x="80"  y="120" width="40" height="400"></rect>
+            <rect x="520" y="120" width="40" height="400"></rect>
+          	<path d="M292.858,381.77c7.137,6.582,16.667,10.606,27.142,10.606c10.473,0,20.002-4.023,27.138-10.603
+          		l198.953-166.409l-25.664-30.68L320,352.324h0l-200.674-167.89l-25.664,30.68L292.858,381.77z"></path>
+          </svg>
+        </span>
+      </a>
+      <a href="https://www.linkedin.com/in/richardplastow/"
+         title="Visit my LinkedIn profile">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 640 640">
+        	<rect x="113.353" y="239.96" width="93.349" height="280.046"></rect>
+        	<path d="M160.027,202.619c-30.335,0-56.007-25.67-56.007-56.004c0-30.335,25.672-56.006,56.007-56.006
+        		c30.334,0,56.004,25.671,56.004,56.006C216.031,176.949,190.361,202.619,160.027,202.619z"></path>
+        	<path d="M533.418,520.006H440.07V379.984c0-37.342-9.334-74.684-46.674-74.684
+        		c-37.341,0-46.674,37.342-46.674,74.684v140.021h-93.348V239.96h93.348v32.672h4.672c11.667-23.339,42.002-42.005,77.008-42.005
+        		c86.351,0,105.016,56.01,105.016,126.019V520.006z"></path>
+        </svg>
+      </a>
+      <a href="https://github.com/richplastow"
+         title="Check out my GitHub projects">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 640 640">
+          <path d="M320.736,311.133c-0.229,0-0.497-0.01-0.736-0.02c-0.259,0.01-0.518,0.02-0.756,0.02
+          	c-63.237,0-118.961-16.013-151.893,14.223c-19.726,18.152-28.046,40.008-28.046,63.535c0,98.318,78.772,110.391,179.929,110.391
+          	h1.502c101.166,0,179.938-12.082,179.938-110.391c0-23.547-8.319-45.383-28.045-63.535
+          	C439.687,295.12,383.983,311.133,320.736,311.133z M234.729,445.479c-19.248,0-34.853-21.616-34.853-48.269
+          	c0-26.662,15.604-48.27,34.853-48.27s34.873,21.607,34.873,48.27C269.602,423.863,253.977,445.479,234.729,445.479z
+          	 M405.252,445.479c-19.248,0-34.873-21.616-34.873-48.269c0-26.662,15.625-48.27,34.873-48.27c19.237,0,34.853,21.607,34.853,48.27
+          	C440.104,423.863,424.5,445.479,405.252,445.479z M366.478,522.968c-9.136,0-27.289,0.021-46.478,0.04
+          	c-19.208-0.02-37.361-0.04-46.487-0.04c-40.376,0-200.25-3.085-200.25-195.802c0-44.348,15.207-76.792,40.077-103.803
+          	c-3.971-9.793-4.17-65.446,17.009-118.711c0,0,48.577,5.324,122.075,55.753c15.406-4.249,41.491-6.369,67.576-6.369
+          	c26.055,0,52.15,2.109,67.576,6.369c73.488-50.429,122.056-55.753,122.056-55.753c21.179,53.265,20.979,108.918,17.019,118.711
+          	c24.881,27.011,40.088,59.476,40.088,103.803C566.738,519.883,406.844,522.968,366.478,522.968z"></path>
+        </svg>
+      </a>
+      <a href="https://twitter.com/RichPlastow"
+         title="Visit my Twitter feed, @RichPlastow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 640 640">
+          <path d="M582.032,151.147c-19.283,8.533-39.896,14.296-61.616,16.955
+          	c22.164-13.299,39.23-34.354,47.209-59.399c-20.724,12.301-43.663,21.277-68.154,26.043c-19.615-20.945-47.543-34.022-78.351-34.022
+          	c-59.289,0-107.274,48.097-107.274,107.386c0,8.422,0.886,16.623,2.771,24.491c-89.211-4.433-168.338-47.209-221.198-112.262
+          	c-9.199,15.848-14.519,34.354-14.519,53.971c0,37.235,19.062,70.149,47.875,89.432c-17.731-0.443-34.354-5.319-48.762-13.409
+          	c0,0.443,0,0.887,0,1.33c0,52.086,37.015,95.416,86.108,105.28c-8.978,2.438-18.507,3.767-28.26,3.767
+          	c-6.871,0-13.63-0.664-20.169-1.994c13.631,42.666,53.305,73.696,100.293,74.582c-36.682,28.813-83.006,45.991-133.317,45.991
+          	c-8.645,0-17.178-0.555-25.601-1.551c47.32,30.808,103.729,48.539,164.237,48.539c197.594,0,305.533-163.683,305.533-305.645
+          	c0-4.654-0.11-9.309-0.332-13.853C549.45,191.597,567.625,172.757,582.032,151.147z"></path>
+        </svg>
+      </a>
     </span>
-    <span class="hidden-xs-down">
-      rich<span class="at"><span style="display:none">_ma_ling</span><img src="asset/font/at-sign-light.svg" alt="AT"></span>richplastow.com
-    </span>
-  </a>
-  <span class="col-sm-4 social-icons">
-    <a href="https://www.linkedin.com/in/richardplastow/"
-       title="Visit my LinkedIn profile">
-      <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 640 640">
-      	<rect x="113.353" y="239.96" width="93.349" height="280.046"></rect>
-      	<path d="M160.027,202.619c-30.335,0-56.007-25.67-56.007-56.004c0-30.335,25.672-56.006,56.007-56.006
-      		c30.334,0,56.004,25.671,56.004,56.006C216.031,176.949,190.361,202.619,160.027,202.619z"></path>
-      	<path d="M533.418,520.006H440.07V379.984c0-37.342-9.334-74.684-46.674-74.684
-      		c-37.341,0-46.674,37.342-46.674,74.684v140.021h-93.348V239.96h93.348v32.672h4.672c11.667-23.339,42.002-42.005,77.008-42.005
-      		c86.351,0,105.016,56.01,105.016,126.019V520.006z"></path>
-      </svg>
-    </a>
-    <a href="https://github.com/richplastow"
-       title="Check out my GitHub projects">
-      <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 640 640">
-        <path d="M320.736,311.133c-0.229,0-0.497-0.01-0.736-0.02c-0.259,0.01-0.518,0.02-0.756,0.02
-        	c-63.237,0-118.961-16.013-151.893,14.223c-19.726,18.152-28.046,40.008-28.046,63.535c0,98.318,78.772,110.391,179.929,110.391
-        	h1.502c101.166,0,179.938-12.082,179.938-110.391c0-23.547-8.319-45.383-28.045-63.535
-        	C439.687,295.12,383.983,311.133,320.736,311.133z M234.729,445.479c-19.248,0-34.853-21.616-34.853-48.269
-        	c0-26.662,15.604-48.27,34.853-48.27s34.873,21.607,34.873,48.27C269.602,423.863,253.977,445.479,234.729,445.479z
-        	 M405.252,445.479c-19.248,0-34.873-21.616-34.873-48.269c0-26.662,15.625-48.27,34.873-48.27c19.237,0,34.853,21.607,34.853,48.27
-        	C440.104,423.863,424.5,445.479,405.252,445.479z M366.478,522.968c-9.136,0-27.289,0.021-46.478,0.04
-        	c-19.208-0.02-37.361-0.04-46.487-0.04c-40.376,0-200.25-3.085-200.25-195.802c0-44.348,15.207-76.792,40.077-103.803
-        	c-3.971-9.793-4.17-65.446,17.009-118.711c0,0,48.577,5.324,122.075,55.753c15.406-4.249,41.491-6.369,67.576-6.369
-        	c26.055,0,52.15,2.109,67.576,6.369c73.488-50.429,122.056-55.753,122.056-55.753c21.179,53.265,20.979,108.918,17.019,118.711
-        	c24.881,27.011,40.088,59.476,40.088,103.803C566.738,519.883,406.844,522.968,366.478,522.968z"></path>
-      </svg>
-    </a>
-    <a href="https://twitter.com/RichPlastow"
-       title="Visit my Twitter feed, @RichPlastow">
-      <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 640 640">
-        <path d="M582.032,151.147c-19.283,8.533-39.896,14.296-61.616,16.955
-        	c22.164-13.299,39.23-34.354,47.209-59.399c-20.724,12.301-43.663,21.277-68.154,26.043c-19.615-20.945-47.543-34.022-78.351-34.022
-        	c-59.289,0-107.274,48.097-107.274,107.386c0,8.422,0.886,16.623,2.771,24.491c-89.211-4.433-168.338-47.209-221.198-112.262
-        	c-9.199,15.848-14.519,34.354-14.519,53.971c0,37.235,19.062,70.149,47.875,89.432c-17.731-0.443-34.354-5.319-48.762-13.409
-        	c0,0.443,0,0.887,0,1.33c0,52.086,37.015,95.416,86.108,105.28c-8.978,2.438-18.507,3.767-28.26,3.767
-        	c-6.871,0-13.63-0.664-20.169-1.994c13.631,42.666,53.305,73.696,100.293,74.582c-36.682,28.813-83.006,45.991-133.317,45.991
-        	c-8.645,0-17.178-0.555-25.601-1.551c47.32,30.808,103.729,48.539,164.237,48.539c197.594,0,305.533-163.683,305.533-305.645
-        	c0-4.654-0.11-9.309-0.332-13.853C549.45,191.597,567.625,172.757,582.032,151.147z"></path>
-      </svg>
-    </a>
-  </span>
+  </div>
+  <p>
+    <span class="nowrap">&copy; 2017 Rich Plastow All Rights Reserved. </span>
+    <span class="nowrap">Screenshots &copy; their respective owners. </span>
+  </p>
 </footer>
 
 
