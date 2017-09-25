@@ -2,7 +2,7 @@ richplastow.github.io
 =====================
 
 + __Last update:__  2017/09/25
-+ __Version:__      1.0.5
++ __Version:__      1.0.6
 
 Portfolio website for Rich Plastow, freelance Web Designer and Web App Developer
 --------------------------------------------------------------------------------
@@ -44,12 +44,12 @@ Icon
 
 Tested
 ------
-+ __Android:__             Browser 4.4+
-+ __iOS 7 (iPhone 5S):__   Safari 7+
-+ __Windows 10:__          Edge 14+, IE 11
++ __Android:__             Browser 4.4
++ __iOS 7 (iPhone 5S):__   Safari 7
++ __Windows 10:__          Edge 14, IE 11
 + __Windows 7:__           IE 10
-+ __Windows XP:__          Firefox 42+, Chrome 36+, Opera 23+
-+ __OS X Mountain Lion:__  Safari 6.2+
++ __Windows XP:__          Firefox 42, Chrome 36, Opera 23
++ __OS X Mountain Lion:__  Safari 6.2
 
 
 Changelog
@@ -78,3 +78,4 @@ Changelog
 + 1.0.3       improved for iOS
 + 1.0.4       complete links in ‘Skills’ section; better footer
 + 1.0.5       prevent devices nudging content horizontally
++ 1.0.6       with CV and case study PDFs
