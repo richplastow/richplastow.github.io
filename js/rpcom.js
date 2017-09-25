@@ -1,4 +1,4 @@
-console.log('RPCOM 1.0.4');
+console.log('RPCOM 1.0.5');
 
 
 //// Polyfill `[].indexOf()`:

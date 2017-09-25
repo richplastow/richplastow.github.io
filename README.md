@@ -2,7 +2,7 @@ richplastow.github.io
 =====================
 
 + __Last update:__  2017/09/25
-+ __Version:__      1.0.4
++ __Version:__      1.0.5
 
 Portfolio website for Rich Plastow, freelance Web Designer and Web App Developer
 --------------------------------------------------------------------------------
@@ -14,7 +14,7 @@ Designed, developed and authored by Rich Plastow.
 
 + __LinkedIn:__     [richardplastow](https://linkedin.com/in/richardplastow)
 + __GitHub:__       [richplastow](https://github.com/richplastow)
-+ __Twitter:__      [@BtnWebVR](https://twitter.com/BtnWebVR)
++ __Twitter:__      [@RichPlastow](https://twitter.com/RichPlastow)
 + __Location:__     Brighton, UK
 
 
@@ -77,3 +77,4 @@ Changelog
 + 1.0.2       improved for mobile devices
 + 1.0.3       improved for iOS
 + 1.0.4       complete links in ‘Skills’ section; better footer
++ 1.0.5       prevent devices nudging content horizontally

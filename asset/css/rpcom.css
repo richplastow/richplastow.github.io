@@ -1,4 +1,4 @@
-/* rpcom.css 1.0.4 */
+/* rpcom.css 1.0.5 */
 
 
 
@@ -72,6 +72,13 @@
 html {
     overflow-x: hidden;
     /*overflow-y: hidden; @TODO reinstate for splash-load */
+}
+body { /* prevent devices nudging content horizontally */
+    overflow: hidden;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 section {
     padding-top: 1.7em;
