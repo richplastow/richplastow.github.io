@@ -13,7 +13,7 @@ Author
 ------
 Created by Rich Plastow, during development of richplastow.com.
 
-+ __LinkedIn:__     [richardplastow](https://linkedin.com/in/richardplastow)
++ __LinkedIn:__     [richardplastow](https://www.linkedin.com/in/richardplastow/)
 + __GitHub:__       [richplastow](https://github.com/richplastow)
 + __Twitter:__      [@BtnWebVR](https://twitter.com/BtnWebVR)
 + __Location:__     Brighton, UK
