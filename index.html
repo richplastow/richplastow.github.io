@@ -89,7 +89,7 @@ l('I4-ok',function(){c.remove('B4-I4'),c.add('I4')});l('JS-ok',function(){c.remo
 </head>
 <body>
 
-<div>
+<div id="navigation">
 
   <!-- SHARE AND MENU -->
   <!-- @TODO reinstate share-menu
@@ -130,7 +130,7 @@ l('I4-ok',function(){c.remove('B4-I4'),c.add('I4')});l('JS-ok',function(){c.remo
     <div>
       <ul>
         <!-- <li><a tabindex="-1" target="_self" href="#top"                       title="Back to the top of the page">Top</a></li> -->
-        <li><a tabindex="-1" target="_self" href="#about"                     title="A quick overview of what I do">About</a></li>
+        <li><a tabindex="-1" target="_self" href="#content"                   title="A quick overview of what I do">About</a></li>
         <li><a tabindex="-1" target="_self" href="#web-apps"                  title="Some of my web application development projects">Web apps</a></li>
         <li><a tabindex="-1" target="_self" href="#websites"                  title="Websites I’ve designed and built">Websites</a></li>
         <li><a tabindex="-1" target="_self" href="#graphic-design"            title="Projects from my days as a graphic designer">Graphic design</a></li>
@@ -150,7 +150,7 @@ l('I4-ok',function(){c.remove('B4-I4'),c.add('I4')});l('JS-ok',function(){c.remo
 
   <div id="cover"></div>
 
-</div>
+</div><!--#navigation -->
 
 
 
@@ -160,7 +160,7 @@ l('I4-ok',function(){c.remove('B4-I4'),c.add('I4')});l('JS-ok',function(){c.remo
 <div id="content" class="container-fluid"><!-- full width layout, lets carousel images reach to window edges -->
 
 
-  <header class="container" id="about"><!-- fixed width -->
+  <header class="container"><!-- fixed width -->
     <div class="row" id="top">
 
       <figure id="logo" class="col-sm-4">
@@ -217,8 +217,8 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
       <div id="intro" class="col-sm-8">
         <p>
           I’m a creative
-          <a href="https://en.wikipedia.org/wiki/Web_application" title="Find out about web applications">web application</a>
-          <a href="https://en.wikipedia.org/wiki/Web_developer" title="Find out about web developers">developer</a>
+          <a href="https://en.wikipedia.org/wiki/Web_application" title="Learn more about web applications">web application</a>
+          <a href="https://en.wikipedia.org/wiki/Web_developer" title="Learn more about web developers">developer</a>
           with twenty years’ experience working for digital
           agencies and publishing houses <span class="nowrap">in London</span> and Brighton.
         </p>
@@ -238,22 +238,22 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
         <div style="clear:both"></div><!-- fix Chrome print bug -->
         <h2>About</h2>
         <p>I build beautiful,
-          <a href="https://en.wikipedia.org/wiki/Usability"           title="Find out about usability">user friendly,</a>
+          <a href="https://en.wikipedia.org/wiki/Usability"           title="Learn more about usability">user friendly,</a>
           feature-rich desktop and mobile
-          <a href="https://en.wikipedia.org/wiki/Web_application"     title="Find out about web applications">web apps.</a>
+          <a href="https://en.wikipedia.org/wiki/Web_application"     title="Learn more about web applications">web apps.</a>
           I’ve worked on projects for
-          <a href="https://en.wikipedia.org/wiki/BBC"                 title="Find out about the BBC">the BBC,</a>
+          <a href="https://en.wikipedia.org/wiki/BBC"                 title="Learn more about the BBC">the BBC,</a>
           <a href="https://en.wikipedia.org/wiki/Saatchi_%26_Saatchi" title="Find out about Saatchi &amp; Saatchi">Saatchi &amp; Saatchi,</a>
           <a href="https://en.wikipedia.org/wiki/EDF_Energy"          title="Find out about EDF">EDF,</a>
           <a href="https://en.wikipedia.org/wiki/Diageo"              title="Find out about Diageo">Diageo,</a>
           <a href="https://en.wikipedia.org/wiki/The_Daily_Telegraph" title="Find out about The Daily Telegraph">The Daily Telegraph,</a>
-          <a href="https://en.wikipedia.org/wiki/Sony"                title="Find out about Sony">Sony,</a>
+          <a href="https://en.wikipedia.org/wiki/Sony"                title="Learn more about Sony">Sony,</a>
           <a href="https://en.wikipedia.org/wiki/Ford_of_Britain"     title="Find out about Ford">Ford,</a>
           <a href="https://en.wikipedia.org/wiki/BT_Group"            title="Find out about BT">BT</a> and the
           <a href="https://en.wikipedia.org/wiki/House_of_Windsor"    title="Find out about the House of Windsor">House of Windsor.</a>
           I like to push browsers to the limit, often using new technologies like
           <a href="https://en.wikipedia.org/wiki/HTML5_Audio"         title="Find out about Web Audio">Web Audio,</a>
-          <a href="https://en.wikipedia.org/wiki/Web_Components"      title="Find out about the Web Components">Web Components</a> and
+          <a href="https://en.wikipedia.org/wiki/Web_Components"      title="Find out about Web Components">Web Components</a> and
           <a href="https://en.wikipedia.org/wiki/WebVR"               title="Find out about the WebVR">WebVR</a>
           in my work.
         </p>
@@ -285,7 +285,7 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
         <dd class="col-sm-10"><a target="_self" href="#dream-vacation" title="Read the ‘Dream Vacation’ case study">‘Dream Vacation’</a> for US travel agent <a href="https://en.wikipedia.org/wiki/RCI_(company)" title="Find out about RCI">RCI,</a> using <a href="https://en.wikipedia.org/wiki/NodeJS" title="Find out about Node">Node</a> and a <a href="https://en.wikipedia.org/wiki/MongoDB" title="Find out about Mongo">Mongo</a> database</dd>
         <dt class="col-sm-2"><time>2013</time></dt>
         <dd class="col-sm-10">Drag-and-drop email composer for web-marketers <a href="http://www.smartfocus.com/en/company" title="Find out about SmartFocus">SmartFocus,</a> based on <a href="http://wordpress.org/about/" title="Find out about WordPress">WordPress</a></dd>
-        <dt class="col-sm-2"><time>2012</time></dt>
+        <dt class="col-sm-2"><time>2013</time></dt>
         <dd class="col-sm-10">Suite of multilingual data-capture iPad apps for <a href="https://en.wikipedia.org/wiki/Winsor_%26_Newton" title="Find out about Winsor &amp; Newton">Winsor &amp; Newton,</a> with <a href="https://en.wikipedia.org/wiki/PHP" title="Find out about PHP">PHP</a> backend</dd>
         <dt class="col-sm-2"><time>2012</time></dt>
         <dd class="col-sm-10">In-store touchscreen catalogue for footwear brand <a href="https://en.wikipedia.org/wiki/Kurt_Geiger" title="Find out about Kurt Geiger">Kurt Geiger,</a> built in <a href="https://en.wikipedia.org/wiki/ActionScript" title="Find out about ActionScript">ActionScript</a></dd>
@@ -1348,6 +1348,24 @@ function(){document.documentElement.classList.add('logo-FIN')})</script><!--@TOD
 <script src="js/bootstrap.min.js"></script>
 
 <script src="js/rpcom.js"></script>
+
+<!-- infopop -->
+<div id="infopop" style="display:none">
+  <div class="infopop-arrow-wrap"><div class="infopop-arrow"></div></div>
+  <div class="infopop-main">
+    <p class="infopop-message"></p>
+    <a class="infopop-dismiss" title="Close this popup">
+      <svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640">
+        <rect x="40" y="290" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -132.5485 320)" width="560" height="60"></rect>
+        <rect x="40" y="290" transform="matrix(0.7071 0.7071 -0.7071 0.7071 320 -132.5485)" width="560" height="60"></rect>
+      </svg>
+    </a>
+    <a class="infopop-button"></a>
+  </div>
+</div>
+<link rel="stylesheet" href="asset/css/infopop.css">
+<script src="js/infopop-data.js"></script>
+<script src="js/infopop.js"></script>
 
 </body>
 </html>

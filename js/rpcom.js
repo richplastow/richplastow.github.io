@@ -1,4 +1,4 @@
-console.log('RPCOM 1.0.7');
+console.log('RPCOM 1.1.0');
 
 
 //// Polyfill `[].indexOf()`:
@@ -25,8 +25,7 @@ if (! Array.prototype.indexOf)
   };
 
 
-//// On load...
-$(function () {
+$(function () { // on load
 
 //// Handy shortcuts.
 var $body = $('body')

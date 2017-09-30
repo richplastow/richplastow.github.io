@@ -1,8 +1,8 @@
 richplastow.github.io
 =====================
 
-+ __Last update:__  2017/09/26
-+ __Version:__      1.0.7
++ __Last update:__  2017/09/30
++ __Version:__      1.1.0
 
 Portfolio website for Rich Plastow, freelance Web Designer and Web App Developer
 --------------------------------------------------------------------------------
@@ -80,3 +80,4 @@ Changelog
 + 1.0.5       prevent devices nudging content horizontally
 + 1.0.6       with CV and case study PDFs
 + 1.0.7       minor text amends
++ 1.1.0       created infopop, which converts links to informational popups
