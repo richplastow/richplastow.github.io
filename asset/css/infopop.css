@@ -1,4 +1,4 @@
-/* infopop.css 20170930 */
+/* infopop.css 20171002 */
 
 
 #infopop {
@@ -23,8 +23,6 @@ body.show-infopop #infopop {
     position: absolute;
     width: 200px;
     height: 150px;
-    background: #fff;
-    background: rgba(255,255,255,0.5);
     z-index: 2;
 }
 
@@ -40,8 +38,8 @@ body.show-infopop #infopop {
     height: 0;
     border-left: 12px solid transparent;
     border-right: 12px solid transparent;
-    border-top: 20px solid #222;
-    border-bottom: 0 solid #222;
+    border-top: 20px solid #333;
+    border-bottom: 0 solid #333;
     z-index: 1;
     transition: margin 0.5s, border 0s 0.25s;
 }
@@ -50,8 +48,8 @@ body.show-infopop #infopop {
 }
 .infopop-arrow-bottom .infopop-arrow {
     margin-top: -20px;
-    border-top: 0 solid #222;
-    border-bottom: 20px solid #222;
+    border-top: 0 solid #333;
+    border-bottom: 20px solid #333;
 }
 #infopop .infopop-message {
     position: absolute;
@@ -62,9 +60,9 @@ body.show-infopop #infopop {
     font-size: 15px;
     line-height: 1.25;
     overflow: hidden;
-    background: #222;
+    background: #333;
     border-radius: 4px;
-    color: #ddd;
+    color: #f8f8f8;
 }
 #infopop.infopop-arrow-bottom .infopop-message {
     margin-top: 0;
@@ -94,14 +92,16 @@ body.show-infopop #infopop {
     letter-spacing: 1px;
     text-transform: uppercase;
     overflow: hiddenxx;
-    background: #222;
+    background: #333;
     color: #ddd!important;
     border-radius: 3px;
     transition: all 0.5s;
 }
-#infopop .infopop-button:hover {
+#infopop .infopop-button:hover,
+#infopop .infopop-button:focus,
+#infopop .infopop-button:active {
     background: #000!important;
-    color: #fff!important;
+    color: #f8f8f8!important;
     text-decoration: none!important;
 }
 #infopop.infopop-arrow-bottom .infopop-button {
@@ -111,12 +111,16 @@ body.show-infopop #infopop {
     position: absolute;
     margin: -2px 0 0 120px;
 }
-#infopop .infopop-button:hover svg {
-    fill: #fff;
-    stroke: #fff;
+#infopop .infopop-button:hover svg,
+#infopop .infopop-button:focus svg,
+#infopop .infopop-button:active svg {
+    fill: #f8f8f8;
+    stroke: #f8f8f8;
     stroke-width: 20;
 }
-#infopop .infopop-button:hover .infopop-underline {
+#infopop .infopop-button:hover .infopop-underline,
+#infopop .infopop-button:focus .infopop-underline,
+#infopop .infopop-button:active .infopop-underline {
     text-decoration: underline;
 }
 
@@ -130,14 +134,16 @@ body.show-infopop #infopop {
     font-size: 12px;
     line-height: 1.2;
     text-transform: uppercase;
-    background: #222;
+    background: #333;
     color: #ddd!important;
     border-radius: 3px;
     transition: all 0.5s;
 }
-#infopop .infopop-dismiss:hover {
+#infopop .infopop-dismiss:hover,
+#infopop .infopop-dismiss:focus,
+#infopop .infopop-dismiss:active {
     background: #000!important;
-    color: #fff!important;
+    color: #f8f8f8!important;
     text-decoration: none!important;
 }
 #infopop.infopop-arrow-bottom .infopop-dismiss {
@@ -146,8 +152,10 @@ body.show-infopop #infopop {
 #infopop .infopop-dismiss svg {
     margin: 2px 0 0 2px;
 }
-#infopop .infopop-dismiss:hover svg {
-    fill: #fff;
-    stroke: #fff;
+#infopop .infopop-dismiss:hover svg,
+#infopop .infopop-dismiss:focus svg,
+#infopop .infopop-dismiss:active svg {
+    fill: #f8f8f8;
+    stroke: #f8f8f8;
     stroke-width: 20;
 }

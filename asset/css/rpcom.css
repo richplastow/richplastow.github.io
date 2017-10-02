@@ -1,4 +1,4 @@
-/* rpcom.css 1.1.0 */
+/* rpcom.css 1.1.1 */
 
 
 
@@ -79,6 +79,7 @@ body { /* prevent devices nudging content horizontally */
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
+    background: #f8f8f8;
 }
 section {
     padding-top: 1.7em;
@@ -120,6 +121,9 @@ html.B4-JS .hidden-B4-JS {
     visibility: hidden; /* hide until the site’s JavaScript is ready * /
 }
 */
+hidden {
+    display: none; /* for IE10 and below */
+}
 .nowrap {
     white-space: nowrap;
 }
@@ -143,10 +147,11 @@ html.B4-JS .hidden-B4-JS {
 article {
     margin-bottom: 1em;
 }
-body, h1, .h1, h2, h3, h4 {
+body, h1, .h1, h2, h3, h4, p {
     font-family: 'JuneRegular', arial, sans-serif;
     font-weight: 400;
     font-style: normal;
+    color: #333;
 }
 h1, .h1 {
     font-size: 3.25em;
@@ -179,7 +184,9 @@ a {
     cursor:  pointer;
     transition: color 0.5s;
 }
-a:hover {
+a:hover,
+a:focus,
+a:active {
     color: #000!important;
     text-decoration: underline!important;
 }
@@ -238,30 +245,33 @@ svg {
 .rpcom-slug li {
     display: inline-block;
     margin: 0.35em 0.1em 0 0;
-    background: #222;
-    border-radius: 0.2em;
     font-weight: bold;
     letter-spacing: 1px;
     text-transform: uppercase;
-    transition: background 0.3s;
 }
 .rpcom-slug li a {
     padding: 0.1em 0.5em;
     color: #ddd!important;
+    background: #333;
+    border-radius: 0.2em;
     text-decoration: none!important;
-    transition: color 0.3s;
+    transition: background 0.3s, color 0.3s;
 }
-.rpcom-slug li:hover {
+.rpcom-slug li a:hover,
+.rpcom-slug li a:focus,
+.rpcom-slug li a:active {
     background: #000;
 }
-.rpcom-slug li:hover a {
-    color: #fff!important;
+.rpcom-slug li a:hover,
+.rpcom-slug li a:focus,
+.rpcom-slug li a:active {
+    color: #f8f8f8!important;
 }
 @media print {
     .rpcom-slug li {
         padding: 0 0 0.05em;
         border: 1px solid #000;
-        background: #FFF;
+        background: #f8f8f8;
     }
     .rpcom-slug li a {
         color: #000!important;
@@ -371,11 +381,13 @@ dd .rpcom-slug {
     transition: 0.3s 0.4s;
 }
 .icon >a rect {
-    fill: #222;
-    stroke: #222;
+    fill: #333;
+    stroke: #333;
     stroke-width: 0;
 }
-.icon >a:hover rect {
+.icon >a:hover rect,
+.icon >a:focus rect,
+.icon >a:active rect {
     fill: #000;
     stroke: #000;
     stroke-width: 20;
@@ -580,7 +592,7 @@ body.show-menu #cover {
 
 /*
 #logo svg >* {
-    fill: #fff; /*@TODO show for legacy browsers which don’t understand `animation` * /
+    fill: #f8f8f8; /*@TODO show for legacy browsers which don’t understand `animation` * /
 }
 #logo svg >*:nth-child(1)  { -webkit-animation:0.3s linear 0.0s forwards logo }
 #logo svg >*:nth-child(2)  { -webkit-animation:0.3s linear 0.1s forwards logo }
@@ -605,12 +617,12 @@ body.show-menu #cover {
 #logo svg >*:nth-child(10) {         animation:0.3s linear 0.6s forwards logo }
 #logo svg >*:nth-child(11) {         animation:0.3s linear 0.6s forwards logo }
 @-webkit-keyframes logo {
-    from { fill:#fff }
-    to   { fill:#222 }
+    from { fill:#f8f8f8 }
+    to   { fill:#333 }
 }
 @keyframes logo {
-    from { fill:#fff }
-    to   { fill:#222 }
+    from { fill:#f8f8f8 }
+    to   { fill:#333 }
 }
 */
 
@@ -731,13 +743,15 @@ figure.carousel-image img {
 }
 
 #foot {
-    background: #222;
+    background: #333;
     color: #ddd;
     cursor: default;
     pointer-events: none;
     transition: 0.5s;
 }
-#foot:hover {
+#foot:hover,
+#foot:focus,
+#foot:active {
     background: #000;
 }
 #foot a {
@@ -745,8 +759,10 @@ figure.carousel-image img {
     padding: 0.2em 0.5em 0.1em;
     color: #ccc!important;
 }
-#foot a:hover {
-    color: #fff!important;
+#foot a:hover,
+#foot a:focus,
+#foot a:active {
+    color: #f8f8f8!important;
 }
 #foot p {
     width: 100%;
@@ -757,7 +773,9 @@ figure.carousel-image img {
     color: #999;
     transition: 0.5s;
 }
-#foot:hover p {
+#foot:hover p,
+#foot:focus p,
+#foot:active p {
     color: #666;
 }
 @media (max-width: 575px) {
@@ -834,7 +852,9 @@ figure.carousel-image img {
     -webkit-transform-origin: center;
             transform-origin: center;
 }
-#foot a:hover svg {
+#foot a:hover svg,
+#foot a:focus svg,
+#foot a:active svg {
     -webkit-transform: scale(1.1, 1.1);
             transform: scale(1.1, 1.1);
 }
@@ -842,7 +862,9 @@ body.show-menu #foot a.menu-btn svg {
     -webkit-transform: translateY(0.1em);
             transform: translateY(0.1em);
 }
-body.show-menu #foot a.menu-btn:hover svg {
+body.show-menu #foot a.menu-btn:hover svg,
+body.show-menu #foot a.menu-btn:focus svg,
+body.show-menu #foot a.menu-btn:active svg {
     -webkit-transform: translateY(0.1em) scale(1.1, 1.1);
             transform: translateY(0.1em) scale(1.1, 1.1);
 }
@@ -852,8 +874,12 @@ body.show-menu #foot a.menu-btn:hover svg {
     transition: 0.3s;
 }
 #foot a:hover rect,
-#foot a:hover path {
-    fill: #fff;
+#foot a:focus rect,
+#foot a:active rect,
+#foot a:hover path,
+#foot a:focus path,
+#foot a:active path {
+    fill: #f8f8f8;
 }
 
 
