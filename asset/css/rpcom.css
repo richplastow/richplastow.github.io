@@ -1,4 +1,4 @@
-/* rpcom.css 1.1.1 */
+/* rpcom.css 1.1.2 */
 
 
 
@@ -79,7 +79,6 @@ body { /* prevent devices nudging content horizontally */
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
-    background: #f8f8f8;
 }
 section {
     padding-top: 1.7em;
@@ -180,13 +179,13 @@ p {
 
 a {
     display: inline-block;
-    color:   #444!important;
+    color:   #555!important;
     cursor:  pointer;
     transition: color 0.5s;
 }
+a.current-infopop,
 a:hover,
-a:focus,
-a:active {
+a:focus {
     color: #000!important;
     text-decoration: underline!important;
 }
@@ -257,21 +256,17 @@ svg {
     text-decoration: none!important;
     transition: background 0.3s, color 0.3s;
 }
+.rpcom-slug li a.current-infopop,
 .rpcom-slug li a:hover,
-.rpcom-slug li a:focus,
-.rpcom-slug li a:active {
+.rpcom-slug li a:focus {
     background: #000;
-}
-.rpcom-slug li a:hover,
-.rpcom-slug li a:focus,
-.rpcom-slug li a:active {
     color: #f8f8f8!important;
 }
 @media print {
     .rpcom-slug li {
         padding: 0 0 0.05em;
         border: 1px solid #000;
-        background: #f8f8f8;
+        background: #fff;
     }
     .rpcom-slug li a {
         color: #000!important;
@@ -386,8 +381,7 @@ dd .rpcom-slug {
     stroke-width: 0;
 }
 .icon >a:hover rect,
-.icon >a:focus rect,
-.icon >a:active rect {
+.icon >a:focus rect {
     fill: #000;
     stroke: #000;
     stroke-width: 20;
@@ -750,8 +744,7 @@ figure.carousel-image img {
     transition: 0.5s;
 }
 #foot:hover,
-#foot:focus,
-#foot:active {
+#foot:focus {
     background: #000;
 }
 #foot a {
@@ -760,8 +753,7 @@ figure.carousel-image img {
     color: #ccc!important;
 }
 #foot a:hover,
-#foot a:focus,
-#foot a:active {
+#foot a:focus {
     color: #f8f8f8!important;
 }
 #foot p {
@@ -774,8 +766,7 @@ figure.carousel-image img {
     transition: 0.5s;
 }
 #foot:hover p,
-#foot:focus p,
-#foot:active p {
+#foot:focus p {
     color: #666;
 }
 @media (max-width: 575px) {
@@ -853,8 +844,7 @@ figure.carousel-image img {
             transform-origin: center;
 }
 #foot a:hover svg,
-#foot a:focus svg,
-#foot a:active svg {
+#foot a:focus svg {
     -webkit-transform: scale(1.1, 1.1);
             transform: scale(1.1, 1.1);
 }
@@ -863,8 +853,7 @@ body.show-menu #foot a.menu-btn svg {
             transform: translateY(0.1em);
 }
 body.show-menu #foot a.menu-btn:hover svg,
-body.show-menu #foot a.menu-btn:focus svg,
-body.show-menu #foot a.menu-btn:active svg {
+body.show-menu #foot a.menu-btn:focus svg {
     -webkit-transform: translateY(0.1em) scale(1.1, 1.1);
             transform: translateY(0.1em) scale(1.1, 1.1);
 }
@@ -875,10 +864,8 @@ body.show-menu #foot a.menu-btn:active svg {
 }
 #foot a:hover rect,
 #foot a:focus rect,
-#foot a:active rect,
 #foot a:hover path,
-#foot a:focus path,
-#foot a:active path {
+#foot a:focus path {
     fill: #f8f8f8;
 }
 

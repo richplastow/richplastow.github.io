@@ -1,4 +1,4 @@
-/* infopop.css 20171002 */
+/* infopop.css 20171004 */
 
 
 #infopop {
@@ -98,8 +98,7 @@ body.show-infopop #infopop {
     transition: all 0.5s;
 }
 #infopop .infopop-button:hover,
-#infopop .infopop-button:focus,
-#infopop .infopop-button:active {
+#infopop .infopop-button:focus {
     background: #000!important;
     color: #f8f8f8!important;
     text-decoration: none!important;
@@ -112,15 +111,13 @@ body.show-infopop #infopop {
     margin: -2px 0 0 120px;
 }
 #infopop .infopop-button:hover svg,
-#infopop .infopop-button:focus svg,
-#infopop .infopop-button:active svg {
+#infopop .infopop-button:focus svg {
     fill: #f8f8f8;
     stroke: #f8f8f8;
     stroke-width: 20;
 }
 #infopop .infopop-button:hover .infopop-underline,
-#infopop .infopop-button:focus .infopop-underline,
-#infopop .infopop-button:active .infopop-underline {
+#infopop .infopop-button:focus .infopop-underline {
     text-decoration: underline;
 }
 
@@ -140,8 +137,7 @@ body.show-infopop #infopop {
     transition: all 0.5s;
 }
 #infopop .infopop-dismiss:hover,
-#infopop .infopop-dismiss:focus,
-#infopop .infopop-dismiss:active {
+#infopop .infopop-dismiss:focus {
     background: #000!important;
     color: #f8f8f8!important;
     text-decoration: none!important;
@@ -153,8 +149,7 @@ body.show-infopop #infopop {
     margin: 2px 0 0 2px;
 }
 #infopop .infopop-dismiss:hover svg,
-#infopop .infopop-dismiss:focus svg,
-#infopop .infopop-dismiss:active svg {
+#infopop .infopop-dismiss:focus svg {
     fill: #f8f8f8;
     stroke: #f8f8f8;
     stroke-width: 20;

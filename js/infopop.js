@@ -1,4 +1,4 @@
-console.log('INFOPOP 20171002');
+console.log('INFOPOP 20171004');
 
 
 $(function () { // on load

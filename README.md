@@ -1,8 +1,8 @@
 richplastow.github.io
 =====================
 
-+ __Last update:__  2017/10/02
-+ __Version:__      1.1.1
++ __Last update:__  2017/10/04
++ __Version:__      1.1.2
 
 Portfolio website for Rich Plastow, freelance Web Designer and Web App Developer
 --------------------------------------------------------------------------------
@@ -82,3 +82,4 @@ Changelog
 + 1.0.7       minor text amends
 + 1.1.0       created infopop, which converts links to informational popups
 + 1.1.1       more infopop definitions
++ 1.1.2       all infopop definitions in place
