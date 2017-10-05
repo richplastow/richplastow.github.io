@@ -1,4 +1,4 @@
-console.log('RPCOM 1.1.2');
+console.log('RPCOM 1.1.3');
 
 
 //// Polyfill `[].indexOf()`:
@@ -72,6 +72,15 @@ function focusMenu () {
     }
 }
 
+//// Fix tabbing between links (will be broken when we infopop removes hrefs).
+var tabindex
+function resetTabindex () { tabindex = 1 }
+function tabindexOn  () { this.setAttribute( 'tabindex', ''+(tabindex++) ) }
+function tabindexOff () { this.setAttribute( 'tabindex', '-1' ) }
+resetTabindex()
+$('#content a, #foot a').each(tabindexOn)
+$('#menu a').each(tabindexOff)
+
 //// Enable the ‘menu’ button.
 $('.menu-btn').on('click', function () {
     if ( $body.hasClass('show-menu') ) {
@@ -80,12 +89,9 @@ $('.menu-btn').on('click', function () {
         $body.addClass('show-menu')
         focusMenu()
         $('.menu-btn a, a.menu-btn').attr('title', 'Close the navigation menu')
-        $('#content a').each(
-            function () { this.setAttribute('tabindex', '-1') }
-        )
-        $('#menu a').each(
-            function () { this.removeAttribute('tabindex') }
-        )
+        resetTabindex()
+        $('#menu a').each(tabindexOn)
+        $('#content a, #foot a').each(tabindexOff)
     }
 })
 
@@ -99,16 +105,17 @@ $('#cover').on('click', function () {
 //// main content.
 $('#menu, #content a').on('click', function (evt) {
     closeMenu()
-    var anchor, target
+    var anchor, $target
     if (evt.target && evt.target.href) {
         if ( anchor = evt.target.href.match(/#[-a-z0-9]+$/) ) {
             if ( $target = $(anchor[0]) ) {
                 evt.preventDefault()
-                $('html, body')
+                $('html')
                    .delay(250)
                    .animate(
                         { scrollTop: $target.offset().top }
                       , 1000
+                    //   , function () { console.log(anchor[0]);window.location = anchor[0] }
                     )
             }
         }
@@ -117,22 +124,11 @@ $('#menu, #content a').on('click', function (evt) {
 
 function closeMenu () {
     $body.removeClass('show-menu')
-    $('#menu a').each(
-        function () { this.setAttribute('tabindex', '-1') }
-    )
-    $('#content a').each(
-        function () { this.removeAttribute('tabindex') }
-    )
     $('.menu-btn a, a.menu-btn').attr('title', 'Open the navigation menu')
+    resetTabindex()
+    $('#content a, #foot a').each(tabindexOn)
+    $('#menu a').each(tabindexOff)
 }
-
-//// Prevent browser’s status-bar opening when a footer link is hovered.
-$('#foot a[href]').each( function (i,el) {
-    var $el = $(el)
-      , href  = $el.attr('href')
-    $el.removeAttr('href')
-       .on('click', function () { window.open(href) })
-})
 
 // //// Tell CSS that the fonts are ready, as soon as they’ve loaded.
 // $('html').removeClass('pre-font')
