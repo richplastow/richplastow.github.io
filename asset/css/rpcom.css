@@ -1,4 +1,4 @@
-/* rpcom.css 1.1.3 */
+/* rpcom.css 1.1.4 */
 
 
 
@@ -71,7 +71,6 @@
 }
 html {
     overflow-x: hidden;
-    max-height: 100%; /* prevent big empty space below footer after resizing */
     /*overflow-y: hidden; @TODO reinstate for splash-load */
 }
 body { /* prevent devices nudging content horizontally */

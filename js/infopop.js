@@ -1,4 +1,4 @@
-console.log('INFOPOP 20171005');
+console.log('infopop 20171006');
 
 
 $(function () { // on load
@@ -32,9 +32,22 @@ $('.infopop-glossary').each( function () { // each glossary <article>
 
 
 //// The infopop should disappear on window-resize, or when anything is clicked.
-$(window).on('resize click', closeInfopop)
+$window.on('resize click', closeInfopop)
 $('body, #navigation, #content').on('click', closeInfopop) // iOS Safari 7
 $message.click( function (evt) { evt.stopPropagation() } )
+
+
+//// The infopop should disappear when it scrolls out of view.
+$window.on('scroll', function () {
+    if (! $body.hasClass('show-infopop') ) return // not currently shown
+    var windowTop = $window.scrollTop()
+      , windowBottom = windowTop + $window.height()
+      , infopopTop = $infopop.offset().top
+    if ( // infopop is below window bottom or above window top
+        ( windowBottom < infopopTop )
+     || ( windowTop > infopopTop + $infopop.height() )
+    ) return closeInfopop()
+})
 
 
 //// Enable infopop-button.
@@ -154,32 +167,59 @@ $('a').each( function () { // step through every <a> element
                 }
             }
 
-            //// fit the infopop to the left or right edge of the link.
-            left = offset.left - 10
+            //// Tweak `left` in the footer.
+            if ('footer-email-sm-up' === this.id)
+                left = $('span', $el).offset().left - 10
+            else if ( $el.hasClass('footer-icon') )
+                left = $('svg', $el).offset().left - 10
+            else
+                left = offset.left - 10
+
+            //// Fit the infopop to the left or right edge of the link.
             gap = $window.width() - left - data.width // to right
             if (25 > gap) {
-                left += $el.width() - data.width + 20
+                if ('footer-email-sm-up' === this.id)
+                    left += $('span', $el).width() - data.width + 20
+                else if ( $el.hasClass('footer-icon') )
+                    left += $('svg', $el).width() - data.width + 20
+                else
+                    left += $el.width() - data.width + 20
                 $infopop.addClass('infopop-arrow-right')
             }
-            if (50 > left) {
+            if ( 50 > left && ! $el.hasClass('footer-icon') ) {
                 $arrow.css( 'margin-left', Math.max(10, offset.left - 50) )
                 left = 50
             } else {
                 $arrow.removeAttr('style')
             }
+            // console.log(left);
 
-            $infopop.css({
-                top:  top
-              , left: left
-            })
+            //// If not currently visible, immediatesly move the infopop just
+            //// below its proper position.
+            if (! $body.hasClass('show-infopop') ) {
+                $infopop.show()
+                $body.removeClass('infopop-transition')
+                $infopop.css({
+                    top:  top + 50
+                  , left: left
+                })
+            }
+
+            //// Next tick, CSS-transition the infopop to its proper position.
+            setTimeout( function () {
+                $body.addClass('infopop-transition')
+                $infopop.css({
+                    top:  top
+                  , left: left
+                })
+                // console.log(top, left);
+            }, 1)
 
             $message
                .html( data.message )
             $button
                .html( data.svg() + data.title )
                .data({ href:href })
-            //    .attr('href', href)
-            //    .attr('title', 'Open an external link in a new window') // a bit obvious
             $body.addClass('show-infopop')
        })
 
@@ -212,6 +252,10 @@ function internalSVG () {
 function closeInfopop () {
     $body.removeClass('show-infopop')
     $('.current-infopop').removeClass('current-infopop')
+    setTimeout( function () {
+        if (! $body.hasClass('show-infopop') )
+            $infopop.hide() // prevent big empty space below footer after resize
+    }, 600)
 }
 
 

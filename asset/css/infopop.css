@@ -1,4 +1,4 @@
-/* infopop.css 20171005 */
+/* infopop.css 20171006 */
 
 
 #infopop {
@@ -9,18 +9,23 @@
     height: 150px;
     opacity: 0;
     visibility: hidden;
+    transform: scale(0.7, 0.7);
     z-index: 95;
-    transition: top 0.5s, left 0.5s, opacity 0.5s, visibility 0.5s 0s;
 }
 #infopop.infopop-contact,
 #infopop.infopop-case-study {
     height: 95px;
 }
-
+body.infopop-transition #infopop {
+    transition: top 0.5s, left 0.5s, opacity 0.5s, transform 0.5s, visibility 0.5s 0s;
+}
 body.show-infopop #infopop {
     visibility: visible;
+}
+body.show-infopop.infopop-transition #infopop {
+    transition: top 0.5s, left 0.5s, opacity 0.5s, transform 0.5s;
     opacity: 1;
-    transition: top 0.5s, left 0.5s, opacity 0.5s;
+    transform: scale(1, 1);
 }
 
 .infopop-main {

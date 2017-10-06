@@ -1,4 +1,4 @@
-console.log('RPCOM 1.1.3');
+console.log('rpcom 1.1.4');
 
 
 //// Polyfill `[].indexOf()`:
@@ -72,6 +72,7 @@ function focusMenu () {
     }
 }
 
+
 //// Fix tabbing between links (will be broken when we infopop removes hrefs).
 var tabindex
 function resetTabindex () { tabindex = 1 }
@@ -80,6 +81,7 @@ function tabindexOff () { this.setAttribute( 'tabindex', '-1' ) }
 resetTabindex()
 $('#content a, #foot a').each(tabindexOn)
 $('#menu a').each(tabindexOff)
+
 
 //// Enable the ‘menu’ button.
 $('.menu-btn').on('click', function () {
@@ -95,11 +97,13 @@ $('.menu-btn').on('click', function () {
     }
 })
 
+
 //// Clicking the ‘cover’ should also close the menu.
 $('#cover').on('click', function () {
     if ( $body.hasClass('show-menu') )
         closeMenu()
 })
+
 
 //// Deal with navigation-menu clicks, and also clicks on <A> elements in the
 //// main content.
@@ -110,7 +114,7 @@ $('#menu, #content a').on('click', function (evt) {
         if ( anchor = evt.target.href.match(/#[-a-z0-9]+$/) ) {
             if ( $target = $(anchor[0]) ) {
                 evt.preventDefault()
-                $('html')
+                $('html, body')
                    .delay(250)
                    .animate(
                         { scrollTop: $target.offset().top }
@@ -132,6 +136,7 @@ function closeMenu () {
 
 // //// Tell CSS that the fonts are ready, as soon as they’ve loaded.
 // $('html').removeClass('pre-font')
+
 
 //// All JavaScript files have initialised. See richplastow.com/support/I4.md
 setTimeout( function () {
