@@ -1,8 +1,8 @@
 richplastow.github.io
 =====================
 
-+ __Last update:__  2017/10/17
-+ __Version:__      1.1.5
++ __Last update:__  2017/10/19
++ __Version:__      1.1.6
 
 Portfolio website for Rich Plastow, freelance Web Designer and Web App Developer
 --------------------------------------------------------------------------------
@@ -86,3 +86,4 @@ Changelog
 + 1.1.3       with demo and case study infopops
 + 1.1.4       fix infopop footer position and gap after resize
 + 1.1.5       mention React, Redux and ‘LogoJen’
++ 1.1.6       Looptopian Launch Vimeo link
