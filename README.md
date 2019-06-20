@@ -2,7 +2,7 @@ richplastow.github.io
 =====================
 
 + __Last update:__  2019/06/20
-+ __Version:__      1.2.5
++ __Version:__      1.2.6
 
 Portfolio website for Rich Plastow, freelance Web Designer and Web App Developer
 --------------------------------------------------------------------------------
@@ -93,3 +93,4 @@ Changelog
 + 1.2.3       correct Group Protection link in menu
 + 1.2.4       update http:// to https://
 + 1.2.5       minor text amends to Group Protection
++ 1.2.6       rich-plastow-cv-june-2019-v11, .docx and .pdf
