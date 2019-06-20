@@ -1,8 +1,8 @@
 richplastow.github.io
 =====================
 
-+ __Last update:__  2019/06/10
-+ __Version:__      1.2.0
++ __Last update:__  2019/06/20
++ __Version:__      1.2.2
 
 Portfolio website for Rich Plastow, freelance Web Designer and Web App Developer
 --------------------------------------------------------------------------------
@@ -88,3 +88,5 @@ Changelog
 + 1.1.5       mention React, Redux and ‘LogoJen’
 + 1.1.6       Looptopian Launch Vimeo link
 + 1.2.0       updated footer year to 2019
++ 1.2.1       content updates
++ 1.2.2       Group Protection case study
