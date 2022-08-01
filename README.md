@@ -1,11 +1,11 @@
 richplastow.github.io
 =====================
 
-+ __Last update:__  2019/06/20
-+ __Version:__      1.2.6
++ __Last update:__  2022/07/30
++ __Version:__      1.3.0
 
-Portfolio website for Rich Plastow, freelance Web Designer and Web App Developer
---------------------------------------------------------------------------------
+Portfolio website for Rich Plastow, creative front-end web app developer
+------------------------------------------------------------------------
 
 
 Author
@@ -25,7 +25,7 @@ Site
 + __Standards:__    HTML5, CSS3
 + __Components:__   Bootstrap 4.0.0, jQuery 3.2.1, Tether 1.2.4
 + __Custom:__       w4 0.0.12
-+ __Software:__     Atom, Git, Illustrator, Photoshop
++ __Software:__     VS Code, Git, Illustrator, Photoshop
 
 
 Icon
@@ -94,3 +94,4 @@ Changelog
 + 1.2.4       update http:// to https://
 + 1.2.5       minor text amends to Group Protection
 + 1.2.6       rich-plastow-cv-june-2019-v11, .docx and .pdf
++ 1.3.0       updates content after Easel
