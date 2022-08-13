@@ -1,8 +1,8 @@
 richplastow.github.io
 =====================
 
-+ __Last update:__  2022/07/30
-+ __Version:__      1.3.0
++ __Last update:__  2022/08/13
++ __Version:__      1.3.1
 
 Portfolio website for Rich Plastow, creative front-end web app developer
 ------------------------------------------------------------------------
@@ -15,7 +15,7 @@ Designed, developed and authored by Rich Plastow.
 + __LinkedIn:__     [richardplastow](https://www.linkedin.com/in/richardplastow/)
 + __GitHub:__       [richplastow](https://github.com/richplastow)
 + __Twitter:__      [@RichPlastow](https://twitter.com/RichPlastow)
-+ __Location:__     Brighton, UK
++ __Location:__     London, UK
 
 
 Site
@@ -95,3 +95,4 @@ Changelog
 + 1.2.5       minor text amends to Group Protection
 + 1.2.6       rich-plastow-cv-june-2019-v11, .docx and .pdf
 + 1.3.0       updates content after Easel
++ 1.3.1       more post-Easel updates, including rich-plastow-cv-august-2022-v2
