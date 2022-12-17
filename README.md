@@ -1,8 +1,8 @@
 richplastow.github.io
 =====================
 
-+ __Last update:__  2022/08/13
-+ __Version:__      1.3.1
++ __Last update:__  2022/12/17
++ __Version:__      1.3.2
 
 Portfolio website for Rich Plastow, creative front-end web app developer
 ------------------------------------------------------------------------
@@ -96,3 +96,4 @@ Changelog
 + 1.2.6       rich-plastow-cv-june-2019-v11, .docx and .pdf
 + 1.3.0       updates content after Easel
 + 1.3.1       more post-Easel updates, including rich-plastow-cv-august-2022-v2
++ 1.3.2       removes Twitter links, since I’m not using Twitter any more
