@@ -1,6 +1,6 @@
 {
   "name": "richplastow.github.io",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Portfolio website for Rich Plastow, creative front-end web app developer",
   "scripts": {
     "test": "echo 'Error: no test specified' && exit 1"

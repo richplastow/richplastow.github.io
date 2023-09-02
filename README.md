@@ -94,6 +94,7 @@ Changelog
 + 1.2.5       minor text amends to Group Protection
 + 1.2.6       rich-plastow-cv-june-2019-v11, .docx and .pdf
 + 1.3.0       updates content after Easel
-+ 1.3.1       more post-Easel updates, including rich-plastow-cv-august-2022-v2
++ 1.4.0       more post-Easel updates, including rich-plastow-cv-august-2022-v2
 + 1.3.2       removes Twitter links, since I’m not using Twitter any more
 + 1.3.3       begins adding two new case studies
++ 1.4.0       comments-out "I am available for freelance ... with me."
