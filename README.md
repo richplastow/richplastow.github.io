@@ -14,7 +14,7 @@ Designed, developed and authored by Rich Plastow.
 
 + __LinkedIn:__     [richardplastow](https://www.linkedin.com/in/richardplastow/)
 + __GitHub:__       [richplastow](https://github.com/richplastow)
-+ __Location:__     London, UK
++ __Location:__     London UK and Lisbon Portugal
 
 
 Site
