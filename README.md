@@ -1,11 +1,11 @@
 richplastow.github.io
 =====================
 
-+ __Last update:__  2024/05/07
-+ __Version:__      1.5.0
++ __Last update:__  2024/11/04
++ __Version:__      1.5.1
 
-Portfolio website for Rich Plastow, creative front-end web app developer
-------------------------------------------------------------------------
+Portfolio website for Rich Plastow, award-winning JavaScript web app developer
+------------------------------------------------------------------------------
 
 
 Author
@@ -14,7 +14,7 @@ Designed, developed and authored by Rich Plastow.
 
 + __LinkedIn:__     [richardplastow](https://www.linkedin.com/in/richardplastow/)
 + __GitHub:__       [richplastow](https://github.com/richplastow)
-+ __Location:__     London UK and Lisbon Portugal
++ __Location:__     London and Brighton UK, and Lisbon Portugal
 
 
 Site
@@ -99,3 +99,4 @@ Changelog
 + 1.3.3       begins adding two new case studies
 + 1.4.0       comments-out "I am available for freelance ... with me."
 + 1.5.0       bumps version before adding KOPE
++ 1.5.1       updates content and CV after HX
