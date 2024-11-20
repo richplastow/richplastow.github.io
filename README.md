@@ -1,8 +1,8 @@
 richplastow.github.io
 =====================
 
-+ __Last update:__  2024/11/04
-+ __Version:__      1.5.1
++ __Last update:__  2024/11/20
++ __Version:__      1.5.2
 
 Portfolio website for Rich Plastow, award-winning JavaScript web app developer
 ------------------------------------------------------------------------------
@@ -100,3 +100,4 @@ Changelog
 + 1.4.0       comments-out "I am available for freelance ... with me."
 + 1.5.0       bumps version before adding KOPE
 + 1.5.1       updates content and CV after HX
++ 1.5.2       splits ‘Dev and CI/CD’ skills into ‘Code Quality’ and ‘CI/CD’
