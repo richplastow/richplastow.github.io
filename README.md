@@ -1,8 +1,8 @@
 richplastow.github.io
 =====================
 
-+ __Last update:__  2024/12/10
-+ __Version:__      1.5.5
++ __Last update:__  2025/02/06
++ __Version:__      1.5.6
 
 Portfolio website for Rich Plastow, award-winning JavaScript web app developer
 ------------------------------------------------------------------------------
@@ -104,3 +104,4 @@ Changelog
 + 1.5.3       updates CV
 + 1.5.4       makes minor fixes
 + 1.5.5       updates CV to fe8 and fs8
++ 1.5.6       adds BBC Bitesize
