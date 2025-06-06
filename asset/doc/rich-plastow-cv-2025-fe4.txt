@@ -1,0 +1,328 @@
+Rich Plastow
+
+
+Summary:
+
+Award-winning frontend web app developer with twenty years’ experience working for leading brands and digital agencies in London and Brighton.
+
+I’m friendly, committed, professional and passionate about great code and great user experiences, with a broad range of skills and an excellent eye for detail. I’ve worked on projects for the BBC, NBCUniversal, Diageo, Sony, Volvo, BT, Saatchi & Saatchi and the House of Windsor. I build feature-rich websites and web apps that are fast, accessible, maintainable and robust at production scale, enjoyed by 100,000s of users.
+
+
+Technical Skills:
+
+* JavaScript
+* TypeScript
+* GraphQL
+* CSS
+* Sass
+* PHP
+* Rust
+* Python
+* React
+* Next.js
+* Vue
+* Node
+* Three.js
+* Gatsby
+* Express
+* Expo
+* Tailwind
+* Redux
+* React Router
+* React Spring
+* Lodash
+* (and many more)
+* Prettier
+* ESLint
+* Storybook
+* JSDoc
+* Jest
+* Playwright
+* Sentry
+* Lighthouse
+* NPM
+* Git
+* GitHub
+* Turbo
+* AWS
+* Nx
+* Docker
+* Azure
+* GCP
+* VS Code
+* Figma
+* Blender
+* Adobe Animate
+* Adobe XD
+* Photoshop
+* InDesign
+* Illustrator
+
+
+Other Skills:
+
+* Agile and Scrum
+* Photography and retouching
+* UX design
+* Illustration and icon design
+* Sub-editing and proofreading
+* Motion graphics and 3D
+
+
+Education:
+
+University: University of Wolverhampton
+Degree: BA (Hons)
+Field of Study: Graphic Design
+Degree Title: Graphic Communication with Painting and Photography
+Overall Result: 2:1
+Dates: September 1995 – June 1998 
+
+
+Clients:
+
+Asda
+BBC
+BMW
+Britannia
+BT
+Daily Telegraph
+Dazed
+Diageo
+EDF
+Ford
+Gok Wan
+GVA
+Headmasters
+House of Windsor
+HX
+Kurt Geiger
+Land Rover
+Legal & General
+Malmaison
+Make Real
+NBCUniversal
+New Look
+Publicis
+Radio Times
+RCI
+Redwood
+Responsible Travel
+Saatchi & Saatchi
+Selfridges
+Sony
+Storm Management
+Tesco
+Time
+Toyota
+VisitBrighton
+Volvo
+Winsor & Newton
+WSP
+Zurich Insurance
+
+
+Career:
+
+Job Title: Senior Frontend-Leaning Full Stack Engineer
+Dates: March 2025 – present
+Company Name: Freelance
+Location: Brighton
+Description:
+Full stack JavaScript web apps, built with AWS, Node, React, Next.js and TypeScript
+
+Highlights:
+* Set up a greenfield Turborepo for building high quality, high performance Next apps
+* Early concept work, prototyping and design for Brighton tech startup JellyBerry
+* Wrote custom serverless AWS Lambda scripts for a multi-tenant dashboard project
+
+
+Job Title: Senior Frontend Developer
+Dates: January 2025 – March 2025 (3 month contract)
+Company Name: BBC Bitesize
+Location: Manchester
+Description:
+BBC Bitesize at The BBC, based in MediaCityUK, Manchester
+
+Role:
+* Part of an interdisciplinary team building a pilot e-learning chatbot for GCSE students, a project which has helped shape the BBC’s generative AI safety standards
+* Collaborated with machine-learning developers to devise a RESTful API for safe and secure communication with the Azure OpenAI Large Language Model
+* Created the chatbot UI and a suite of greenfield web apps in a Turborepo monorepo with excellent Google Lighthouse scores, using Next.js, TypeScript and Tailwind
+* Set up Jest, Chai, React Testing Library, JSDoc, Storybook and a custom generator to keep code modular, maintainable, reliable and well documented
+
+Highlights:
+* Built a pipeline utility to render CSV and XML data as accessible React components
+* Created a chatbot server in Express with SuperTest unit tests which simulates OpenAI services, for integration testing the apps, and speeding up development
+
+
+Job Title: Senior Full Stack JavaScript Engineer
+Dates: June 2024 – December 2024 (6 month contract)
+Company Name: HX
+Location: London
+Description:
+HX, London, offers premium cruises to destinations like the Galápagos and Antarctica
+
+Role:
+* Built React components for a new Figma design system, with pixel-perfect Tailwind
+* Worked closely with product owners, developers, designers and other stakeholders
+* Implemented the redesign of travelhx.com, a high-volume, high-value Next.js website
+
+Highlights:
+* Introduced the team to generators, and created a suite of high quality components
+* Built a system for responsive scroll-driven animated maps, with custom React hooks
+* Created an advanced Storybook instance, generating docs from JSDoc comments
+
+
+Job Title: Front-End Developer
+Dates: August 2023 – May 2024
+Company Name: KOPE
+Location: London
+Description:
+KOPE, based in London, provide AI-powered web apps for offsite construction
+
+Role:
+* Researched and evaluated new technologies, including Nx monorepo and Drie 3D
+* Championed robust, maintainable, accessible code, with excellent core web vitals
+* Mentored junior developers, through code reviews and discussion groups
+
+Highlights:
+* AI-driven productivity app for architects with custom 3D configurator, built with Vue
+* Drawing management tool for engineers at WSP, using IBM Carbon and GraphQL
+* Transitioned the front-end multi-repos to an Nx monorepo, retaining full Git history
+
+
+Job Title: Freelance Full Stack JavaScript Developer
+Dates: August 2022 – August 2023
+Company Name: KOPE, VisitBrighton and Not Timid
+Location: London and Brighton
+Description:
+KOPE, VisitBrighton and generative AI interior design startup Not Timid
+
+Role:
+Full stack JavaScript web apps in Node, React, Next.js, TypeScript, Tailwind and Three.js
+
+Highlights:
+* React Native app and admin dashboard, with AWS EC2, S3, API Gateway and DynamoDB
+* Interior design app using AWS, Next.js, Expo, TypeScript, React Three Fiber and Tailwind CSS
+* A prototype using Vue-based 3D animation: https://richplastow.com/#cluster-viewer
+
+
+Job Title: Senior Software Engineer
+Dates: July 2019 – August 2022
+Company Name: Easel TV
+Location: London
+Description:
+Easel TV, a London-based company offering cross-platform video streaming solutions
+
+Role:
+* Recruited, led and mentored the JavaScript devs, as part of a cross-functional team
+* Worked closely with clients, technology partners and other stakeholders
+* Championed React Native for OTT VoD, and React for smart TVs and set-top boxes
+* Modernised the tech-stack for an Agile, CI/CD workflow with AWS S3 and Lambda
+
+Highlights:
+* An advanced multi-tenant streaming TV website, built with TypeScript and Gatsby
+* Smart TV app for NBCUniversal’s reality TV channel hayu, using Node and React
+* Content management admin dashboard for streaming TV, in TypeScript and Next.js
+
+
+Job Title: Freelance Developer and Designer
+Dates: June 2017 – July 2019
+Company Name: VisitBrighton, Responsible Travel and Fluxx
+Location: Brighton
+Description:
+VisitBrighton is Brighton & Hove council’s commercial marketing division. Responsible Travel is an activist travel company based in Brighton. Fluxx is a business transformation and product innovation agency based in London.
+
+Role:
+Primarily front-end development using React and Vue, with a little Node back-end
+
+Highlights:
+* Ideation, design and build of an award winning exhibition stand for VisitBrighton
+* A set of Three.js motion graphics for Responsible Travel documentary ‘Crowded Out’
+* ‘Group Protection’, an insurance sales tool prototype for Legal & General in Vue
+
+
+Job Title: JavaScript Guru
+Dates: January 2016 – June 2017
+Company Name: Make Real
+Location: Brighton
+Description:
+Make Real, a digital agency building collaborative serious games and VR experiences
+
+Role:
+In-house JavaScript specialist, delivering cutting edge immersive web apps
+
+Highlights:
+* Animated 3D guide with video and minigames for EDF, using TypeScript and Angular
+* Concept art for Loco Dojo, a multiplayer virtual reality game voiced by Brian Blessed
+* ‘Bar Sim Game’, a multi-user 3D financial simulation for Diageo, built using Three.js, which won a DevLearn DemoFest award: https://richplastow.com/#bar-sim-game
+
+
+Job Title: Senior WordPress Developer
+Dates: May 2014 – January 2016
+Company Name: Pragmatic
+Location: Brighton
+Description:
+Pragmatic, specialists in WordPress website design, development and maintenance
+
+Role:
+Web design and WordPress development projects of all sizes, as part of an Agile team
+
+Highlights:
+* Game of Thrones themed shareable random quote generator, for Tesco and Blinkbox
+* A custom book-creation site with WooCommerce and automatic print-on-demand
+
+
+Job Title: Technical Director
+Dates: July 2009 – May 2014
+Company Name: Kandi
+Location: London
+Description:
+Kandi, a London-based multidisciplinary agency
+
+Role:
+WordPress and web app development for many well-known brands
+
+Highlights:
+* Suite of multilingual data-capture iPad apps for Winsor & Newton, with PHP backend
+* In-store touchscreen catalogue for footwear brand Kurt Geiger, built in ActionScript
+* ‘Smarter Living’, a lifestyle and pension calculator for Zurich Insurance, using jQuery
+* ‘Broo’, a custom WordPress theme with custom plugins based on Bootstrap
+* Promotional microsite with HTML5 animations for the Ford B-Max launch campaign
+
+
+Job Title: Art Editor and Developer
+Dates: February 2008 – July 2009
+Company Name: Publicis
+Location: London
+Description:
+Publicis is a multinational marketing and communications agency
+
+Role:
+Customer magazine design and web app development for major international brands
+
+Highlights:
+* ‘Preview’, a magazine and Flash-driven e-zine with embedded video for Blockbuster 
+* ‘Body Shape Challenge’, a browser game for New Look shortlisted for an APA award
+
+
+Job Title: Freelance Art Editor
+Dates: June 2001 – February 2008
+Company Name: Redwood, Time and BBC Worldwide
+Location: London
+Description:
+Redwood is a London-based agency specialising in customer magazines and websites. Time, formerly IPC, is a consumer magazine and digital publisher. BBC Worldwide is the commercial subsidiary of the BBC based in London
+
+Role:
+Template creation and layout for high-profile magazines
+
+Highlights:
+* Design of award-winning customer magazines for Britannia, Land Rover and Volvo
+* Template design for a major brand refresh of Radio Times at BBC Worldwide
+
+Contact Details:
+
+Profile: https://linkedin.com/in/richardplastow
+Portfolio: https://richplastow.com
+GitHub: https://github.com/richplastow
+Email: rich@richplastow.com
