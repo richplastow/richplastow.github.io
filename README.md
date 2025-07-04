@@ -1,11 +1,11 @@
 richplastow.github.io
 =====================
 
-+ __Last update:__  2025/05/28
-+ __Version:__      1.5.10
++ __Last update:__  2025/07/04
++ __Version:__      1.5.11
 
-Portfolio website for Rich Plastow, award-winning JavaScript web app developer
-------------------------------------------------------------------------------
+Portfolio and CV for Rich Plastow, award-winning senior developer
+-----------------------------------------------------------------
 
 
 Author
@@ -14,7 +14,7 @@ Designed, developed and authored by Rich Plastow.
 
 + __LinkedIn:__     [richardplastow](https://www.linkedin.com/in/richardplastow/)
 + __GitHub:__       [richplastow](https://github.com/richplastow)
-+ __Location:__     London and Brighton UK, and Lisbon Portugal
++ __Location:__     Brighton, UK
 
 
 Site
@@ -109,3 +109,4 @@ Changelog
 + 1.5.8       makes current year in footer dynamic
 + 1.5.9       updates CV (fe4 and fs4); fixes URLs; tidies asset/doc/
 + 1.5.10      adds .txt version of CV for parsers
++ 1.5.11      Updates intro and About text

@@ -22,7 +22,7 @@
 /* sm - small devices (landscape phones, 576px and up) */
 @media screen and (min-width: 576px) and (max-width: 767px) {
     html {
-        font-size: 0.622rem;
+        font-size: 0.62rem;
     }
 }
 
@@ -125,6 +125,9 @@ hidden {
 }
 .nowrap {
     white-space: nowrap;
+}
+.less-tracking {
+    letter-spacing: -0.05em;
 }
 @media (min-width: 576px) {
     .float-left-sm-up {
